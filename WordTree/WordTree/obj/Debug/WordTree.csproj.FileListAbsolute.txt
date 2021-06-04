@@ -1,0 +1,10 @@
+D:\VS2019\Project\WordTree\WordTree\bin\Debug\WordTree.exe.config
+D:\VS2019\Project\WordTree\WordTree\bin\Debug\WordTree.exe
+D:\VS2019\Project\WordTree\WordTree\bin\Debug\WordTree.pdb
+D:\VS2019\Project\WordTree\WordTree\bin\Debug\Newtonsoft.Json.dll
+D:\VS2019\Project\WordTree\WordTree\bin\Debug\Newtonsoft.Json.xml
+D:\VS2019\Project\WordTree\WordTree\obj\Debug\WordTree.csprojAssemblyReference.cache
+D:\VS2019\Project\WordTree\WordTree\obj\Debug\WordTree.csproj.CoreCompileInputs.cache
+D:\VS2019\Project\WordTree\WordTree\obj\Debug\WordTree.csproj.CopyComplete
+D:\VS2019\Project\WordTree\WordTree\obj\Debug\WordTree.exe
+D:\VS2019\Project\WordTree\WordTree\obj\Debug\WordTree.pdb
