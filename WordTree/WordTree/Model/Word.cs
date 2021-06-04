@@ -9,7 +9,7 @@ namespace WordTree.Model
     /// <summary>
     /// 单词信息
     /// </summary>
-    class Word
+    public class Word
     {
         public string word { get; set; } //单词名
         public string Accent { get; set; }  //音标
@@ -19,7 +19,7 @@ namespace WordTree.Model
         public string Sentence_trans { get; set; }  //例句翻译
         public string Sentence_phrase { get; set; }  //短语（可能为空）
         public string Word_etyma { get; set; }  //助记（可能为空）
-        public string VoicePath{ get; set; }    //音频路径
+        //public string VoicePath{ get; set; }    //音频路径
 
         public override bool Equals(object obj)
         {

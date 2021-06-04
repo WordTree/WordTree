@@ -10,7 +10,7 @@ namespace WordTree.Model
     /// <summary>
     /// 存储词库信息
     /// </summary>
-    class VocabularyDic
+    public class VocabularyDic
     {
         public string Name { get; set; }   //词库名
         public int Total { get; set; }    //词汇总数

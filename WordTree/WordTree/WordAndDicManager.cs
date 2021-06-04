@@ -13,7 +13,7 @@ namespace WordTree
     /// <summary>
     /// 单例类 负责管理目标词库和单词读取
     /// </summary>
-    class WordAndDicManager
+    public class WordAndDicManager
     {
         private static WordAndDicManager instance = new WordAndDicManager();
 
@@ -34,7 +34,7 @@ namespace WordTree
         /// <param name="dicName"></param>
         public void init(string dicName)
         {
-            string dicInfo = File.ReadAllText("..\\..\\Words\\VocabularyDic\\" + dicName + ".json");
+            string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
             targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
 
             targetDic.Name = dicName;
@@ -59,20 +59,20 @@ namespace WordTree
         /// <returns></returns>
         public Word getWord(string wordStr)
         {
-            string voicPath = "..\\..\\Voice\\" + wordStr + ".mp3";
-            //如果本地不存在对应单词音频则爬取对应单词的音频
-            if (!File.Exists(voicPath))
-            {
-                WebClient webClient = new WebClient();
-                webClient.Encoding = Encoding.UTF8;
-                string url = "http://dict.youdao.com/dictvoice?type=1&audio=" + wordStr;
-                Task<byte[]> downloadTask = Task.Run(() => webClient.DownloadData(url));
-                byte[] result = downloadTask.Result;
-                Task writeFileTask = Task.Run(() => File.WriteAllBytes(voicPath, result));
-            }
-            string wordInfo = File.ReadAllText("..\\..\\Words\\"+wordStr+".json");
+            //string voicPath = "..\\..\\..\\WordTree\\Voice\\" + wordStr + ".mp3";
+            ////如果本地不存在对应单词音频则爬取对应单词的音频
+            //if (!File.Exists(voicPath))
+            //{
+            //    WebClient webClient = new WebClient();
+            //    webClient.Encoding = Encoding.UTF8;
+            //    string url = "http://dict.youdao.com/dictvoice?type=1&audio=" + wordStr;
+            //    Task<byte[]> downloadTask = Task.Run(() => webClient.DownloadData(url));
+            //    byte[] result = downloadTask.Result;
+            //    Task writeFileTask = Task.Run(() => File.WriteAllBytes(voicPath, result));
+            //}
+            string wordInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\" + wordStr+".json");
             Word target = JsonConvert.DeserializeObject<Word>(wordInfo);
-            target.VoicePath = voicPath;
+            //target.VoicePath = voicPath;
             return target;
         }
     }

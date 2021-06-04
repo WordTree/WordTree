@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WordTree;
+using WordTree.Model;
 
 namespace APP_Form
 {
@@ -16,10 +18,15 @@ namespace APP_Form
         List<string> searchTarget = new List<string>();
         ///<summary>Search的结果集合</summary>
         List<string> searchResult = new List<string>();
+
+        WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
+        
         public Form1()
         {
             InitializeComponent();
-            TestInit();
+            wordAndDicManager.init("CET4");
+            searchTarget = new List<string>(wordAndDicManager.targetDic.List);
+            //TestInit();
         }
         /**<summary>
          * 输入内容时自动触发 Search 方法,
@@ -53,11 +60,11 @@ namespace APP_Form
             {
                 comboBox_Searcher.Items.Clear();
                 searchResult.Clear();
-                foreach (var word in searchTarget)
+                foreach (var wordstr in searchTarget)
                 {
-                    if (word.StartsWith(comboBox_Searcher.Text.ToLower()))
+                    if (wordstr.StartsWith(comboBox_Searcher.Text.ToLower()))
                     {
-                        searchResult.Add(word);
+                        searchResult.Add(wordstr);
                     }
                 }
                 comboBox_Searcher.Items.AddRange(searchResult.ToArray());
@@ -71,17 +78,48 @@ namespace APP_Form
         private void SetWord(string word,string explination,string example,Image image)
         {
             label_Word.Text = word;
-            label_Explination.Text = explination;
+            label_meanCN.Text = explination;
             label_Example.Text = example;
             pictureBox.Image = image;
         }
         private void TestInit()
         {
-            searchTarget.Add("apple");
-            searchTarget.Add("ash");
-            searchTarget.Add("asp");
-            searchTarget.Add("abundant");
-            searchTarget.Add("abandon");
+            
+        }
+
+        private void comboBox_Searcher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Word targetWord = wordAndDicManager.getWord((string)comboBox_Searcher.SelectedItem);
+            label_Word.Text = targetWord.word;
+            label_meanCN.Text = targetWord.Mean_cn;
+            label_meanEN.Text = targetWord.Mean_en;
+            label_Example.Text = targetWord.Sentence + "\n" + targetWord.Sentence_trans;
+            label_else.Text = targetWord.Sentence_phrase + "\n" + targetWord.Word_etyma;
+            axWindowsMediaPlayer1.URL = "http://dict.youdao.com/dictvoice?type=1&audio="+targetWord.word;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+            
+            //pictureBox.Image = image;
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Voice_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_meanCN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
