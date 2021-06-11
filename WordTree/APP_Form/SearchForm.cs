@@ -37,7 +37,6 @@ namespace APP_Form
         private void comboBox_Searcher_TextUpdate(object sender, EventArgs e)
         {
             Search();
-            comboBox_Searcher.DroppedDown = true;
             //使光标保持在最后一栏
             this.comboBox_Searcher.SelectionStart = this.comboBox_Searcher.Text.Length;
             //使光标不被遮挡
@@ -54,12 +53,13 @@ namespace APP_Form
         {
             if (comboBox_Searcher.Text == "")
             {
-                comboBox_Searcher.DroppedDown = false;
+                comboBox_Searcher.Items.Clear();
             }
             else
             {
                 comboBox_Searcher.Items.Clear();
                 searchResult.Clear();
+                comboBox_Searcher.DroppedDown = true;
                 foreach (var wordstr in searchTarget)
                 {
                     if (wordstr.StartsWith(comboBox_Searcher.Text.ToLower()))
@@ -73,14 +73,17 @@ namespace APP_Form
 
         private void comboBox_Searcher_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnl_wordInfo.Controls.Clear();
-            Word targetWord = wordAndDicManager.getWord((string)comboBox_Searcher.SelectedItem);
-            wordInfoForm = new WordInfoForm(targetWord);
-            wordInfoForm.TopLevel = false;
-            wordInfoForm.FormBorderStyle = FormBorderStyle.None;
-            wordInfoForm.Dock = DockStyle.Fill;
-            pnl_wordInfo.Controls.Add(wordInfoForm);
-            wordInfoForm.Show();      
+            if (comboBox_Searcher.SelectedIndex >= 0)
+            {
+                pnl_wordInfo.Controls.Clear();
+                Word targetWord = wordAndDicManager.getWord((string)comboBox_Searcher.SelectedItem);
+                wordInfoForm = new WordInfoForm(targetWord);
+                wordInfoForm.TopLevel = false;
+                wordInfoForm.FormBorderStyle = FormBorderStyle.None;
+                wordInfoForm.Dock = DockStyle.Fill;
+                pnl_wordInfo.Controls.Add(wordInfoForm);
+                wordInfoForm.Show();
+            }
         }
 
 

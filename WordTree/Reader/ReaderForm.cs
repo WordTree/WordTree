@@ -25,7 +25,7 @@ namespace Reader
         {
             InitializeComponent();
             wordAndDicManager.init("CET4");
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         }
         /// <summary>
         /// 窗体间传递用户选择
@@ -60,9 +60,6 @@ namespace Reader
             test.Add("dull");
             manager.ContentImpact(test, Paragraph_richTextBox);
             */
-
-
-
         }
 
         private void testbutton2_Click(object sender, EventArgs e)

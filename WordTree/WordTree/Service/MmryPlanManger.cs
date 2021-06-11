@@ -14,7 +14,7 @@ namespace WordTree.Service
     {
         public void AddPlan(Word word)
         {
-            PlannedWord plannedWord = new PlannedWord(word.word,DateTime.Now,-1,3);
+            PlannedWord plannedWord = new PlannedWord(word.word,DateTime.Now,-1);
             using(var ctx  = new PlannedWordContext())
             {
                 if (ctx.PlannedWords.Contains(plannedWord))

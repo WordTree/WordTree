@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WordTree.Model
 {
-    class Node
+    public class Node
     {
         public Word Data { get; set; }
         public Node Next { get; set; }
@@ -27,7 +27,7 @@ namespace WordTree.Model
     /// </summary>
     public class WordLinkedList
     {
-        private Node head;
+        public Node head;
         public int Count { get; set; }
         public WordLinkedList()
         {
