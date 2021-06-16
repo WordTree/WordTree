@@ -11,6 +11,12 @@ namespace WordTree.Service
     {
 		WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
 		private MmryPlanManger mmryPlanManger = new MmryPlanManger();
+
+		public bool ChoosePicture { get; set; }
+		public bool ChooseCNMeans { get; set; }
+		public bool ReciteMethod { get; set; }
+
+
 		/// <summary>
 		/// 用户设定的每次记忆单词量
 		/// </summary>
@@ -75,7 +81,7 @@ namespace WordTree.Service
 			mmryPlanManger.UpdatePlan(target);
 		}
 
-
+		
 
 	}
 }

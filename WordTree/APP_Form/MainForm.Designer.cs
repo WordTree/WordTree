@@ -40,14 +40,11 @@ namespace APP_Form
             // 
             // panel_Form
             // 
-            this.panel_Form.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Form.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel_Form.Location = new System.Drawing.Point(0, -6);
-            this.panel_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Form.Location = new System.Drawing.Point(0, 73);
+            this.panel_Form.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Form.Name = "panel_Form";
-            this.panel_Form.Size = new System.Drawing.Size(1001, 785);
+            this.panel_Form.Size = new System.Drawing.Size(1001, 706);
             this.panel_Form.TabIndex = 0;
             // 
             // flowLayoutPanel_FormController
@@ -59,7 +56,7 @@ namespace APP_Form
             this.flowLayoutPanel_FormController.Controls.Add(this.button_ReadingTransfer);
             this.flowLayoutPanel_FormController.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel_FormController.Location = new System.Drawing.Point(0, 783);
-            this.flowLayoutPanel_FormController.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel_FormController.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel_FormController.Name = "flowLayoutPanel_FormController";
             this.flowLayoutPanel_FormController.Size = new System.Drawing.Size(1001, 141);
             this.flowLayoutPanel_FormController.TabIndex = 1;
@@ -68,7 +65,7 @@ namespace APP_Form
             // 
             this.button_MemoryTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_MemoryTransfer.Location = new System.Drawing.Point(4, 4);
-            this.button_MemoryTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_MemoryTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.button_MemoryTransfer.Name = "button_MemoryTransfer";
             this.button_MemoryTransfer.Size = new System.Drawing.Size(241, 138);
             this.button_MemoryTransfer.TabIndex = 3;
@@ -80,7 +77,7 @@ namespace APP_Form
             // 
             this.button_SearchTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_SearchTransfer.Location = new System.Drawing.Point(253, 4);
-            this.button_SearchTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_SearchTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.button_SearchTransfer.Name = "button_SearchTransfer";
             this.button_SearchTransfer.Size = new System.Drawing.Size(241, 138);
             this.button_SearchTransfer.TabIndex = 0;
@@ -92,7 +89,7 @@ namespace APP_Form
             // 
             this.button_HistoryTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_HistoryTransfer.Location = new System.Drawing.Point(502, 4);
-            this.button_HistoryTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_HistoryTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.button_HistoryTransfer.Name = "button_HistoryTransfer";
             this.button_HistoryTransfer.Size = new System.Drawing.Size(241, 138);
             this.button_HistoryTransfer.TabIndex = 1;
@@ -103,7 +100,7 @@ namespace APP_Form
             // 
             this.button_ReadingTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button_ReadingTransfer.Location = new System.Drawing.Point(751, 4);
-            this.button_ReadingTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_ReadingTransfer.Margin = new System.Windows.Forms.Padding(4);
             this.button_ReadingTransfer.Name = "button_ReadingTransfer";
             this.button_ReadingTransfer.Size = new System.Drawing.Size(241, 138);
             this.button_ReadingTransfer.TabIndex = 2;
@@ -119,7 +116,7 @@ namespace APP_Form
             this.Controls.Add(this.flowLayoutPanel_FormController);
             this.Controls.Add(this.panel_Form);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "WordTree";
             this.flowLayoutPanel_FormController.ResumeLayout(false);

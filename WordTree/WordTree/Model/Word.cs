@@ -19,6 +19,7 @@ namespace WordTree.Model
         public string Sentence_trans { get; set; }  //例句翻译
         public string Sentence_phrase { get; set; }  //短语（可能为空）
         public string Word_etyma { get; set; }  //助记（可能为空）
+        public string Picture { get; set; }
 
         //public string VoicePath{ get; set; }    //音频路径
 

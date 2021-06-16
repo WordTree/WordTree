@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WordTree;
 using WordTree.Model;
+using WordTree.Service;
 
 namespace APP_Form
 {
@@ -26,8 +26,9 @@ namespace APP_Form
         public SearchForm()
         {
             InitializeComponent();
-            wordAndDicManager.init("CET4");
-            searchTarget = new List<string>(wordAndDicManager.targetDic.List);
+
+            VocabularyDic allWordsDic = wordAndDicManager.getVocabularyDic("AllWords");
+            searchTarget = new List<string>(allWordsDic.List);
         }
         /**<summary>
          * 输入内容时自动触发 Search 方法,
