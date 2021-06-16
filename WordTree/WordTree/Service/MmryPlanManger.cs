@@ -12,20 +12,43 @@ namespace WordTree.Service
     /// </summary>
     class MmryPlanManger
     {
-        public void AddPlan(Word word)
+        /// <summary>
+        /// 增加计划记录
+        /// </summary>
+        /// <param name="wordStr"></param>
+        public void AddPlan(string wordStr)
         {
-            PlannedWord plannedWord = new PlannedWord(word.word,DateTime.Now,-1);
-            using(var ctx  = new PlannedWordContext())
+            PlannedWord plannedWord = new PlannedWord(wordStr, DateTime.Now, -1);
+            using (var ctx = new PlannedWordContext())
             {
-                if (ctx.PlannedWords.Contains(plannedWord))
+                if (ctx.PlannedWords.Where(o => o.Wordstr == wordStr).Any())
+                {
                     throw new ApplicationException("该单词已经在计划中");
+                }
                 ctx.PlannedWords.Add(plannedWord);
                 ctx.SaveChanges();
-                
-                Console.WriteLine("Successfully add!");
+
+                //Console.WriteLine("Successfully add!");
             }
         }
 
+        /// <summary>
+        /// 清空计划
+        /// </summary>
+        public void ClearAll()
+        {
+            using (var ctx = new PlannedWordContext())
+            {
+                var list = ctx.PlannedWords.ToList();
+                ctx.PlannedWords.RemoveRange(list);
+                ctx.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 删除计划
+        /// </summary>
+        /// <param name="wordStr"></param>
         public void DelPlan(string wordStr)
         {
             using(var ctx = new PlannedWordContext())
@@ -43,6 +66,10 @@ namespace WordTree.Service
             }
         }
 
+        /// <summary>
+        /// 更新记录
+        /// </summary>
+        /// <param name="plannedWord"></param>
         public void UpdatePlan(PlannedWord plannedWord)
         {
             if (plannedWord == null)
@@ -56,14 +83,24 @@ namespace WordTree.Service
                 
             }
         }
+
+        /// <summary>
+        /// 按上次记忆时间查询所有记录
+        /// </summary>
+        /// <returns></returns>
         public List<PlannedWord> QueryAll()
         {
             using(var ctx = new PlannedWordContext())
             {
-                return ctx.PlannedWords.OrderBy(o=>o.Phase).ToList();
+                return ctx.PlannedWords.OrderBy(o=>o.LastMmryTime).ToList();
             }
         }
 
+        /// <summary>
+        /// 按单词查询记录
+        /// </summary>
+        /// <param name="wordStr"></param>
+        /// <returns></returns>
         public PlannedWord QueryByWordStr(string wordStr)
         {
             using(var ctx = new PlannedWordContext())

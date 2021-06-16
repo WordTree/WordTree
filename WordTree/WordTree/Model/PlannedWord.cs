@@ -13,7 +13,7 @@ namespace WordTree.Model
     public class PlannedWord
     {
         [Key]
-        public string Wordstr { get; set; }
+        public string Wordstr { get; set; }   
         public DateTime LastMmryTime { get; set; }
         public int Phase { get; set; }
         public PlannedWord()

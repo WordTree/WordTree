@@ -16,6 +16,7 @@ namespace APP_Form
     {
         public SearchForm searchForm = new SearchForm();
         public ReaderForm readerForm = new ReaderForm();
+        public MemoryForm memoryForm = new MemoryForm();
         public TransferController transferController = TransferController.GetController();
         public MainForm()
         {
@@ -39,6 +40,11 @@ namespace APP_Form
         private void button_ReadingTransfer_Click(object sender, EventArgs e)
         {
             transferController.Transfer(panel_Form, readerForm);
+        }
+
+        private void button_MemoryTransfer_Click(object sender, EventArgs e)
+        {
+            transferController.Transfer(panel_Form, memoryForm);
         }
     }
 }

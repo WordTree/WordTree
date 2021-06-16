@@ -9,6 +9,7 @@ namespace WordTree.Model
     public class Node
     {
         public Word Data { get; set; }
+        public int StrangeDegree { get; set; }
         public Node Next { get; set; }
         public Node()
         {
@@ -42,24 +43,24 @@ namespace WordTree.Model
         /// <param name="item"></param>
         public void Add(Word item)
         {
-            Node p = new Node(item);
-            Node c = head;
+            Node newNode = new Node(item);
+            Node tempPtr = head;
 
             if (IsEmpty())
             {
-                head.Next = p;
-                p.Next = head;
+                head.Next = newNode;
+                newNode.Next = head;
                 Count++;
                 return;
             }
 
-            while (c.Next != head)
+            while (tempPtr.Next != head)
             {
-                c = c.Next;
+                tempPtr = tempPtr.Next;
             }
 
-            c.Next = p;
-            p.Next = head;
+            tempPtr.Next = newNode;
+            newNode.Next = head;
             Count++;
         }
 
@@ -75,24 +76,24 @@ namespace WordTree.Model
         /// <summary>
         /// 删除节点
         /// </summary>
-        /// <param name="i">删除节点的位置</param>
-        public void Remove(int i)
+        /// <param name="index">删除节点的位置</param>
+        public void Remove(int index)
         {
-            if (IsEmpty() || i < 0 || i > Count-1)
+            if (IsEmpty() || index < 0 || index > Count-1)
             {
                 Console.WriteLine("链表为空或位置错误");
                 throw new ApplicationException("链表为空或位置错误");
             }
 
             //遍历位置删除节点
-            Node c = head;  
+            Node tempPtr = head;  
             Node pre = new Node(); 
-            int j = -1;
-            while (c.Next != head && j < i)
+            int scanner = -1;
+            while (tempPtr.Next != head && scanner < index)
             {
-                pre = c;
-                c = c.Next;
-                ++j;
+                pre = tempPtr;
+                tempPtr = tempPtr.Next;
+                ++scanner;
             }
             //遍历到位置
             pre.Next = pre.Next.Next;
@@ -101,26 +102,26 @@ namespace WordTree.Model
         /// <summary>
         /// 根据位置获取元素值
         /// </summary>
-        /// <param name="i">元素位置</param>
+        /// <param name="index">元素位置</param>
         /// <returns>元素数据域值</returns>
-        public Word GetElem(int i)
+        public Node GetElem(int index)
         {
             //链表为空时返回默认值。
-            if (IsEmpty() || i < 0 || i > Count-1)
+            if (IsEmpty() || index < 0 || index > Count-1)
             {
                 Console.WriteLine("链表为空或位置错误");
                 throw new ApplicationException("链表为空或位置错误");
             }
             //遍历查找并返回
-            Node c = head;
-            int j = -1;
-            while (c.Next != head && j < i)
+            Node tempPtr = head;
+            int scanner = -1;
+            while (tempPtr.Next != head && scanner < index)
             {
-                c = c.Next;
-                ++j;
+                tempPtr = tempPtr.Next;
+                ++scanner;
             }
             //遍历找到
-            return c.Data;
+            return tempPtr;
         }
 
         //判断链表是否为空
@@ -136,21 +137,21 @@ namespace WordTree.Model
         /// <returns>节点位置</returns>
         public int Locate(Word value)
         {
-            int i = 0;
-            Node c = head.Next;
-            while (c != head || !c.Data.Equals(value))
+            int index = 0;
+            Node tempPtr = head.Next;
+            while (tempPtr != head || !tempPtr.Data.Equals(value))
             {
-                c = c.Next;
-                ++i;
+                tempPtr = tempPtr.Next;
+                ++index;
             }
-            if (c == head)
+            if (tempPtr == head)
             {
                 Console.WriteLine("不存在这样的节点");
                 return -1;
             }
             else
             {
-                return i;
+                return index;
             }
         }
     }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WordTree.Model;
 using WordTree;
+using Newtonsoft.Json;
 
 namespace Reader
 {
@@ -42,8 +43,9 @@ namespace Reader
         {
             manager.ContentInit(p);
             Paragraph_richTextBox.Text = p.content;
-            List<string> test = new List<string>();
-            test.Add("dull");
+            string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\重点词汇.json");
+            VocabularyDic importantDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
+            List<string> test = importantDic.List.ToList();
             manager.ContentImpact(test, Paragraph_richTextBox);
         }
 

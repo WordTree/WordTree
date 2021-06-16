@@ -10,10 +10,14 @@ using System.Windows.Forms;
 using WordTree.Model;
 using WordTree.Service;
 using WordTree;
+using System.Threading;
+
 namespace APP_Form
 {
     public partial class MemoryForm : Form
     {
+        public MemoryManager memoryManager = new MemoryManager();
+        WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
         public WordLinkedList words;
         public int count = 0;
         public int index;
@@ -21,12 +25,13 @@ namespace APP_Form
         public MemoryForm()
         {
             InitializeComponent();
-            var manager = WordAndDicManager.getInstance();
-            words = new WordLinkedList();
-            words.Add(manager.getWord("kingdom"));
-            words.Add(manager.getWord("kit"));
-            words.Add(manager.getWord("knee"));
-            words.Add(manager.getWord("knowledge"));
+            this.AcceptButton = button_CommitSpelling;
+            
+
+            memoryManager.NeedNum = 30;
+
+            words = memoryManager.GetNextWords(count);
+
             wordCheckIn();
         }
         /// <summary>
@@ -39,12 +44,19 @@ namespace APP_Form
             if (textBox_SpellingBox.Text.Equals(currentWord.word))
             {
                 words.Remove(index);
+                if (words.GetElem(index) == null)
+                {
+                    index = index % words.Count;
+                }
+                MessageBox.Show("正确");
                 wordCheckIn();
+                textBox_SpellingBox.Text = "";
                 count += 1;
             }
             else
             {
                 index = (index + 1) % words.Count;
+                MessageBox.Show("错误");
                 wordCheckIn();
             }
         }
@@ -56,15 +68,21 @@ namespace APP_Form
         {
             if (!words.IsEmpty())
             {
-                var word = words.GetElem(index);
-                label_meanZN.Text = word.Mean_cn;
-                this.currentWord = word;
+                var node = words.GetElem(index);
+                label_meanZN.Text = node.Data.Mean_cn;
+                this.currentWord = node.Data;
             }
             else
             {
                 label_meanZN.Text = "今天的单词已经背完了！";
                 button_CommitSpelling.Enabled = false;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + currentWord.word;
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
     }
 }

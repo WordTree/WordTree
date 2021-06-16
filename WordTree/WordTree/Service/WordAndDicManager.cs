@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using WordTree.Model;
+using WordTree.Service;
 
 namespace WordTree
 {
@@ -16,6 +17,8 @@ namespace WordTree
     public class WordAndDicManager
     {
         private static WordAndDicManager instance = new WordAndDicManager();
+
+        private MmryPlanManger mmryPlanManger = new MmryPlanManger();
 
         public VocabularyDic targetDic;  //目标词库
 
@@ -32,25 +35,41 @@ namespace WordTree
         /// 初始化目标词库
         /// </summary>
         /// <param name="dicName"></param>
-        public void init(string dicName)
+        public async void init(string dicName)
         {
             string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
             targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
-
             targetDic.Name = dicName;
+
+            //将目标词库中所有单词加入计划
+            await Task.Run(() =>
+            {
+                foreach (string wordStr in targetDic.List)
+                {
+                    try
+                    {
+                        mmryPlanManger.AddPlan(wordStr);
+                    }
+                    catch (ApplicationException e)
+                    {
+                        continue;
+                    }
+                }
+            });
         }
-        
+
         /// <summary>
         /// 更换目标词库
         /// </summary>
         /// <param name="dicName"></param>
-        public void changeTargetDic(string dicName)
+        public async void changeTargetDic(string dicName)
         {
             if (dicName == targetDic.Name)
-                throw  new ApplicationException("目标词库已经是该词库");
+                throw new ApplicationException("目标词库已经是该词库");
 
+            //清空计划，重新设置目标词库
+            await Task.Run(() => mmryPlanManger.ClearAll());
             init(dicName);
-
         }
 
         /// <summary>

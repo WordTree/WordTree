@@ -18,7 +18,6 @@ namespace WordTree.Model
 
         public VocabularyDic()
         {
-
         }
         public VocabularyDic(string name)
         {
