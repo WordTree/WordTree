@@ -14,9 +14,9 @@ namespace APP_Form
 {
     public partial class MainForm : Form
     {
-        public SearchForm searchForm = new SearchForm();
-        public ReaderForm readerForm = new ReaderForm();
-        public MemoryForm memoryForm = new MemoryForm();
+        //public SearchForm searchForm = new SearchForm();
+        //public ReaderForm readerForm = new ReaderForm();
+        //public MemoryForm memoryForm = new MemoryForm();
         public TransferController transferController = TransferController.GetController();
         public MainForm()
         {
@@ -30,7 +30,7 @@ namespace APP_Form
         /// <param name="e"></param>
         private void button_SearchTransfer_Click(object sender, EventArgs e)
         {
-            transferController.Transfer(panel_Form,searchForm);
+            //transferController.Transfer(panel_Form,searchForm);
         }
         /// <summary>
         /// 跳转到阅读界面
@@ -39,12 +39,17 @@ namespace APP_Form
         /// <param name="e"></param>
         private void button_ReadingTransfer_Click(object sender, EventArgs e)
         {
-            transferController.Transfer(panel_Form, readerForm);
+            //transferController.Transfer(panel_Form, readerForm);
         }
 
         private void button_MemoryTransfer_Click(object sender, EventArgs e)
         {
-            transferController.Transfer(panel_Form, memoryForm);
+            //transferController.Transfer(panel_Form, memoryForm);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

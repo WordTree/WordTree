@@ -26,8 +26,10 @@ namespace APP_Form
         public SearchForm()
         {
             InitializeComponent();
-            wordAndDicManager.init("CET4");
-            searchTarget = new List<string>(wordAndDicManager.targetDic.List);
+            comboBox_Searcher.ItemHeight = 100;
+            comboBox_Searcher.Size = new Size(194, 200);
+            //wordAndDicManager.init("CET4");
+            //searchTarget = new List<string>(wordAndDicManager.targetDic.List);
         }
         /**<summary>
          * 输入内容时自动触发 Search 方法,

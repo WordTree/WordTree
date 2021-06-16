@@ -30,99 +30,112 @@ namespace APP_Form
         private void InitializeComponent()
         {
             this.panel_Form = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel_FormController = new System.Windows.Forms.FlowLayoutPanel();
             this.button_MemoryTransfer = new System.Windows.Forms.Button();
             this.button_SearchTransfer = new System.Windows.Forms.Button();
             this.button_HistoryTransfer = new System.Windows.Forms.Button();
             this.button_ReadingTransfer = new System.Windows.Forms.Button();
-            this.flowLayoutPanel_FormController.SuspendLayout();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Form
             // 
-            this.panel_Form.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_Form.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel_Form.Location = new System.Drawing.Point(0, -6);
-            this.panel_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Form.BackColor = System.Drawing.Color.White;
+            this.panel_Form.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_Form.Location = new System.Drawing.Point(215, 0);
             this.panel_Form.Name = "panel_Form";
-            this.panel_Form.Size = new System.Drawing.Size(1001, 785);
+            this.panel_Form.Size = new System.Drawing.Size(536, 521);
             this.panel_Form.TabIndex = 0;
-            // 
-            // flowLayoutPanel_FormController
-            // 
-            this.flowLayoutPanel_FormController.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flowLayoutPanel_FormController.Controls.Add(this.button_MemoryTransfer);
-            this.flowLayoutPanel_FormController.Controls.Add(this.button_SearchTransfer);
-            this.flowLayoutPanel_FormController.Controls.Add(this.button_HistoryTransfer);
-            this.flowLayoutPanel_FormController.Controls.Add(this.button_ReadingTransfer);
-            this.flowLayoutPanel_FormController.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel_FormController.Location = new System.Drawing.Point(0, 783);
-            this.flowLayoutPanel_FormController.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.flowLayoutPanel_FormController.Name = "flowLayoutPanel_FormController";
-            this.flowLayoutPanel_FormController.Size = new System.Drawing.Size(1001, 141);
-            this.flowLayoutPanel_FormController.TabIndex = 1;
             // 
             // button_MemoryTransfer
             // 
+            this.button_MemoryTransfer.BackColor = System.Drawing.Color.Gainsboro;
+            this.button_MemoryTransfer.FlatAppearance.BorderSize = 0;
+            this.button_MemoryTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_MemoryTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_MemoryTransfer.Location = new System.Drawing.Point(4, 4);
-            this.button_MemoryTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_MemoryTransfer.ForeColor = System.Drawing.Color.DimGray;
+            this.button_MemoryTransfer.Location = new System.Drawing.Point(0, 198);
+            this.button_MemoryTransfer.Margin = new System.Windows.Forms.Padding(0);
             this.button_MemoryTransfer.Name = "button_MemoryTransfer";
-            this.button_MemoryTransfer.Size = new System.Drawing.Size(241, 138);
+            this.button_MemoryTransfer.Size = new System.Drawing.Size(212, 66);
             this.button_MemoryTransfer.TabIndex = 3;
             this.button_MemoryTransfer.Text = "记忆";
-            this.button_MemoryTransfer.UseVisualStyleBackColor = true;
+            this.button_MemoryTransfer.UseVisualStyleBackColor = false;
             this.button_MemoryTransfer.Click += new System.EventHandler(this.button_MemoryTransfer_Click);
             // 
             // button_SearchTransfer
             // 
+            this.button_SearchTransfer.BackColor = System.Drawing.Color.Gainsboro;
+            this.button_SearchTransfer.FlatAppearance.BorderSize = 0;
+            this.button_SearchTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_SearchTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_SearchTransfer.Location = new System.Drawing.Point(253, 4);
-            this.button_SearchTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_SearchTransfer.ForeColor = System.Drawing.Color.DimGray;
+            this.button_SearchTransfer.Location = new System.Drawing.Point(0, 0);
+            this.button_SearchTransfer.Margin = new System.Windows.Forms.Padding(0);
             this.button_SearchTransfer.Name = "button_SearchTransfer";
-            this.button_SearchTransfer.Size = new System.Drawing.Size(241, 138);
+            this.button_SearchTransfer.Size = new System.Drawing.Size(212, 66);
             this.button_SearchTransfer.TabIndex = 0;
-            this.button_SearchTransfer.Text = "查词";
-            this.button_SearchTransfer.UseVisualStyleBackColor = true;
+            this.button_SearchTransfer.Text = "词典";
+            this.button_SearchTransfer.UseVisualStyleBackColor = false;
             this.button_SearchTransfer.Click += new System.EventHandler(this.button_SearchTransfer_Click);
             // 
             // button_HistoryTransfer
             // 
+            this.button_HistoryTransfer.BackColor = System.Drawing.Color.Gainsboro;
+            this.button_HistoryTransfer.FlatAppearance.BorderSize = 0;
+            this.button_HistoryTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_HistoryTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_HistoryTransfer.Location = new System.Drawing.Point(502, 4);
-            this.button_HistoryTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_HistoryTransfer.ForeColor = System.Drawing.Color.DimGray;
+            this.button_HistoryTransfer.Location = new System.Drawing.Point(0, 66);
+            this.button_HistoryTransfer.Margin = new System.Windows.Forms.Padding(0);
             this.button_HistoryTransfer.Name = "button_HistoryTransfer";
-            this.button_HistoryTransfer.Size = new System.Drawing.Size(241, 138);
+            this.button_HistoryTransfer.Size = new System.Drawing.Size(212, 66);
             this.button_HistoryTransfer.TabIndex = 1;
             this.button_HistoryTransfer.Text = "统计";
-            this.button_HistoryTransfer.UseVisualStyleBackColor = true;
+            this.button_HistoryTransfer.UseVisualStyleBackColor = false;
             // 
             // button_ReadingTransfer
             // 
+            this.button_ReadingTransfer.BackColor = System.Drawing.Color.Gainsboro;
+            this.button_ReadingTransfer.FlatAppearance.BorderSize = 0;
+            this.button_ReadingTransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_ReadingTransfer.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_ReadingTransfer.Location = new System.Drawing.Point(751, 4);
-            this.button_ReadingTransfer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_ReadingTransfer.ForeColor = System.Drawing.Color.DimGray;
+            this.button_ReadingTransfer.Location = new System.Drawing.Point(0, 132);
+            this.button_ReadingTransfer.Margin = new System.Windows.Forms.Padding(0);
             this.button_ReadingTransfer.Name = "button_ReadingTransfer";
-            this.button_ReadingTransfer.Size = new System.Drawing.Size(241, 138);
+            this.button_ReadingTransfer.Size = new System.Drawing.Size(212, 66);
             this.button_ReadingTransfer.TabIndex = 2;
             this.button_ReadingTransfer.Text = "阅读";
-            this.button_ReadingTransfer.UseVisualStyleBackColor = true;
+            this.button_ReadingTransfer.UseVisualStyleBackColor = false;
             this.button_ReadingTransfer.Click += new System.EventHandler(this.button_ReadingTransfer_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowLayoutPanel1.Controls.Add(this.button_SearchTransfer);
+            this.flowLayoutPanel1.Controls.Add(this.button_HistoryTransfer);
+            this.flowLayoutPanel1.Controls.Add(this.button_ReadingTransfer);
+            this.flowLayoutPanel1.Controls.Add(this.button_MemoryTransfer);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(215, 521);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 924);
-            this.Controls.Add(this.flowLayoutPanel_FormController);
+            this.ClientSize = new System.Drawing.Size(751, 521);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel_Form);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "WordTree";
-            this.flowLayoutPanel_FormController.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -130,10 +143,10 @@ namespace APP_Form
         #endregion
 
         private System.Windows.Forms.Panel panel_Form;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_FormController;
         private System.Windows.Forms.Button button_MemoryTransfer;
         private System.Windows.Forms.Button button_SearchTransfer;
         private System.Windows.Forms.Button button_HistoryTransfer;
         private System.Windows.Forms.Button button_ReadingTransfer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

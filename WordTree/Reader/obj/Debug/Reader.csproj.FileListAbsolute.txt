@@ -35,7 +35,6 @@ C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\bin\Debug\System.Numerics.V
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\bin\Debug\Interop.WMPLib.dll
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\bin\Debug\AxInterop.WMPLib.dll
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\obj\Debug\Reader.csprojAssemblyReference.cache
-C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\obj\Debug\Reader.exe.config
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\obj\Debug\Interop.WMPLib.dll
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\Reader\obj\Debug\Reader.csproj.ResolveComReference.cache
