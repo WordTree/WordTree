@@ -36,12 +36,12 @@ namespace APP_Form
             // 
             // comboBox_Searcher
             // 
+            this.comboBox_Searcher.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Searcher.FormattingEnabled = true;
-            this.comboBox_Searcher.ItemHeight = 15;
-            this.comboBox_Searcher.Location = new System.Drawing.Point(215, 28);
-            this.comboBox_Searcher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_Searcher.ItemHeight = 25;
+            this.comboBox_Searcher.Location = new System.Drawing.Point(151, 20);
             this.comboBox_Searcher.Name = "comboBox_Searcher";
-            this.comboBox_Searcher.Size = new System.Drawing.Size(257, 23);
+            this.comboBox_Searcher.Size = new System.Drawing.Size(194, 33);
             this.comboBox_Searcher.TabIndex = 0;
             this.comboBox_Searcher.SelectedIndexChanged += new System.EventHandler(this.comboBox_Searcher_SelectedIndexChanged);
             this.comboBox_Searcher.TextUpdate += new System.EventHandler(this.comboBox_Searcher_TextUpdate);
@@ -60,8 +60,8 @@ namespace APP_Form
             // pnl_wordInfo
             // 
             this.pnl_wordInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pnl_wordInfo.Location = new System.Drawing.Point(0, 72);
-            this.pnl_wordInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnl_wordInfo.Location = new System.Drawing.Point(0, 58);
+            this.pnl_wordInfo.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_wordInfo.Name = "pnl_wordInfo";
             this.pnl_wordInfo.Size = new System.Drawing.Size(825, 416);
             this.pnl_wordInfo.TabIndex = 2;

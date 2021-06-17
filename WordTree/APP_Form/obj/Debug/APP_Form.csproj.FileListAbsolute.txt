@@ -140,3 +140,8 @@ D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\System.Numerics.
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\Newtonsoft.Json.xml
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.csproj.CopyComplete
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SettingForm.resources
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ExplanationCheck.resources
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SettingForm.resources
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SpellingCheckForm.resources
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ImageCheckForm.resources
