@@ -80,7 +80,7 @@ namespace WordTree.Service
         {
             string wordInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\" + wordStr+".json");
             Word target = JsonConvert.DeserializeObject<Word>(wordInfo);
-            target.Picture = JsonConvert.
+            target.Picture = 
             return target;
         }
 

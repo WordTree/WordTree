@@ -37,10 +37,11 @@ namespace APP_Form
             // comboBox_Searcher
             // 
             this.comboBox_Searcher.FormattingEnabled = true;
-            this.comboBox_Searcher.ItemHeight = 12;
-            this.comboBox_Searcher.Location = new System.Drawing.Point(161, 22);
+            this.comboBox_Searcher.ItemHeight = 15;
+            this.comboBox_Searcher.Location = new System.Drawing.Point(215, 28);
+            this.comboBox_Searcher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox_Searcher.Name = "comboBox_Searcher";
-            this.comboBox_Searcher.Size = new System.Drawing.Size(194, 20);
+            this.comboBox_Searcher.Size = new System.Drawing.Size(257, 23);
             this.comboBox_Searcher.TabIndex = 0;
             this.comboBox_Searcher.SelectedIndexChanged += new System.EventHandler(this.comboBox_Searcher_SelectedIndexChanged);
             this.comboBox_Searcher.TextUpdate += new System.EventHandler(this.comboBox_Searcher_TextUpdate);
@@ -49,30 +50,32 @@ namespace APP_Form
             // 
             this.label_Search.AutoSize = true;
             this.label_Search.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Search.Location = new System.Drawing.Point(104, 25);
+            this.label_Search.Location = new System.Drawing.Point(139, 31);
+            this.label_Search.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Search.Name = "label_Search";
-            this.label_Search.Size = new System.Drawing.Size(41, 12);
+            this.label_Search.Size = new System.Drawing.Size(52, 15);
             this.label_Search.TabIndex = 1;
             this.label_Search.Text = "查询：";
             // 
             // pnl_wordInfo
             // 
             this.pnl_wordInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pnl_wordInfo.Location = new System.Drawing.Point(0, 58);
-            this.pnl_wordInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_wordInfo.Location = new System.Drawing.Point(0, 72);
+            this.pnl_wordInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_wordInfo.Name = "pnl_wordInfo";
-            this.pnl_wordInfo.Size = new System.Drawing.Size(619, 333);
+            this.pnl_wordInfo.Size = new System.Drawing.Size(825, 416);
             this.pnl_wordInfo.TabIndex = 2;
             // 
             // SearchForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(619, 391);
+            this.ClientSize = new System.Drawing.Size(825, 489);
             this.Controls.Add(this.pnl_wordInfo);
             this.Controls.Add(this.label_Search);
             this.Controls.Add(this.comboBox_Searcher);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             this.ResumeLayout(false);

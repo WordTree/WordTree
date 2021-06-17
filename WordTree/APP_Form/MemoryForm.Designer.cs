@@ -43,9 +43,9 @@ namespace APP_Form
             // 
             this.panel_Lights.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel_Lights.Location = new System.Drawing.Point(0, 15);
-            this.panel_Lights.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Lights.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Lights.Name = "panel_Lights";
-            this.panel_Lights.Size = new System.Drawing.Size(1035, 54);
+            this.panel_Lights.Size = new System.Drawing.Size(1065, 51);
             this.panel_Lights.TabIndex = 0;
             // 
             // label_meanZN
@@ -62,7 +62,7 @@ namespace APP_Form
             // textBox_SpellingBox
             // 
             this.textBox_SpellingBox.Location = new System.Drawing.Point(419, 184);
-            this.textBox_SpellingBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_SpellingBox.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_SpellingBox.Name = "textBox_SpellingBox";
             this.textBox_SpellingBox.Size = new System.Drawing.Size(132, 25);
             this.textBox_SpellingBox.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace APP_Form
             // button_CommitSpelling
             // 
             this.button_CommitSpelling.Location = new System.Drawing.Point(439, 218);
-            this.button_CommitSpelling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_CommitSpelling.Margin = new System.Windows.Forms.Padding(4);
             this.button_CommitSpelling.Name = "button_CommitSpelling";
             this.button_CommitSpelling.Size = new System.Drawing.Size(100, 29);
             this.button_CommitSpelling.TabIndex = 3;
@@ -109,7 +109,7 @@ namespace APP_Form
             this.Controls.Add(this.textBox_SpellingBox);
             this.Controls.Add(this.label_meanZN);
             this.Controls.Add(this.panel_Lights);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemoryForm";
             this.Text = "MemoryForm";
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();

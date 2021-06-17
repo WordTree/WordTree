@@ -35,6 +35,9 @@ namespace APP_Form
             this.button_SearchTransfer = new System.Windows.Forms.Button();
             this.button_HistoryTransfer = new System.Windows.Forms.Button();
             this.button_ReadingTransfer = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label_Search = new System.Windows.Forms.Label();
+            this.comboBox_Searcher = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel_FormController.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,11 +111,44 @@ namespace APP_Form
             this.button_ReadingTransfer.UseVisualStyleBackColor = true;
             this.button_ReadingTransfer.Click += new System.EventHandler(this.button_ReadingTransfer_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(894, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 35);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "设置";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label_Search
+            // 
+            this.label_Search.AutoSize = true;
+            this.label_Search.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Search.Location = new System.Drawing.Point(272, 31);
+            this.label_Search.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_Search.Name = "label_Search";
+            this.label_Search.Size = new System.Drawing.Size(52, 15);
+            this.label_Search.TabIndex = 4;
+            this.label_Search.Text = "查询：";
+            // 
+            // comboBox_Searcher
+            // 
+            this.comboBox_Searcher.FormattingEnabled = true;
+            this.comboBox_Searcher.ItemHeight = 15;
+            this.comboBox_Searcher.Location = new System.Drawing.Point(348, 28);
+            this.comboBox_Searcher.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox_Searcher.Name = "comboBox_Searcher";
+            this.comboBox_Searcher.Size = new System.Drawing.Size(257, 23);
+            this.comboBox_Searcher.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 924);
+            this.Controls.Add(this.label_Search);
+            this.Controls.Add(this.comboBox_Searcher);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel_FormController);
             this.Controls.Add(this.panel_Form);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -121,6 +157,7 @@ namespace APP_Form
             this.Text = "WordTree";
             this.flowLayoutPanel_FormController.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -132,5 +169,8 @@ namespace APP_Form
         private System.Windows.Forms.Button button_SearchTransfer;
         private System.Windows.Forms.Button button_HistoryTransfer;
         private System.Windows.Forms.Button button_ReadingTransfer;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_Search;
+        private System.Windows.Forms.ComboBox comboBox_Searcher;
     }
 }
