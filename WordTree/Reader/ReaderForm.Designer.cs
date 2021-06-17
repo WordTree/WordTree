@@ -55,17 +55,17 @@ namespace Reader
             // 
             this.Info_richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Info_richTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Info_richTextBox.Location = new System.Drawing.Point(841, 37);
+            this.Info_richTextBox.Location = new System.Drawing.Point(880, 37);
             this.Info_richTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Info_richTextBox.Name = "Info_richTextBox";
-            this.Info_richTextBox.Size = new System.Drawing.Size(177, 608);
+            this.Info_richTextBox.Size = new System.Drawing.Size(138, 608);
             this.Info_richTextBox.TabIndex = 1;
             this.Info_richTextBox.Text = "";
             // 
             // read_switchbutton
             // 
             this.read_switchbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.read_switchbutton.Location = new System.Drawing.Point(915, 649);
+            this.read_switchbutton.Location = new System.Drawing.Point(896, 658);
             this.read_switchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.read_switchbutton.Name = "read_switchbutton";
             this.read_switchbutton.Size = new System.Drawing.Size(103, 36);

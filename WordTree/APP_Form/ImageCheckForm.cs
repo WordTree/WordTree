@@ -55,15 +55,18 @@ namespace APP_Form
             }
         }
 
-        private void GetPicture(PictureBox pictureBox,string url)
+        private void GetPicture(PictureBox pictureBox, string url)
         {
-            WebRequest webreq = System.Net.WebRequest.Create(url);
-            WebResponse webres = webreq.GetResponse();
-            using (System.IO.Stream stream = webres.GetResponseStream())
-            {
-                pictureBox.Image = Image.FromStream(stream);
+            try {
+                    WebRequest webreq = System.Net.WebRequest.Create(url);
+                    WebResponse webres = webreq.GetResponse();
+                    using (System.IO.Stream stream = webres.GetResponseStream())
+                    {
+                    pictureBox.Image = Image.FromStream(stream);
+                    }
+                }
+            catch(Exception la) { };
             }
-        }
 
         private void picTrueWord_Click(object sender, EventArgs e)
         {

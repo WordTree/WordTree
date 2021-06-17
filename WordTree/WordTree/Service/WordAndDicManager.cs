@@ -69,7 +69,7 @@ namespace WordTree.Service
 
             //清空计划，重新设置目标词库
             await Task.Run(() => mmryPlanManger.ClearAll());
-            init(dicName);
+            //init(dicName);
         }
 
         /// <summary>
