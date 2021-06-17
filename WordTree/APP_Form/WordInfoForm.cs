@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WordTree.Model;
+using WordTree.Service;
 
 namespace APP_Form
 {
     public partial class WordInfoForm : Form
     {
+        private MmryPlanManager mmryPlanManager;
+        private Word targetWord;
+
         public WordInfoForm(Word targetWord)
         {
+            this.targetWord = targetWord;
             InitializeComponent();
             label_Word.Text = targetWord.word;
             label_meanCN.Text = targetWord.Mean_cn;
@@ -30,6 +35,20 @@ namespace APP_Form
         private void button_Voice_Click(object sender, EventArgs e)
         {
             VoicePlayer.Ctlcontrols.play();
+        }
+
+        private void btnAddPlan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mmryPlanManager.AddPlan(targetWord.word);
+                
+
+            }catch(ApplicationException exp)
+            {
+                MessageBox.Show(exp.Message);
+
+            }
         }
     }
 }

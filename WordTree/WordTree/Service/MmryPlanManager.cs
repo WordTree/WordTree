@@ -10,7 +10,7 @@ namespace WordTree.Service
     /// <summary>
     /// 管理单词计划，增删改查数据库
     /// </summary>
-    class MmryPlanManger
+    public class MmryPlanManager
     {
         /// <summary>
         /// 增加计划记录

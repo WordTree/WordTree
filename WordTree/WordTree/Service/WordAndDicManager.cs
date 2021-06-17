@@ -7,9 +7,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using WordTree.Model;
-using WordTree.Service;
 
-namespace WordTree
+namespace WordTree.Service
 {
     /// <summary>
     /// 单例类 负责管理目标词库和单词读取
@@ -18,7 +17,7 @@ namespace WordTree
     {
         private static WordAndDicManager instance = new WordAndDicManager();
 
-        private MmryPlanManger mmryPlanManger = new MmryPlanManger();
+        private MmryPlanManager mmryPlanManger = new MmryPlanManager();
 
         public VocabularyDic targetDic;  //目标词库
 
@@ -81,8 +80,15 @@ namespace WordTree
         {
             string wordInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\" + wordStr+".json");
             Word target = JsonConvert.DeserializeObject<Word>(wordInfo);
-            //target.VoicePath = voicPath;
+            //target.Picture = JsonConvert.
             return target;
+        }
+
+        public VocabularyDic getVocabularyDic(string dicName)
+        {
+            string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
+            targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
+            return targetDic;
         }
     }
 }

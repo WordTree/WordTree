@@ -109,7 +109,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Word.cs" />
     <Compile Include="Service\MemoryManager.cs" />
-    <Compile Include="Service\MmryPlanManger.cs" />
+    <Compile Include="Service\MmryPlanManager.cs" />
     <Compile Include="Service\PlannedWordContext.cs" />
     <Compile Include="Service\WordAndDicManager.cs" />
   </ItemGroup>

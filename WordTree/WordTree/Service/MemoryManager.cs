@@ -10,7 +10,13 @@ namespace WordTree.Service
     public class MemoryManager
     {
 		WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
-		private MmryPlanManger mmryPlanManger = new MmryPlanManger();
+		private MmryPlanManager mmryPlanManger = new MmryPlanManager();
+
+		public bool ChoosePicture { get; set; }
+		public bool ChooseCNMeans { get; set; }
+		public bool ReciteMethod { get; set; }
+
+
 		/// <summary>
 		/// 用户设定的每次记忆单词量
 		/// </summary>
@@ -44,7 +50,7 @@ namespace WordTree.Service
 
 		public MemoryManager()
         {
-			List <PlannedWord> words = new MmryPlanManger().QueryAll();
+			List <PlannedWord> words = new MmryPlanManager().QueryAll();
 			var targetWords = words.Where(o => NeedRecite(o));
 			NeedWord = targetWords.ToArray();
 
@@ -75,7 +81,7 @@ namespace WordTree.Service
 			mmryPlanManger.UpdatePlan(target);
 		}
 
-
+		
 
 	}
 }

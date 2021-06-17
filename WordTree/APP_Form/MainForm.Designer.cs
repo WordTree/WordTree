@@ -93,6 +93,7 @@ namespace APP_Form
             this.button_HistoryTransfer.TabIndex = 1;
             this.button_HistoryTransfer.Text = "统计";
             this.button_HistoryTransfer.UseVisualStyleBackColor = false;
+            this.button_HistoryTransfer.Click += new System.EventHandler(this.button_HistoryTransfer_Click);
             // 
             // button_ReadingTransfer
             // 

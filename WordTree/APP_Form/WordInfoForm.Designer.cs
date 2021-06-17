@@ -40,6 +40,7 @@ namespace APP_Form
             this.label_Word = new System.Windows.Forms.Label();
             this.label_etyma = new System.Windows.Forms.Label();
             this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
+            this.btnAddPlan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.VoicePlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,7 @@ namespace APP_Form
             // VoicePlayer
             // 
             this.VoicePlayer.Enabled = true;
-            this.VoicePlayer.Location = new System.Drawing.Point(718, 415);
+            this.VoicePlayer.Location = new System.Drawing.Point(748, 434);
             this.VoicePlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VoicePlayer.Name = "VoicePlayer";
             this.VoicePlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VoicePlayer.OcxState")));
@@ -86,7 +87,7 @@ namespace APP_Form
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.pictureBox.Location = new System.Drawing.Point(13, 70);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(155, 135);
             this.pictureBox.TabIndex = 15;
@@ -105,9 +106,9 @@ namespace APP_Form
             // button_Voice
             // 
             this.button_Voice.Location = new System.Drawing.Point(636, 34);
-            this.button_Voice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Voice.Margin = new System.Windows.Forms.Padding(4);
             this.button_Voice.Name = "button_Voice";
-            this.button_Voice.Size = new System.Drawing.Size(75, 29);
+            this.button_Voice.Size = new System.Drawing.Size(79, 30);
             this.button_Voice.TabIndex = 13;
             this.button_Voice.Text = "播音";
             this.button_Voice.UseVisualStyleBackColor = true;
@@ -132,12 +133,23 @@ namespace APP_Form
             this.label_etyma.Size = new System.Drawing.Size(517, 40);
             this.label_etyma.TabIndex = 23;
             // 
+            // btnAddPlan
+            // 
+            this.btnAddPlan.Location = new System.Drawing.Point(44, 245);
+            this.btnAddPlan.Name = "btnAddPlan";
+            this.btnAddPlan.Size = new System.Drawing.Size(83, 30);
+            this.btnAddPlan.TabIndex = 24;
+            this.btnAddPlan.Text = "加入计划";
+            this.btnAddPlan.UseVisualStyleBackColor = true;
+            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
+            // 
             // WordInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(803, 489);
+            this.Controls.Add(this.btnAddPlan);
             this.Controls.Add(this.label_etyma);
             this.Controls.Add(this.VoicePlayer);
             this.Controls.Add(this.label_phrase);
@@ -168,5 +180,6 @@ namespace APP_Form
         private System.Windows.Forms.Label label_Word;
         private System.Windows.Forms.Label label_etyma;
         private MySql.Data.MySqlClient.CustomInstaller customInstaller1;
+        private System.Windows.Forms.Button btnAddPlan;
     }
 }
