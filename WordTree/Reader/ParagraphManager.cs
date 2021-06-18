@@ -17,16 +17,23 @@ namespace Reader
         /// </summary>
         public void ContentInit(Paragraph p)
         {
-            StreamReader stream = new StreamReader("..\\..\\..\\Reader\\Text\\" + p.ParagraphName + ".txt", Encoding.GetEncoding("UTF-8"));
-            p.content = stream.ReadToEnd();
-            stream.Close();
+            try
+            {
+                StreamReader stream = new StreamReader("..\\..\\..\\Reader\\Text\\" + p.ParagraphName + ".txt", Encoding.GetEncoding("UTF-8"));
+                p.content = stream.ReadToEnd();
+                stream.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         /// <summary>
         /// 获得本地段落名称列表
         /// </summary>
-        public List<string > GetAllParagraghNames()
+        public List<string > GetAllParagraghNames(string type)
         {
-            var files = Directory.GetFiles("..\\..\\..\\Reader\\Text\\", "*.txt").ToList();
+            var files = Directory.GetFiles( $"..\\..\\..\\Reader\\Text\\{type}", "*.txt").ToList();
             List<string> names = new List<string>();
             foreach( string name in files)
             {

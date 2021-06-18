@@ -10,8 +10,7 @@ using System.Windows.Forms;
 
 namespace Reader
 {
-    public delegate void GetChoice(string choice);
-    public delegate void Tracecommand();
+    
     public partial class UserTextChoice :  Form
     {
         ParagraphManager manager = new ParagraphManager();
@@ -22,7 +21,7 @@ namespace Reader
         public UserTextChoice(GetChoice Setpara, Tracecommand command)
         {
             InitializeComponent();
-            userchoices = manager.GetAllParagraghNames();
+            userchoices = manager.GetAllParagraghNames("CET4");
             choice_comboBox_Searcher.Items.AddRange(userchoices.ToArray());
             choice = Setpara;
             trace = command;
