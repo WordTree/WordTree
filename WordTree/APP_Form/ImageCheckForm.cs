@@ -1,4 +1,5 @@
 ﻿using APP_Form.Controller;
+using HZH_Controls.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,7 @@ namespace APP_Form
             this.falseWord1 = falseWord1;
             this.falseWord2 = falseWord2;
             this.falseWord3 = falseWord3;
-
+          
             lblWordStr.Text = trueWord.word;
 
             //播音
@@ -71,18 +72,22 @@ namespace APP_Form
         private void picTrueWord_Click(object sender, EventArgs e)
         {
             //出现笑脸
-            //出现笑脸一下子
+            FrmTips.ShowTipsSuccess(this, "fuck");
             if (haveFalse == true)
-                False();
+            {
+                True();
+            }
             else
+            {
                 True(); //显示单词详细信息界面，修改当前单词的熟悉程度
+            }
 
         }
 
         private void picFalseWord1_Click(object sender, EventArgs e)
         {
 
-            //弹哭脸
+            
             //哭脸出现一会后消失
             haveFalse = true;
              

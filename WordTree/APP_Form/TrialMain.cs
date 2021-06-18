@@ -24,12 +24,10 @@ namespace APP_Form
         public TrialMain()
         {
             InitializeComponent();
-    }
-
-        private void panControl_Paint(object sender, PaintEventArgs e)
-        {
-
+            Console.WriteLine(this.panControl.Size.Width);
+            Console.WriteLine(this.panControl.Size.Height);
         }
+
 
         private void TrialMain_Load(object sender, EventArgs e)
         {
@@ -57,7 +55,7 @@ namespace APP_Form
             switch (strName)
             {
                 case "词典":
-                    transferController.Transfer( panControl, new SearchForm());
+                    transferController.Transfer(panControl, new SearchForm());
                     break;
                 case "统计":
                     transferController.Transfer(panControl, new SearchForm());

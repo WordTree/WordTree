@@ -141,6 +141,11 @@ D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\System.Runtime.C
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\Newtonsoft.Json.xml
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.csproj.CopyComplete
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SettingForm.resources
+<<<<<<< HEAD
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ExplanationCheck.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ImageCheck.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SpellingCheckForm.resources
+=======
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ExplanationCheck.resources
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SettingForm.resources
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SpellingCheckForm.resources
@@ -206,3 +211,8 @@ C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ex
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.pdb
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\bin\Debug\HZH_Controls.dll
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.TrialMain.resources
+>>>>>>> 202a0cf6bc1fe854b67eeed88322d80ee9ea5713
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ImageCheckForm.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.TrialMain.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\bin\Debug\HZH_Controls.dll
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.TipsForm.resources

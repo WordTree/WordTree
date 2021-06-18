@@ -12,6 +12,7 @@ using WordTree.Service;
 using WordTree;
 using System.Threading;
 using APP_Form.Controller;
+using HZH_Controls.Forms;
 
 namespace APP_Form
 {
@@ -35,14 +36,14 @@ namespace APP_Form
             InitializeComponent();
             memoryManager.NeedNum = 20;
 
-            Memory();
+            Memory(null,null);
             //wordCheckIn();
         }
 
         /// <summary>
         /// 控制单个单词记忆的界面跳转逻辑
         /// </summary>
-        private void Memory()
+        private void Memory(object sender, EventArgs args)
         {
             try
             {
@@ -116,6 +117,7 @@ namespace APP_Form
                 //跳转到ImageCheckForm界面
                 ImageCheckForm imageCheckForm = new ImageCheckForm(trueWord, randomWords[0].Data, randomWords[1].Data, randomWords[2].Data);
                 imageCheckForm.True += CorrectAnswer;
+
                 transfer.Transfer(this.panel_Form, imageCheckForm);
 
 
@@ -137,7 +139,10 @@ namespace APP_Form
             if(currentNode.StrangeDegree == 3)
             {
                 currentNode.StrangeDegree--;
-                transfer.Transfer(panel_Form, new WordInfoForm(currentNode.Data));
+                var wordInfoForm = new WordInfoForm(currentNode.Data);
+                wordInfoForm.ucBtnExt_Next.BtnClick += Memory;
+                wordInfoForm.ucBtnExt_Next.Visible = true;
+                transfer.Transfer(panel_Form, wordInfoForm);
                 index++;
             }
 
@@ -155,10 +160,11 @@ namespace APP_Form
         {
             if (currentNode.StrangeDegree != 3)
             {
-
             }
 
         }
+
+
 
         /// <summary>
         /// 检查拼写是否正确

@@ -19,10 +19,8 @@ namespace WordTree
             //Console.WriteLine(word);
             MmryPlanManager mmryPlanManager = new MmryPlanManager();
             //mmryPlanManager.AddPlan("access");
-
-            mmryPlanManager.AddPlan("project");
+            //mmryPlanManager.AddPlan("project");
             //mmryPlanManager.AddPlan("intention");
-            //mmryPlanManager.AddPlan("equivalence");
             //mmryPlanManager.AddPlan("negotiate");
             //mmryPlanManager.AddPlan("strategy");
             //mmryPlanManager.AddPlan("primary");
