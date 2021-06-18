@@ -143,3 +143,4 @@ C:\Users\86187\Documents\GitHub\WordTree\WordTree\Reader\obj\Debug\Reader.csproj
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\Reader\obj\Debug\Reader.exe
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\Reader\obj\Debug\Reader.pdb
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\Reader\bin\Debug\HZH_Controls.dll
+D:\VS2019\Project\WordTree\WordTree\WordTree\Reader\bin\Debug\HZH_Controls.dll

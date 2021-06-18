@@ -12,6 +12,7 @@ using WordTree.Service;
 using WordTree;
 using System.Threading;
 using APP_Form.Controller;
+using HZH_Controls.Forms;
 
 namespace APP_Form
 {
@@ -117,8 +118,6 @@ namespace APP_Form
                 ImageCheckForm imageCheckForm = new ImageCheckForm(trueWord, randomWords[0].Data, randomWords[1].Data, randomWords[2].Data);
                 imageCheckForm.True += CorrectAnswer;
                 transfer.Transfer(this.panel_Form, imageCheckForm);
-
-
             }
         }
 
@@ -139,6 +138,8 @@ namespace APP_Form
                 currentNode.StrangeDegree--;
                 transfer.Transfer(panel_Form, new WordInfoForm(currentNode.Data));
                 index++;
+
+
             }
 
             else

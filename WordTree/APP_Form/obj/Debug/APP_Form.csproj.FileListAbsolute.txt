@@ -206,3 +206,5 @@ C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ex
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.pdb
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\bin\Debug\HZH_Controls.dll
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.TrialMain.resources
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\HZH_Controls.dll
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.TrialMain.resources

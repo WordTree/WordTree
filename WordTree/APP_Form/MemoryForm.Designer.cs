@@ -40,17 +40,17 @@ namespace APP_Form
             this.panel_Lights.Location = new System.Drawing.Point(0, 0);
             this.panel_Lights.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Lights.Name = "panel_Lights";
-            this.panel_Lights.Size = new System.Drawing.Size(715, 66);
+            this.panel_Lights.Size = new System.Drawing.Size(736, 66);
             this.panel_Lights.TabIndex = 0;
             // 
             // panel_Form
             // 
             this.panel_Form.BackColor = System.Drawing.Color.Silver;
             this.panel_Form.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_Form.Location = new System.Drawing.Point(0, 66);
+            this.panel_Form.Location = new System.Drawing.Point(0, 52);
             this.panel_Form.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Form.Name = "panel_Form";
-            this.panel_Form.Size = new System.Drawing.Size(715, 585);
+            this.panel_Form.Size = new System.Drawing.Size(736, 585);
             this.panel_Form.TabIndex = 1;
             // 
             // MemoryForm
@@ -58,11 +58,11 @@ namespace APP_Form
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(715, 651);
+            this.ClientSize = new System.Drawing.Size(736, 637);
             this.Controls.Add(this.panel_Form);
             this.Controls.Add(this.panel_Lights);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemoryForm";
             this.Text = "MemoryForm";
             this.ResumeLayout(false);

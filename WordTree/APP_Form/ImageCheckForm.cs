@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WordTree.Model;
@@ -22,6 +23,9 @@ namespace APP_Form
         Word falseWord3;
 
         bool haveFalse = false;   //记录该单词是否选错过
+
+        Image trueImage = Image.FromFile(@"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\正确.png");
+        Image falseImage = Image.FromFile(@"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误.png");
 
         public event Action True;
         public event Action False;
@@ -71,35 +75,40 @@ namespace APP_Form
         private void picTrueWord_Click(object sender, EventArgs e)
         {
             //出现笑脸
-            //出现笑脸一下子
+            picTrueWord.Controls.Add(picTrueOrFalse);
+            picTrueOrFalse.Parent = picTrueWord;
+            picTrueOrFalse.Image = trueImage;
+            picTrueWord.Controls.SetChildIndex(picTrueOrFalse, 100);
+            Thread.Sleep(500);
+            
+
+
             if (haveFalse == true)
-                False();
+                True();
             else
-                True(); //显示单词详细信息界面，修改当前单词的熟悉程度
+                True();   //显示单词详细信息界面，修改当前单词的熟悉程度
 
         }
 
         private void picFalseWord1_Click(object sender, EventArgs e)
         {
 
-            //弹哭脸
-            //哭脸出现一会后消失
-            haveFalse = true;
-             
 
+
+            haveFalse = true;
         }
 
         private void picFalseWord2_Click(object sender, EventArgs e)
         {
-            //弹哭脸
-            //哭脸出现一会后消失
+
+
+
             haveFalse = true;
         }
 
         private void picFalseWord3_Click(object sender, EventArgs e)
         {
-            //弹哭脸
-            //哭脸出现一会后消失
+
             haveFalse = true;
         }
     }

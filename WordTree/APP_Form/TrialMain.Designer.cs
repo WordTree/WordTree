@@ -62,7 +62,7 @@ namespace APP_Form
             this.tvMenu.ShowLines = false;
             this.tvMenu.ShowPlusMinus = false;
             this.tvMenu.ShowRootLines = false;
-            this.tvMenu.Size = new System.Drawing.Size(208, 568);
+            this.tvMenu.Size = new System.Drawing.Size(283, 637);
             this.tvMenu.TabIndex = 8;
             this.tvMenu.TipFont = new System.Drawing.Font("新宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tvMenu.TipImage = ((System.Drawing.Image)(resources.GetObject("tvMenu.TipImage")));
@@ -72,16 +72,16 @@ namespace APP_Form
             // 
             this.panControl.AutoScroll = true;
             this.panControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panControl.Location = new System.Drawing.Point(208, 61);
+            this.panControl.Location = new System.Drawing.Point(283, 61);
             this.panControl.Name = "panControl";
-            this.panControl.Size = new System.Drawing.Size(714, 568);
+            this.panControl.Size = new System.Drawing.Size(736, 637);
             this.panControl.TabIndex = 10;
             // 
             // TrialMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 629);
+            this.ClientSize = new System.Drawing.Size(1019, 698);
             this.Controls.Add(this.panControl);
             this.Controls.Add(this.tvMenu);
             this.Name = "TrialMain";
