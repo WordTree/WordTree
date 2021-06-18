@@ -62,7 +62,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeControl.cs" />
     <Compile Include="UserTextChoice.cs">
       <SubType>Form</SubType>
     </Compile>

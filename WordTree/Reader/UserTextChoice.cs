@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace Reader
 {
-    
+    public delegate void GetChoice(string choice);
+    public delegate void Tracecommand();
     public partial class UserTextChoice :  Form
     {
         ParagraphManager manager = new ParagraphManager();
