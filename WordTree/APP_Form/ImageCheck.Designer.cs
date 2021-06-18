@@ -57,7 +57,7 @@ namespace APP_Form
             this.pictureBox1.BackColor = System.Drawing.Color.Gray;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(235, 145);
+            this.pictureBox1.Size = new System.Drawing.Size(248, 145);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -68,17 +68,18 @@ namespace APP_Form
             this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 75);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 79);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(484, 312);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(508, 312);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox2.Location = new System.Drawing.Point(244, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(257, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(235, 148);
+            this.pictureBox2.Size = new System.Drawing.Size(248, 148);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
@@ -87,16 +88,16 @@ namespace APP_Form
             this.pictureBox3.BackColor = System.Drawing.Color.Gray;
             this.pictureBox3.Location = new System.Drawing.Point(3, 157);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(235, 145);
+            this.pictureBox3.Size = new System.Drawing.Size(248, 145);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox4.Location = new System.Drawing.Point(244, 157);
+            this.pictureBox4.Location = new System.Drawing.Point(257, 157);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(235, 145);
+            this.pictureBox4.Size = new System.Drawing.Size(248, 145);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             // 

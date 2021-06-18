@@ -141,3 +141,6 @@ D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\System.Runtime.C
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\Newtonsoft.Json.xml
 D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.csproj.CopyComplete
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SettingForm.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ExplanationCheck.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.ImageCheck.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SpellingCheckForm.resources

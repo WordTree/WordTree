@@ -1,0 +1,9 @@
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\bin\Debug\TEST.exe.config
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\bin\Debug\TEST.exe
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\bin\Debug\TEST.pdb
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\obj\Debug\TEST.csprojAssemblyReference.cache
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\obj\Debug\TEST.exe
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\obj\Debug\TEST.pdb
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\obj\Debug\TEST.TestForm.resources
+C:\Users\Lisn\Desktop\Final\WordTree\WordTree\TEST\obj\Debug\TEST.csproj.GenerateResource.cache
