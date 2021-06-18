@@ -63,6 +63,26 @@ namespace APP_Form.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap WPS图片_修改尺寸 {
+            get {
+                object obj = ResourceManager.GetObject("WPS图片-修改尺寸", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap WPS图片_修改尺寸1 {
+            get {
+                object obj = ResourceManager.GetObject("WPS图片-修改尺寸1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 小喇叭_爱给网_aigei_com {
             get {
                 object obj = ResourceManager.GetObject("小喇叭_爱给网_aigei_com", resourceCulture);

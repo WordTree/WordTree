@@ -26,7 +26,7 @@ namespace Reader
         public ReaderForm()
         {
             InitializeComponent();
-            wordAndDicManager.init("CET4");
+            //wordAndDicManager.init("CET4");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         }
         /// <summary>

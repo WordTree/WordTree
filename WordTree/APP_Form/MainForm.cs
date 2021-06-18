@@ -14,10 +14,10 @@ namespace APP_Form
 {
     public partial class MainForm : Form
     {
-        //public SearchForm searchForm = new SearchForm();
-        //public ReaderForm readerForm = new ReaderForm();
-        //public MemoryForm memoryForm = new MemoryForm();
-        //public TransferController transferController = TransferController.GetController();
+        public SearchForm searchForm = new SearchForm();
+        public ReaderForm readerForm = new ReaderForm();
+        public MemoryForm memoryForm = new MemoryForm();
+        public TransferController transferController = TransferController.GetController();
         /// <summary>
         /// 存放界面上所有的按钮
         /// </summary>
@@ -27,6 +27,8 @@ namespace APP_Form
         {
             InitializeComponent();
             InitButtonList();
+
+
 
         }
 
@@ -38,7 +40,7 @@ namespace APP_Form
         private void button_SearchTransfer_Click(object sender, EventArgs e)
         {
             GetFocus(button_SearchTransfer);
-            //transferController.Transfer(panel_Form, searchForm);
+            transferController.Transfer(panel_Form, searchForm);
 
         }
         /// <summary>
@@ -49,13 +51,13 @@ namespace APP_Form
         private void button_ReadingTransfer_Click(object sender, EventArgs e)
         {
             GetFocus(button_ReadingTransfer);
-            //transferController.Transfer(panel_Form, readerForm);
+            transferController.Transfer(panel_Form, readerForm);
         }
 
         private void button_MemoryTransfer_Click(object sender, EventArgs e)
         {
             GetFocus(button_MemoryTransfer);
-            //transferController.Transfer(panel_Form, memoryForm);
+            transferController.Transfer(panel_Form, memoryForm);
         }
 
         private void button_HistoryTransfer_Click(object sender, EventArgs e)
@@ -93,6 +95,5 @@ namespace APP_Form
             buttons.Add(button_ReadingTransfer);
             buttons.Add(button_SearchTransfer);
         }
-
     }
 }

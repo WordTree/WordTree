@@ -16,5 +16,9 @@ namespace APP_Form
         {
             InitializeComponent();
         }
+
+        Func<bool> isTrue;
+
+
     }
 }

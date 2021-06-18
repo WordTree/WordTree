@@ -126,5 +126,10 @@ namespace APP_Form
             var bmp = new Bitmap(webC.OpenRead(picture.ToString()));
             pictureBox1.Image = bmp;
         }
+
+        private void SearchForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

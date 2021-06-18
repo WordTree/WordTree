@@ -14,11 +14,10 @@ namespace APP_Form
 {
     public partial class WordInfoForm : Form
     {
-        public enum Mode {Search,Memory};
         private MmryPlanManager mmryPlanManager;
         private Word targetWord;
 
-        public WordInfoForm(Word targetWor,Mode mode)
+        public WordInfoForm(Word targetWord)
         {
             this.targetWord = targetWord;
             InitializeComponent();

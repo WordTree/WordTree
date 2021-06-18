@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using WordTree.Model;
 
@@ -68,7 +69,7 @@ namespace WordTree.Service
 
             //清空计划，重新设置目标词库
             await Task.Run(() => mmryPlanManger.ClearAll());
-            init(dicName);
+            //init(dicName);
         }
 
         /// <summary>
@@ -80,7 +81,10 @@ namespace WordTree.Service
         {
             string wordInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\" + wordStr+".json");
             Word target = JsonConvert.DeserializeObject<Word>(wordInfo);
-            //target.Picture = JsonConvert.
+            string pictureInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\单词图片.json");
+            string filter = @"http.*"+wordStr+"_.*png";
+            var pictureUrl = Regex.Match(pictureInfo, filter);
+            target.Picture = pictureUrl.Value;
             return target;
         }
 

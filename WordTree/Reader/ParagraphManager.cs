@@ -45,7 +45,7 @@ namespace Reader
         public void ContentImpact(List<string> targets, RichTextBox textbox)
         {
             foreach (string target in targets) {
-                List<int> list = GetIndexArray(textbox.Text, target);
+                List<int> list = GetIndexArray(textbox, target);
                 for (int i = 0; i < list.Count; i++)
                 {
                     int index = (int)list[i];
@@ -59,16 +59,18 @@ namespace Reader
         /// <summary>
         /// 查询关键字位置
         /// </summary>
-        public List<int> GetIndexArray(String textbox_text, String targetstr)
+        public List<int> GetIndexArray(RichTextBox textbox, String targetstr)
         {
-            List<int> list = new List<int>();
+
+            List<int> list_position = new List<int>();
             int start = 0;
-            while (start < textbox_text.Length)
+            char[] textsearch = textbox.Text.ToCharArray();
+            while (start < textbox.Text.Length)
             {
-                int index = textbox_text.IndexOf(targetstr, start);
-                if (index >= 0)
+                int index = textbox.Text.IndexOf(targetstr, start);
+                if (index >= 0 && textsearch[index - 1] == ' ')
                 {
-                    list.Add(index);
+                    list_position.Add(index);
                     start = index + targetstr.Length;
                 }
                 else
@@ -76,7 +78,7 @@ namespace Reader
                     break;
                 }
             }
-            return list;
+            return list_position;
         }
         /// <summary>
         /// 获取并处理被选中的单词

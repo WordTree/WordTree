@@ -16,11 +16,13 @@ namespace WordTree.Model
 
             Data = new Word();
             Next = null;
+            StrangeDegree = 3;
         }
         public Node(Word item)
         {
             Data = item;
             Next = null;
+            StrangeDegree = 3;
         }
     }
     /// <summary>

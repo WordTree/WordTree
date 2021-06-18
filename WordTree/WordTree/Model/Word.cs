@@ -46,7 +46,8 @@ namespace WordTree.Model
         override public string ToString()
         {
             return "word:" + word + "\naccent:" + Accent + "\nmean_cn:" + Mean_cn + "\nmean_en:" + Mean_en + "\nsentence:" + Sentence
-                + "\nsentence_trans:" + Sentence_trans + "\nsentence_phrase:" + Sentence_phrase + "\nword_etyma:" + Word_etyma ;
+                + "\nsentence_trans:" + Sentence_trans + "\nsentence_phrase:" + Sentence_phrase + "\nword_etyma:" + Word_etyma + "\nPicture：" + Picture;
+                
         }
 
     }

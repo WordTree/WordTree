@@ -41,6 +41,7 @@ namespace APP_Form
             this.label_etyma = new System.Windows.Forms.Label();
             this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
             this.btnAddPlan = new System.Windows.Forms.Button();
+            this.ucBtnExt_Next = new HZH_Controls.Controls.UCBtnExt();
             ((System.ComponentModel.ISupportInitialize)(this.VoicePlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,7 @@ namespace APP_Form
             // 
             this.VoicePlayer.Enabled = true;
             this.VoicePlayer.Location = new System.Drawing.Point(748, 434);
-            this.VoicePlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.VoicePlayer.Margin = new System.Windows.Forms.Padding(2);
             this.VoicePlayer.Name = "VoicePlayer";
             this.VoicePlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VoicePlayer.OcxState")));
             this.VoicePlayer.Size = new System.Drawing.Size(52, 44);
@@ -135,7 +136,7 @@ namespace APP_Form
             // btnAddPlan
             // 
             this.btnAddPlan.Location = new System.Drawing.Point(33, 196);
-            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddPlan.Name = "btnAddPlan";
             this.btnAddPlan.Size = new System.Drawing.Size(62, 24);
             this.btnAddPlan.TabIndex = 24;
@@ -143,12 +144,40 @@ namespace APP_Form
             this.btnAddPlan.UseVisualStyleBackColor = true;
             this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
             // 
+            // ucBtnExt_Next
+            // 
+            this.ucBtnExt_Next.BackColor = System.Drawing.Color.White;
+            this.ucBtnExt_Next.BtnBackColor = System.Drawing.Color.White;
+            this.ucBtnExt_Next.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ucBtnExt_Next.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_Next.BtnText = "NEXT>>";
+            this.ucBtnExt_Next.ConerRadius = 5;
+            this.ucBtnExt_Next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ucBtnExt_Next.EnabledMouseEffect = false;
+            this.ucBtnExt_Next.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_Next.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ucBtnExt_Next.IsRadius = true;
+            this.ucBtnExt_Next.IsShowRect = true;
+            this.ucBtnExt_Next.IsShowTips = false;
+            this.ucBtnExt_Next.Location = new System.Drawing.Point(12, 286);
+            this.ucBtnExt_Next.Margin = new System.Windows.Forms.Padding(0);
+            this.ucBtnExt_Next.Name = "ucBtnExt_Next";
+            this.ucBtnExt_Next.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_Next.RectWidth = 1;
+            this.ucBtnExt_Next.Size = new System.Drawing.Size(124, 40);
+            this.ucBtnExt_Next.TabIndex = 25;
+            this.ucBtnExt_Next.TabStop = false;
+            this.ucBtnExt_Next.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
+            this.ucBtnExt_Next.TipsText = "";
+            this.ucBtnExt_Next.Visible = false;
+            // 
             // WordInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(520, 423);
+            this.Controls.Add(this.ucBtnExt_Next);
             this.Controls.Add(this.btnAddPlan);
             this.Controls.Add(this.label_etyma);
             this.Controls.Add(this.VoicePlayer);
@@ -159,7 +188,7 @@ namespace APP_Form
             this.Controls.Add(this.label_meanCN);
             this.Controls.Add(this.button_Voice);
             this.Controls.Add(this.label_Word);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "WordInfoForm";
             this.Text = "WordInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.VoicePlayer)).EndInit();
@@ -181,5 +210,6 @@ namespace APP_Form
         private System.Windows.Forms.Label label_etyma;
         private MySql.Data.MySqlClient.CustomInstaller customInstaller1;
         private System.Windows.Forms.Button btnAddPlan;
+        public HZH_Controls.Controls.UCBtnExt ucBtnExt_Next;
     }
 }

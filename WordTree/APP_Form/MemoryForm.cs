@@ -12,6 +12,7 @@ using WordTree.Service;
 using WordTree;
 using System.Threading;
 using APP_Form.Controller;
+using HZH_Controls.Forms;
 
 namespace APP_Form
 {
@@ -24,21 +25,147 @@ namespace APP_Form
         /// </summary>
         private TransferController transfer = TransferController.GetController();
 
-        public WordLinkedList words;
-        public int count = 0;
-        public int index;
-        public Word currentWord;
+        private Node[] savedWords = new Node[10];  //保存每一轮的10个单词
+        private WordLinkedList changingWords = new WordLinkedList();  //动态变化的单词循环链表
+        private int count = 0;
+        private int index;
+        private Node currentNode;
+        
         public MemoryForm()
         {
             InitializeComponent();
+            memoryManager.NeedNum = 20;
 
-
-            memoryManager.NeedNum = 30;
-
-            // words = memoryManager.GetNextWords(count);
-
+            Memory(null,null);
             //wordCheckIn();
         }
+
+        /// <summary>
+        /// 控制单个单词记忆的界面跳转逻辑
+        /// </summary>
+        private void Memory(object sender, EventArgs args)
+        {
+            try
+            {
+                //循环链表不为空则取出单词，否则获取新的一轮单词
+                if (!changingWords.IsEmpty())
+                {
+                    try
+                    {
+                        currentNode = changingWords.GetElem(index);
+                    }catch(ApplicationException e)
+                    {
+                        index = index % changingWords.Count;
+                        currentNode = changingWords.GetElem(index);
+                    }
+                        
+                }
+                else
+                {
+                    changingWords = memoryManager.GetNextWords(count);
+                    Node temp = changingWords.head.Next;
+                    int i = 0;
+                    while (temp != changingWords.head)
+                    {
+                        savedWords[i] = temp;
+                        i++;
+                        temp = temp.Next;
+                    }
+                    currentNode = changingWords.GetElem(index);
+                }
+
+                switch (currentNode.StrangeDegree)
+                {
+                    case 3: 
+                        ImageCheck(currentNode);
+                        break;
+                    case 2:
+                        ExplanationCheck(currentNode);
+                        break;
+                    case 1:
+                        SpellingCheck(currentNode);
+                        break;
+                }
+
+            }
+            catch (ApplicationException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+
+
+
+        private void ImageCheck(Node currentNode)
+        {
+            if (currentNode.Data.Picture != null)
+            {
+                Word trueWord = currentNode.Data;
+                Node[] tempWords = new Node[9];
+                int index = 0;
+                foreach (Node node in savedWords)
+                {
+                    if (node != currentNode)
+                    {
+                        tempWords[index] = node;
+                        index++;
+                    }
+                    
+                }
+                Node[] randomWords = DifferentRandomController<Node>.GetDifferentRandom(tempWords, 3);  //从剩下的9个单词中获取3个随机单词
+
+                //跳转到ImageCheckForm界面
+                ImageCheckForm imageCheckForm = new ImageCheckForm(trueWord, randomWords[0].Data, randomWords[1].Data, randomWords[2].Data);
+                imageCheckForm.True += CorrectAnswer;
+
+                transfer.Transfer(this.panel_Form, imageCheckForm);
+
+
+            }
+        }
+
+        private void ExplanationCheck(Node currentNode)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void SpellingCheck(Node currentNode)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CorrectAnswer()
+        {
+            if(currentNode.StrangeDegree == 3)
+            {
+                currentNode.StrangeDegree--;
+                var wordInfoForm = new WordInfoForm(currentNode.Data);
+                wordInfoForm.ucBtnExt_Next.BtnClick += Memory;
+                wordInfoForm.ucBtnExt_Next.Visible = true;
+                transfer.Transfer(panel_Form, wordInfoForm);
+                index++;
+            }
+
+            else
+            {
+                currentNode.StrangeDegree--;
+                if (currentNode.StrangeDegree == 0)
+                    changingWords.Remove(index);
+                else
+                    index++;
+            }
+        } 
+
+        private void InCorrectAnswer()
+        {
+            if (currentNode.StrangeDegree != 3)
+            {
+            }
+
+        }
+
+
+
         /// <summary>
         /// 检查拼写是否正确
         /// </summary>
