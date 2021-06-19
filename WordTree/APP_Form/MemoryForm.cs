@@ -34,12 +34,22 @@ namespace APP_Form
         private int count = 0;
         private int index;
         private Node currentNode;
-        
+        private PictureBox[] pictureBoxes = new PictureBox[10];
+
+        private const string stage1 = @"..\..\Resources\Images\种子.png";
+        private const string stage2 = @"..\..\Resources\Images\幼苗.png";
+        private const string stage3 = @"..\..\Resources\Images\成熟期.png";
+        private const string stage4 = @"..\..\Resources\Images\带树.png";
+
+        private string[] stages = { stage1, stage2, stage3, stage4 };
+
         public MemoryForm()
         {
             InitializeComponent();
 
             memoryManager.NeedNum = 20;
+            InitPictureBoxes();
+
         }
 
         /// <summary>
@@ -177,7 +187,9 @@ namespace APP_Form
             if(currentNode.StrangeDegree == 3)
             {
                 currentNode.StrangeDegree--;
+                SetPicture(index, currentNode.StrangeDegree);
                 HaveIncorrectAnswer();
+
             }
             else
             {
@@ -209,8 +221,32 @@ namespace APP_Form
             index++;
         }
 
+        /// <summary>
+        /// 初始化数组 pictureBoxes
+        /// </summary>
+        private void InitPictureBoxes()
+        {
+            pictureBoxes[0] = pictureBox1;
+            pictureBoxes[1] = pictureBox2;
+            pictureBoxes[2] = pictureBox3;
+            pictureBoxes[3] = pictureBox4;
+            pictureBoxes[4] = pictureBox5;
+            pictureBoxes[5] = pictureBox6;
+            pictureBoxes[6] = pictureBox7;
+            pictureBoxes[7] = pictureBox8;
+            pictureBoxes[8] = pictureBox9;
+            pictureBoxes[9] = pictureBox10;
 
+            foreach (var picture in pictureBoxes)
+            {
+                picture.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture.Image = Image.FromFile(stage1);
+            }
+        }
 
-      
+        private void SetPicture(int pictureIndex,int StageIndex)
+        {
+            pictureBoxes[pictureIndex].Image = Image.FromFile(stages[StageIndex]);
+        }
     }
 }

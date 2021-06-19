@@ -15,6 +15,7 @@ namespace APP_Form
 {
     public partial class TrialMain : FrmWithTitle
     {
+
         public SearchForm searchForm = new SearchForm();
         public ReaderForm readerForm = new ReaderForm();
         public MemoryForm memoryForm = new MemoryForm();
