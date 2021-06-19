@@ -22,7 +22,7 @@ namespace Reader
         public UserTextChoice(GetChoice Setpara, Tracecommand command)
         {
             InitializeComponent();
-            userchoices = manager.GetAllParagraghNames();
+            userchoices = manager.GetAllParagraghNames("CET4");
             choice_comboBox_Searcher.Items.AddRange(userchoices.ToArray());
             choice = Setpara;
             trace = command;

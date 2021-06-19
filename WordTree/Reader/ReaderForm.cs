@@ -17,11 +17,13 @@ namespace Reader
 {
     public partial class ReaderForm : Form
     {
+        WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
         Paragraph p = new Paragraph();
         ParagraphManager manager = new ParagraphManager();
         Word selected = new Word();//用户选中的单词
-        WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
-        
+        List<string> userchoices = new List<string>();
+
+        string type = "ForFun";//文段类型
 
         public ReaderForm()
         {
@@ -29,8 +31,15 @@ namespace Reader
             //wordAndDicManager.init("CET4");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
         }
+        public ReaderForm(string type)
+        {
+            InitializeComponent();
+            //wordAndDicManager.init("CET4");
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.type = type;
+        }
         /// <summary>
-        /// 窗体间传递用户选择
+        /// 用户选择
         /// </summary>
         /// <param name="paraname"></param>
         private void SetParagraph(string paraname)
@@ -38,7 +47,7 @@ namespace Reader
             p.ParagraphName = paraname;
         }
         /// <summary>
-        /// 子窗口回传文本显示命令
+        /// 文本显示
         /// </summary>
         private void TraceText()
         {
@@ -46,29 +55,13 @@ namespace Reader
             Paragraph_richTextBox.Text = p.content;
             string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\重点词汇.json");
             VocabularyDic importantDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
-            List<string> test = importantDic.List.ToList();
-            manager.ContentImpact(test, Paragraph_richTextBox);
+            List<string> keywords = importantDic.List.ToList();
+            manager.ContentImpact(keywords, Paragraph_richTextBox);
         }
 
         private void Paragraph_richTextBox_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void test_button_Click(object sender, EventArgs e)
-        {
-            /*manager.ContentInit(p);
-            Paragraph_richTextBox.Text = p.content;
-            List<string> test = new List<string>();
-            test.Add("dull");
-            manager.ContentImpact(test, Paragraph_richTextBox);
-            */
-        }
-
-        private void testbutton2_Click(object sender, EventArgs e)
-        {
-            UserTextChoice choiceform = new UserTextChoice(SetParagraph, TraceText);
-            choiceform.Show();
         }
 
         private void Paragraph_richTextBox_Click(object sender, EventArgs e)
@@ -85,13 +78,27 @@ namespace Reader
 
         private void ReaderForm_Load(object sender, EventArgs e)
         {
-            
+            userchoices = manager.GetAllParagraghNames(type);
+            string userchoice = userchoices.FirstOrDefault();
+            SetParagraph(userchoice);
+            TraceText();
         }
 
         private void ReaderForm_Shown(object sender, EventArgs e)
         {
-            UserTextChoice choiceform = new UserTextChoice(SetParagraph, TraceText);
-            choiceform.Show();
+            //UserTextChoice choiceform = new UserTextChoice(SetParagraph, TraceText);
+            //choiceform.Show();
+        }
+
+        int scan = 0;//用于文件目录循环遍历
+        private void readbutton_Click(object sender, EventArgs e)
+        {
+            //UserTextChoice choiceform = new UserTextChoice(SetParagraph, TraceText);
+            //choiceform.Show();
+            scan = (scan + 1) % userchoices.Count;
+            string userchoice = userchoices[scan];
+            SetParagraph(userchoice);
+            TraceText();
         }
     }
 }

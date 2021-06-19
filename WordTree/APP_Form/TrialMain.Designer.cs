@@ -45,14 +45,14 @@ namespace APP_Form
             this.tvMenu.HideSelection = false;
             this.tvMenu.IsShowByCustomModel = true;
             this.tvMenu.IsShowTip = false;
-            this.tvMenu.ItemHeight = 135;
+            this.tvMenu.ItemHeight = 115;
             this.tvMenu.Location = new System.Drawing.Point(0, 61);
             this.tvMenu.LstTips = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("tvMenu.LstTips")));
             this.tvMenu.Name = "tvMenu";
             this.tvMenu.NodeBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             this.tvMenu.NodeDownPic = ((System.Drawing.Image)(resources.GetObject("tvMenu.NodeDownPic")));
             this.tvMenu.NodeForeColor = System.Drawing.Color.White;
-            this.tvMenu.NodeHeight = 135;
+            this.tvMenu.NodeHeight = 115;
             this.tvMenu.NodeIsShowSplitLine = true;
             this.tvMenu.NodeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
             this.tvMenu.NodeSelectedForeColor = System.Drawing.Color.White;
@@ -62,26 +62,27 @@ namespace APP_Form
             this.tvMenu.ShowLines = false;
             this.tvMenu.ShowPlusMinus = false;
             this.tvMenu.ShowRootLines = false;
-            this.tvMenu.Size = new System.Drawing.Size(208, 568);
+            this.tvMenu.Size = new System.Drawing.Size(283, 637);
             this.tvMenu.TabIndex = 8;
             this.tvMenu.TipFont = new System.Drawing.Font("新宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tvMenu.TipImage = ((System.Drawing.Image)(resources.GetObject("tvMenu.TipImage")));
+            this.tvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterExpand);
             this.tvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterSelect);
             // 
             // panControl
             // 
             this.panControl.AutoScroll = true;
             this.panControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panControl.Location = new System.Drawing.Point(208, 61);
+            this.panControl.Location = new System.Drawing.Point(283, 61);
             this.panControl.Name = "panControl";
-            this.panControl.Size = new System.Drawing.Size(714, 568);
+            this.panControl.Size = new System.Drawing.Size(736, 637);
             this.panControl.TabIndex = 10;
             // 
             // TrialMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 629);
+            this.ClientSize = new System.Drawing.Size(1019, 698);
             this.Controls.Add(this.panControl);
             this.Controls.Add(this.tvMenu);
             this.Name = "TrialMain";

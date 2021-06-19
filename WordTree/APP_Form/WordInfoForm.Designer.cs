@@ -50,7 +50,7 @@ namespace APP_Form
             // 
             this.VoicePlayer.Enabled = true;
             this.VoicePlayer.Location = new System.Drawing.Point(748, 434);
-            this.VoicePlayer.Margin = new System.Windows.Forms.Padding(2);
+            this.VoicePlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VoicePlayer.Name = "VoicePlayer";
             this.VoicePlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("VoicePlayer.OcxState")));
             this.VoicePlayer.Size = new System.Drawing.Size(52, 44);
@@ -60,37 +60,40 @@ namespace APP_Form
             // label_phrase
             // 
             this.label_phrase.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_phrase.Location = new System.Drawing.Point(202, 294);
+            this.label_phrase.Location = new System.Drawing.Point(271, 368);
+            this.label_phrase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_phrase.Name = "label_phrase";
-            this.label_phrase.Size = new System.Drawing.Size(314, 32);
+            this.label_phrase.Size = new System.Drawing.Size(417, 40);
             this.label_phrase.TabIndex = 18;
             this.label_phrase.Text = "Phrase";
             // 
             // label_meanEN
             // 
             this.label_meanEN.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_meanEN.Location = new System.Drawing.Point(200, 103);
-            this.label_meanEN.Margin = new System.Windows.Forms.Padding(3);
+            this.label_meanEN.Location = new System.Drawing.Point(271, 129);
+            this.label_meanEN.Margin = new System.Windows.Forms.Padding(4);
             this.label_meanEN.Name = "label_meanEN";
-            this.label_meanEN.Size = new System.Drawing.Size(316, 64);
+            this.label_meanEN.Size = new System.Drawing.Size(417, 80);
             this.label_meanEN.TabIndex = 17;
             this.label_meanEN.Text = "MeanEN";
             // 
             // label_Example
             // 
             this.label_Example.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Example.Location = new System.Drawing.Point(199, 172);
+            this.label_Example.Location = new System.Drawing.Point(265, 215);
+            this.label_Example.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Example.Name = "label_Example";
-            this.label_Example.Size = new System.Drawing.Size(317, 122);
+            this.label_Example.Size = new System.Drawing.Size(423, 152);
             this.label_Example.TabIndex = 16;
             this.label_Example.Text = "Example\r\n\r\n\r\n\r\n";
             // 
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox.Location = new System.Drawing.Point(10, 56);
+            this.pictureBox.Location = new System.Drawing.Point(13, 70);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(116, 108);
+            this.pictureBox.Size = new System.Drawing.Size(155, 135);
             this.pictureBox.TabIndex = 15;
             this.pictureBox.TabStop = false;
             this.pictureBox.Visible = false;
@@ -98,17 +101,19 @@ namespace APP_Form
             // label_meanCN
             // 
             this.label_meanCN.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_meanCN.Location = new System.Drawing.Point(200, 66);
+            this.label_meanCN.Location = new System.Drawing.Point(267, 82);
+            this.label_meanCN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_meanCN.Name = "label_meanCN";
-            this.label_meanCN.Size = new System.Drawing.Size(316, 32);
+            this.label_meanCN.Size = new System.Drawing.Size(421, 40);
             this.label_meanCN.TabIndex = 14;
             this.label_meanCN.Text = "meanCN";
             // 
             // button_Voice
             // 
-            this.button_Voice.Location = new System.Drawing.Point(442, 29);
+            this.button_Voice.Location = new System.Drawing.Point(589, 36);
+            this.button_Voice.Margin = new System.Windows.Forms.Padding(4);
             this.button_Voice.Name = "button_Voice";
-            this.button_Voice.Size = new System.Drawing.Size(59, 24);
+            this.button_Voice.Size = new System.Drawing.Size(79, 30);
             this.button_Voice.TabIndex = 13;
             this.button_Voice.Text = "播音";
             this.button_Voice.UseVisualStyleBackColor = true;
@@ -117,9 +122,10 @@ namespace APP_Form
             // label_Word
             // 
             this.label_Word.Font = new System.Drawing.Font("Microsoft YaHei UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Word.Location = new System.Drawing.Point(106, 4);
+            this.label_Word.Location = new System.Drawing.Point(141, 5);
+            this.label_Word.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Word.Name = "label_Word";
-            this.label_Word.Size = new System.Drawing.Size(330, 49);
+            this.label_Word.Size = new System.Drawing.Size(440, 61);
             this.label_Word.TabIndex = 11;
             this.label_Word.Text = "Word";
             this.label_Word.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,18 +133,19 @@ namespace APP_Form
             // label_etyma
             // 
             this.label_etyma.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_etyma.Location = new System.Drawing.Point(199, 347);
+            this.label_etyma.Location = new System.Drawing.Point(265, 434);
+            this.label_etyma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_etyma.Name = "label_etyma";
-            this.label_etyma.Size = new System.Drawing.Size(314, 32);
+            this.label_etyma.Size = new System.Drawing.Size(419, 40);
             this.label_etyma.TabIndex = 23;
             this.label_etyma.Text = "etyma";
             // 
             // btnAddPlan
             // 
-            this.btnAddPlan.Location = new System.Drawing.Point(33, 196);
-            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddPlan.Location = new System.Drawing.Point(44, 245);
+            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(62, 24);
+            this.btnAddPlan.Size = new System.Drawing.Size(83, 30);
             this.btnAddPlan.TabIndex = 24;
             this.btnAddPlan.Text = "加入计划";
             this.btnAddPlan.UseVisualStyleBackColor = true;
@@ -159,24 +166,25 @@ namespace APP_Form
             this.ucBtnExt_Next.IsRadius = true;
             this.ucBtnExt_Next.IsShowRect = true;
             this.ucBtnExt_Next.IsShowTips = false;
-            this.ucBtnExt_Next.Location = new System.Drawing.Point(12, 286);
+            this.ucBtnExt_Next.Location = new System.Drawing.Point(16, 358);
             this.ucBtnExt_Next.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_Next.Name = "ucBtnExt_Next";
             this.ucBtnExt_Next.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucBtnExt_Next.RectWidth = 1;
-            this.ucBtnExt_Next.Size = new System.Drawing.Size(124, 40);
+            this.ucBtnExt_Next.Size = new System.Drawing.Size(165, 50);
             this.ucBtnExt_Next.TabIndex = 25;
             this.ucBtnExt_Next.TabStop = false;
             this.ucBtnExt_Next.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
             this.ucBtnExt_Next.TipsText = "";
             this.ucBtnExt_Next.Visible = false;
+            this.ucBtnExt_Next.BtnClick += new System.EventHandler(this.ucBtnExt_Next_BtnClick);
             // 
             // WordInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(520, 423);
+            this.ClientSize = new System.Drawing.Size(693, 529);
             this.Controls.Add(this.ucBtnExt_Next);
             this.Controls.Add(this.btnAddPlan);
             this.Controls.Add(this.label_etyma);
@@ -188,7 +196,7 @@ namespace APP_Form
             this.Controls.Add(this.label_meanCN);
             this.Controls.Add(this.button_Voice);
             this.Controls.Add(this.label_Word);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WordInfoForm";
             this.Text = "WordInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.VoicePlayer)).EndInit();
