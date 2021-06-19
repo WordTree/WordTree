@@ -72,7 +72,6 @@ namespace APP_Form
         private void picTrueWord_Click(object sender, EventArgs e)
         {
             //出现笑脸
-            FrmTips.ShowTipsSuccess(this, "fuck");
             if (haveFalse == true)
             {
                 True();

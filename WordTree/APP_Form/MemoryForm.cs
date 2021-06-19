@@ -30,14 +30,21 @@ namespace APP_Form
         private int count = 0;
         private int index;
         private Node currentNode;
-        
+        private PictureBox[] pictureBoxes = new PictureBox[10];
+
+        private const string stage1 = @"..\..\Resources\Images\种子.png";
+        private const string stage2 = @"..\..\Resources\Images\幼苗.png";
+        private const string stage3 = @"..\..\Resources\Images\成熟期.png";
+        private const string stage4 = @"..\..\Resources\Images\带树.png";
+
+        private string[] stages = { stage1, stage2, stage3, stage4 };
+
         public MemoryForm()
         {
             InitializeComponent();
             memoryManager.NeedNum = 20;
-
             Memory(null,null);
-            //wordCheckIn();
+            InitPictureBoxes();
         }
 
         /// <summary>
@@ -142,8 +149,11 @@ namespace APP_Form
                 var wordInfoForm = new WordInfoForm(currentNode.Data);
                 wordInfoForm.ucBtnExt_Next.BtnClick += Memory;
                 wordInfoForm.ucBtnExt_Next.Visible = true;
+                FrmTips.ShowTips(new Form(), "NICE", 1000, false, ContentAlignment.TopCenter,new Point(2000,600),TipsSizeMode.Small,null,TipsState.Success);
                 transfer.Transfer(panel_Form, wordInfoForm);
+                SetPicture(index, currentNode.StrangeDegree);
                 index++;
+
             }
 
             else
@@ -164,58 +174,32 @@ namespace APP_Form
 
         }
 
-
-
         /// <summary>
-        /// 检查拼写是否正确
+        /// 初始化数组 pictureBoxes
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //        private void button_CommitSpelling_Click(object sender, EventArgs e)
-        //        {
-        //            if (textBox_SpellingBox.Text.Equals(currentWord.word))
-        //            {
-        //                words.Remove(index);
-        //                if (words.GetElem(index) == null)
-        //                {
-        //                    index = index % words.Count;
-        //                }
-        //                MessageBox.Show("正确");
-        //                wordCheckIn();
-        //                textBox_SpellingBox.Text = "";
-        //                count += 1;
-        //            }
-        //            else
-        //            {
-        //                index = (index + 1) % words.Count;
-        //                MessageBox.Show("错误");
-        //                wordCheckIn();
-        //            }
-        //        }
+        private void InitPictureBoxes()
+        {
+            pictureBoxes[0] = pictureBox1;
+            pictureBoxes[1] = pictureBox2;
+            pictureBoxes[2] = pictureBox3;
+            pictureBoxes[3] = pictureBox4;
+            pictureBoxes[4] = pictureBox5;
+            pictureBoxes[5] = pictureBox6;
+            pictureBoxes[6] = pictureBox7;
+            pictureBoxes[7] = pictureBox8;
+            pictureBoxes[8] = pictureBox9;
+            pictureBoxes[9] = pictureBox10;
 
-        //        /// <summary>
-        //        /// 开始复习
-        //        /// </summary>
-        //        private void wordCheckIn()
-        //        {
-        //            if (!words.IsEmpty())
-        //            {
-        //                var node = words.GetElem(index);
-        //                label_meanZN.Text = node.Data.Mean_cn;
-        //                this.currentWord = node.Data;
-        //            }
-        //            else
-        //            {
-        //                label_meanZN.Text = "今天的单词已经背完了！";
-        //                button_CommitSpelling.Enabled = false;
-        //            }
-        //        }
+            foreach (var picture in pictureBoxes)
+            {
+                picture.SizeMode = PictureBoxSizeMode.StretchImage;
+                picture.Image = Image.FromFile(stage1);
+            }
+        }
 
-        //        private void button1_Click(object sender, EventArgs e)
-        //        {
-        //            axWindowsMediaPlayer1.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + currentWord.word;
-        //            axWindowsMediaPlayer1.Ctlcontrols.play();
-        //        }
-        //    }
+        private void SetPicture(int pictureIndex,int StageIndex)
+        {
+            pictureBoxes[pictureIndex].Image = Image.FromFile(stages[StageIndex]);
+        }
     }
 }

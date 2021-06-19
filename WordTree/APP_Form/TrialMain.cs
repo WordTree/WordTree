@@ -15,6 +15,10 @@ namespace APP_Form
 {
     public partial class TrialMain : FrmWithTitle
     {
+
+        public SearchForm searchForm = new SearchForm();
+        public ReaderForm readerForm = new ReaderForm();
+        public MemoryForm memoryForm = new MemoryForm();
         public TransferController transferController = TransferController.GetController();
         public TrialMain()
         {
@@ -51,16 +55,16 @@ namespace APP_Form
             switch (strName)
             {
                 case "词典":
-                    transferController.Transfer(panControl, new SearchForm());
+                    transferController.Transfer(panControl, searchForm);
                     break;
                 case "统计":
-                    transferController.Transfer(panControl, new SearchForm());
+                    transferController.Transfer(panControl, searchForm);
                     break;
                 case "阅读":
-                    transferController.Transfer(panControl, new ReaderForm());
+                    transferController.Transfer(panControl, readerForm);
                     break;
                 case "记忆":
-                    transferController.Transfer(panControl, new MemoryForm());
+                    transferController.Transfer(panControl, memoryForm);
                     break;
             }
         }
