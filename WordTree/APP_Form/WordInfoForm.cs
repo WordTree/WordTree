@@ -50,5 +50,10 @@ namespace APP_Form
 
             }
         }
+
+        private void ucBtnExt_Next_BtnClick(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

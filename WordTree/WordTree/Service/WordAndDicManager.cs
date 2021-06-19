@@ -32,30 +32,30 @@ namespace WordTree.Service
         }
 
         /// <summary>
-        /// 初始化目标词库
+        /// 初始化目标词库 （不再是初始化就把目标词库的单词全部录入数据库)
         /// </summary>
         /// <param name="dicName"></param>
         public async void init(string dicName)
         {
-            string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
-            targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
-            targetDic.Name = dicName;
+            //string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
+            //targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
+            //targetDic.Name = dicName;
 
-            //将目标词库中所有单词加入计划
-            await Task.Run(() =>
-            {
-                foreach (string wordStr in targetDic.List)
-                {
-                    try
-                    {
-                        mmryPlanManger.AddPlan(wordStr);
-                    }
-                    catch (ApplicationException e)
-                    {
-                        continue;
-                    }
-                }
-            });
+            ////将目标词库中所有单词加入计划
+            //await Task.Run(() =>
+            //{
+            //    foreach (string wordStr in targetDic.List)
+            //    {
+            //        try
+            //        {
+            //            mmryPlanManger.AddPlan(wordStr);
+            //        }
+            //        catch (ApplicationException e)
+            //        {
+            //            continue;
+            //        }
+            //    }
+            //});
         }
 
         /// <summary>
@@ -64,11 +64,11 @@ namespace WordTree.Service
         /// <param name="dicName"></param>
         public async void changeTargetDic(string dicName)
         {
-            if (dicName == targetDic.Name)
-                throw new ApplicationException("目标词库已经是该词库");
+            //if (dicName == targetDic.Name)
+            //    throw new ApplicationException("目标词库已经是该词库");
 
-            //清空计划，重新设置目标词库
-            await Task.Run(() => mmryPlanManger.ClearAll());
+            ////清空计划，重新设置目标词库
+            //await Task.Run(() => mmryPlanManger.ClearAll());
             //init(dicName);
         }
 

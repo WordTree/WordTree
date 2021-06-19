@@ -1,10 +1,12 @@
 ﻿using APP_Form.Controller;
+using HZH_Controls.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -22,27 +24,22 @@ namespace APP_Form
         Word falseWord2; 
         Word falseWord3;
 
-        bool haveFalse = false;   //记录该单词是否选错过
+        public event Action True; //选对正确答案后的事件
 
-        Image trueImage = Image.FromFile(@"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\正确.png");
-        Image falseImage = Image.FromFile(@"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误.png");
-
-        public event Action True;
-        public event Action False;
-
-
+        SoundPlayer soundPlayer = new SoundPlayer();
+ 
         public ImageCheckForm(Word trueWord,Word falseWord1,Word falseWord2,Word falseWord3)
         {
+
             InitializeComponent();
+            mediaPlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + trueWord.word;
+            mediaPlayer.Ctlcontrols.play();
             this.trueWord = trueWord;
             this.falseWord1 = falseWord1;
             this.falseWord2 = falseWord2;
             this.falseWord3 = falseWord3;
 
             lblWordStr.Text = trueWord.word;
-
-            //播音
-
 
             //将单词图片绑定在各个pictureBox上，并打乱顺序显示
             GetPicture(picTrueWord, trueWord.Picture);
@@ -59,6 +56,11 @@ namespace APP_Form
             }
         }
 
+        /// <summary>
+        /// 获取图片
+        /// </summary>
+        /// <param name="pictureBox"></param>
+        /// <param name="url"></param>
         private void GetPicture(PictureBox pictureBox, string url)
         {
             try {
@@ -72,44 +74,73 @@ namespace APP_Form
             catch(Exception la) { };
             }
 
+        /// <summary>
+        /// 选中正确单词对应的图片
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void picTrueWord_Click(object sender, EventArgs e)
         {
-            //出现笑脸
-            picTrueWord.Controls.Add(picTrueOrFalse);
-            picTrueOrFalse.Parent = picTrueWord;
-            picTrueOrFalse.Image = trueImage;
-            picTrueWord.Controls.SetChildIndex(picTrueOrFalse, 100);
+            soundPlayer.SoundLocation = @"..\..\Resources\正确提示音.wav";
+            soundPlayer.Load();
+            soundPlayer.Play();
+
+            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\正确提示音.wav";
+            //mediaPlayer.Ctlcontrols.play();
+            this.lblWordStr.ForeColor = Color.Green;
+            lblWordStr.Refresh();
             Thread.Sleep(500);
-            
 
-
-            if (haveFalse == true)
-                True();
-            else
-                True();   //显示单词详细信息界面，修改当前单词的熟悉程度
-
+            True();
+            this.Dispose();
         }
 
         private void picFalseWord1_Click(object sender, EventArgs e)
         {
+            
+            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
+            soundPlayer.Load();
+            soundPlayer.Play();
 
+            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
+            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误提示音.wav";
+            //mediaPlayer.Ctlcontrols.play();
 
-
-            haveFalse = true;
+            lblWordStr.Refresh();
+            Thread.Sleep(500);
+            lblWordStr.ForeColor = Color.Black;
+            lblWordStr.Refresh();
         }
 
         private void picFalseWord2_Click(object sender, EventArgs e)
         {
+            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
+            soundPlayer.Load();
+            soundPlayer.Play();
+            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误提示音.wav";
+            //mediaPlayer.Ctlcontrols.play();
+            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
+            lblWordStr.Refresh();
+            Thread.Sleep(500);
+            lblWordStr.ForeColor = Color.Black;
+            lblWordStr.Refresh();
 
-
-
-            haveFalse = true;
         }
 
         private void picFalseWord3_Click(object sender, EventArgs e)
         {
+            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
+            soundPlayer.Load();
+            soundPlayer.Play();
+            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误提示音.wav";
+            //mediaPlayer.Ctlcontrols.play();
+            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
+            lblWordStr.Refresh();
+            Thread.Sleep(500);
+            lblWordStr.ForeColor = Color.Black;
+            lblWordStr.Refresh();
 
-            haveFalse = true;
         }
+
     }
 }

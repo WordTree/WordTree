@@ -18,26 +18,27 @@ namespace WordTree
             //Word word = wordAndDicManager.getWord("crucial");
             //Console.WriteLine(word);
             MmryPlanManager mmryPlanManager = new MmryPlanManager();
-            //mmryPlanManager.AddPlan("access");
-
+            mmryPlanManager.ClearAll();
+            mmryPlanManager.AddPlan("access");
             mmryPlanManager.AddPlan("project");
-            //mmryPlanManager.AddPlan("intention");
-            //mmryPlanManager.AddPlan("equivalence");
-            //mmryPlanManager.AddPlan("negotiate");
-            //mmryPlanManager.AddPlan("strategy");
-            //mmryPlanManager.AddPlan("primary");
-            //mmryPlanManager.AddPlan("obstacle");
-            //mmryPlanManager.AddPlan("signal");
-            //mmryPlanManager.AddPlan("plague");
-            //mmryPlanManager.AddPlan("psychological");
-            //mmryPlanManager.AddPlan("senior");
-            //mmryPlanManager.AddPlan("individual");
-            //mmryPlanManager.AddPlan("contemporary");
-            //mmryPlanManager.AddPlan("specialize");
-            //mmryPlanManager.AddPlan("philosopher");
-            //mmryPlanManager.AddPlan("scholarship");
-            //mmryPlanManager.AddPlan("fiction");
-            //mmryPlanManager.AddPlan("depressed");
+            mmryPlanManager.AddPlan("intention");
+            mmryPlanManager.AddPlan("negotiate");
+            mmryPlanManager.AddPlan("strategy");
+            mmryPlanManager.AddPlan("primary");
+            mmryPlanManager.AddPlan("obstacle");
+            mmryPlanManager.AddPlan("signal");
+            mmryPlanManager.AddPlan("plague");
+            mmryPlanManager.AddPlan("psychological");
+            mmryPlanManager.AddPlan("senior");
+            mmryPlanManager.AddPlan("crucial");
+            mmryPlanManager.AddPlan("flaw");
+            mmryPlanManager.AddPlan("individual");
+            mmryPlanManager.AddPlan("contemporary");
+            mmryPlanManager.AddPlan("specialize");
+            mmryPlanManager.AddPlan("philosopher");
+            mmryPlanManager.AddPlan("scholarship");
+            mmryPlanManager.AddPlan("fiction");
+            mmryPlanManager.AddPlan("depressed");
         }
 
         public static int[] GetRandomSequence(int[] array, int count)

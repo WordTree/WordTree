@@ -81,7 +81,5 @@ namespace WordTree.Service
 			mmryPlanManger.UpdatePlan(target);
 		}
 
-		
-
 	}
 }
