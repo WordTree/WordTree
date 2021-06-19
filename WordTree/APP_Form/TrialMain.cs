@@ -19,6 +19,11 @@ namespace APP_Form
         public ReaderForm readerForm = new ReaderForm();
         public MemoryForm memoryForm = new MemoryForm();
         public TransferController transferController = TransferController.GetController();
+
+        TreeNode dictNode = new TreeNode("         词典");
+        TreeNode statNode = new TreeNode("         统计");
+        TreeNode readNode = new TreeNode("         阅读");
+        TreeNode mryNode = new TreeNode("         记忆");
         public TrialMain()
         {
             InitializeComponent();
@@ -29,21 +34,20 @@ namespace APP_Form
 
         private void TrialMain_Load(object sender, EventArgs e)
         {
-            TreeNode dictNode = new TreeNode("         词典");
-            TreeNode statNode = new TreeNode("         统计");
-            TreeNode readNode = new TreeNode("         阅读");
-            TreeNode mryNode = new TreeNode("         记忆");
+            
 
-            readNode.Nodes.Add("四级真题");
-            readNode.Nodes.Add("四级材料");
-            readNode.Nodes.Add("六级真题");
-            readNode.Nodes.Add("六级材料");
+            readNode.Nodes.Add("    CET4");
+            readNode.Nodes.Add("    CET6");
+            readNode.Nodes.Add("    TOEFL");
+            readNode.Nodes.Add("    IELTS");
 
 
             this.tvMenu.Nodes.Add(dictNode);
             this.tvMenu.Nodes.Add(statNode);
-            this.tvMenu.Nodes.Add(readNode);
             this.tvMenu.Nodes.Add(mryNode);
+            this.tvMenu.Nodes.Add(readNode);
+
+            
         }
 
         private void tvMenu_AfterSelect(object sender, TreeViewEventArgs e)
@@ -66,7 +70,24 @@ namespace APP_Form
                     transferController.Transfer(panControl, memoryForm);
                     memoryForm.Memory(null, null);
                     break;
+                case "CET4":
+                    transferController.Transfer(panControl, new ReaderForm("CET4"));
+                    break;
+                case "CET6":
+                    transferController.Transfer(panControl, new ReaderForm("CET6"));
+                    break;
+                case "TOEFL":
+                    transferController.Transfer(panControl, new ReaderForm("TOEFL"));
+                    break;
+                case "IELTS":
+                    transferController.Transfer(panControl, new ReaderForm("IELTS"));
+                    break;
             }
+        }
+
+        private void tvMenu_AfterExpand(object sender, TreeViewEventArgs e)
+        {
+            
         }
     }
 }

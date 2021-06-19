@@ -45,6 +45,7 @@ namespace Reader
             this.Paragraph_richTextBox.Location = new System.Drawing.Point(0, 0);
             this.Paragraph_richTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Paragraph_richTextBox.Name = "Paragraph_richTextBox";
+            this.Paragraph_richTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.Paragraph_richTextBox.Size = new System.Drawing.Size(758, 754);
             this.Paragraph_richTextBox.TabIndex = 0;
             this.Paragraph_richTextBox.Text = "";
@@ -70,9 +71,9 @@ namespace Reader
             this.read_switchbutton.Name = "read_switchbutton";
             this.read_switchbutton.Size = new System.Drawing.Size(103, 36);
             this.read_switchbutton.TabIndex = 3;
-            this.read_switchbutton.Text = "阅读";
+            this.read_switchbutton.Text = "更换";
             this.read_switchbutton.UseVisualStyleBackColor = true;
-            this.read_switchbutton.Click += new System.EventHandler(this.testbutton2_Click);
+            this.read_switchbutton.Click += new System.EventHandler(this.readbutton_Click);
             // 
             // word_axWindowsMediaPlayer
             // 
