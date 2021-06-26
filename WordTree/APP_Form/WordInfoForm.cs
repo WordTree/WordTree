@@ -21,12 +21,13 @@ namespace APP_Form
         {
             this.targetWord = targetWord;
             InitializeComponent();
-            label_Word.Text = targetWord.word;
-            label_meanCN.Text = targetWord.Mean_cn;
-            label_meanEN.Text = targetWord.Mean_en;
-            label_Example.Text = targetWord.Sentence + "\n" + targetWord.Sentence_trans;
-            label_phrase.Text = targetWord.Sentence_phrase; 
-            label_etyma.Text = targetWord.Word_etyma;
+            richTextBox1.Text = targetWord.ToString();
+            //label_Word.Text = targetWord.word;
+            //label_meanCN.Text = targetWord.Mean_cn;
+            //label_meanEN.Text = targetWord.Mean_en;
+            //label_Example.Text = targetWord.Sentence + "\n" + targetWord.Sentence_trans;
+            //label_phrase.Text = targetWord.Sentence_phrase; 
+            //label_etyma.Text = targetWord.Word_etyma;
             VoicePlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + targetWord.word;
             VoicePlayer.Ctlcontrols.play();
 
