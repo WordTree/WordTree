@@ -27,12 +27,11 @@ namespace APP_Form
         /// </summary>
         private TransferController transfer = TransferController.GetController();
 
-   
-
-        private Node[] savedWords = new Node[10];  //保存每一轮的10个单词
+        private List<Node> savedWords = new List<Node>(); //保存每一轮的10个单词
         private WordLinkedList changingWords = new WordLinkedList();  //动态变化的单词循环链表
-        private int count = 0;
-        private int index;
+        private int count = 0;   //已完成记忆的单词数量
+        private int index;    //单词在循环链表中的index
+
         private Node currentNode;
         private PictureBox[] pictureBoxes = new PictureBox[10];
 
@@ -41,12 +40,11 @@ namespace APP_Form
         private const string stage3 = @"..\..\Resources\Images\成熟期.png";
         private const string stage4 = @"..\..\Resources\Images\带树.png";
 
-        private string[] stages = { stage1, stage2, stage3, stage4 };
+        private string[] stages = { stage4, stage3, stage2, stage1 };
 
         public MemoryForm()
         {
             InitializeComponent();
-
             memoryManager.NeedNum = 20;
             InitPictureBoxes();
 
@@ -74,13 +72,12 @@ namespace APP_Form
                 }
                 else
                 {
+                    savedWords.Clear();
                     changingWords = memoryManager.GetNextWords(count);
                     Node temp = changingWords.head.Next;
-                    int i = 0;
                     while (temp != changingWords.head)
                     {
-                        savedWords[i] = temp;
-                        i++;
+                        savedWords.Add(temp);
                         temp = temp.Next;
                     }
                     currentNode = changingWords.GetElem(index);
@@ -175,35 +172,38 @@ namespace APP_Form
             spellingCheckForm.False += HaveIncorrectAnswer;
 
             transfer.Transfer(panel_Form, spellingCheckForm);
-
+            spellingCheckForm.txbAnswer.txtInput.Focus();
+            
 
         }
 
         /// <summary>
-        /// 直接回答正确后的操作：若为选图方法，熟悉度-1且显示单词详细信息，若为其他两种方法，直接下一个单词记忆
+        /// 直接回答正确后的操作
         /// </summary>
         private void CorrectAnswer()
         {
-            if(currentNode.StrangeDegree == 3)
+            int wordIndex = savedWords.IndexOf(currentNode);
+            if (currentNode.StrangeDegree == 3)     //若为选图方法，熟悉度-1且显示单词详细信息
             {
                 currentNode.StrangeDegree--;
-                SetPicture(index, currentNode.StrangeDegree);
-                HaveIncorrectAnswer();
+                SetPicture(wordIndex, currentNode.StrangeDegree);
+
+                HaveIncorrectAnswer();      //操作相同因此调用改方法
 
             }
-            else
+            else     //若为其他两种方法，熟悉度-1并直接下一个单词记忆
             {
                 currentNode.StrangeDegree--;
-                if (currentNode.StrangeDegree == 0)
+                SetPicture(wordIndex, currentNode.StrangeDegree);
+
+                if (currentNode.StrangeDegree == 0)   //熟悉度为0则移出循环队列并将记录写回数据库
                 {
                     changingWords.Remove(index);
                     count++;
                     memoryManager.CompleteMmry(currentNode.Data);
-                }
-                    
+                }  
                 else
                     index++;
-
                 Memory(null,null);
 
             }
@@ -222,7 +222,7 @@ namespace APP_Form
         }
 
         /// <summary>
-        /// 初始化数组 pictureBoxes
+        /// 初始化图片数组 pictureBoxes
         /// </summary>
         private void InitPictureBoxes()
         {

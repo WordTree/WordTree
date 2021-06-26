@@ -54,15 +54,15 @@ namespace APP_Form
                 flp_Btns.Controls.Add(picturebox);
             }
         }
-
+        
         public ExplanationCheckForm()
         {
             InitializeComponent();
         }
+
+        
         private void btnTrueWord_BtnClick(object sender, EventArgs e)
         {
-            //mediaPlayer.URL = @"..\..\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
             soundPlayer.SoundLocation = @"..\..\Resources\正确提示音.wav";
             soundPlayer.Load();
             soundPlayer.Play();
@@ -85,73 +85,44 @@ namespace APP_Form
             this.Dispose();
         }
 
-        private void btnFalseWord1_BtnClick(object sender, EventArgs e)
+        /// <summary>
+        /// 错误之后的行为
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PfmAfterFalse(UCBtnExt selectedBtn)
         {
-            //mediaPlayer.URL = @"..\..\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
             soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
             soundPlayer.Load();
             soundPlayer.Play();
 
             this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord1.FillColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord1.RectColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord1.Refresh();
+            selectedBtn.FillColor = Color.FromArgb(205, 92, 92);
+            selectedBtn.RectColor = Color.FromArgb(205, 92, 92);
+            selectedBtn.Refresh();
             lblWordStr.Refresh();
             Thread.Sleep(500);
             lblWordStr.ForeColor = Color.Black;
-            btnFalseWord1.FillColor = Color.FromArgb(224, 224, 224);
-            btnFalseWord1.RectColor = Color.FromArgb(224, 224, 224);
-            btnFalseWord1.Refresh();
+            selectedBtn.FillColor = Color.FromArgb(224, 224, 224);
+            selectedBtn.RectColor = Color.FromArgb(224, 224, 224);
+            selectedBtn.Refresh();
             lblWordStr.Refresh();
 
             haveFalse = true;
+        }
+        private void btnFalseWord1_BtnClick(object sender, EventArgs e)
+        {
+            PfmAfterFalse(btnFalseWord1);
         }
 
         private void btnFalseWord2_BtnClick(object sender, EventArgs e)
         {
-            //mediaPlayer.URL = @"..\..\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
-            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
-            soundPlayer.Load();
-            soundPlayer.Play();
-
-            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord2.FillColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord2.RectColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord2.Refresh();
-            lblWordStr.Refresh();
-            Thread.Sleep(500);
-            lblWordStr.ForeColor = Color.Black;
-            btnFalseWord2.FillColor = Color.FromArgb(224, 224, 224);
-            btnFalseWord2.RectColor = Color.FromArgb(224, 224, 224);
-            btnFalseWord2.Refresh();
-            lblWordStr.Refresh();
-
-            haveFalse = true;
+            PfmAfterFalse(btnFalseWord2);
         }
 
         private void btnFalseWord3_BtnClick(object sender, EventArgs e)
         {
-            //mediaPlayer.URL = @"..\..\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
-            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
-            soundPlayer.Load();
-            soundPlayer.Play();
-
-            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord3.FillColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord3.RectColor = Color.FromArgb(205, 92, 92);
-            btnFalseWord3.Refresh();
-            lblWordStr.Refresh();
-            Thread.Sleep(500);
-            lblWordStr.ForeColor = Color.Black;
-            btnFalseWord3.FillColor = Color.FromArgb(224, 224, 224);
-            btnFalseWord3.RectColor = Color.FromArgb(224, 224, 224);
-            btnFalseWord3.Refresh();
-            lblWordStr.Refresh();
-
-            haveFalse = true;
+            PfmAfterFalse(btnFalseWord3);
         }
     }
 }

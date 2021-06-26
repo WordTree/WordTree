@@ -22,14 +22,14 @@ namespace APP_Form
 
             //WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
             //WordTree.Model.Word word = wordAndDicManager.getWord("access");
-            //SpellingCheckForm spellingCheckForm = new SpellingCheckForm();
+            //SpellingCheckForm spellingCheckForm = new SpellingCheckForm(word);
             //spellingCheckForm.SetValue(word);
             //Application.Run(spellingCheckForm);
 
             //WordTree.Model.Word word1 = wordAndDicManager.getWord("adorn");
             //WordTree.Model.Word word2 = wordAndDicManager.getWord("signal");
             //WordTree.Model.Word word3 = wordAndDicManager.getWord("intention");
-            //Application.Run(new ExplanationCheckForm(word,word1,word2,word3));
+            //Application.Run(new ExplanationCheckForm(word, word1, word2, word3));
 
         }
     }

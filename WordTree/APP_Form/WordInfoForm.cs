@@ -22,11 +22,20 @@ namespace APP_Form
             this.targetWord = targetWord;
             InitializeComponent();
             label_Word.Text = targetWord.word;
-            label_meanCN.Text = targetWord.Mean_cn;
-            label_meanEN.Text = targetWord.Mean_en;
-            label_Example.Text = targetWord.Sentence + "\n" + targetWord.Sentence_trans;
-            label_phrase.Text = targetWord.Sentence_phrase; 
-            label_etyma.Text = targetWord.Word_etyma;
+            lblAccent.Text = targetWord.Accent;
+            rtbWordInfo.AppendText(targetWord.Mean_cn + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Mean_en + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Sentence + "\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_trans + "\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_phrase + "\n");
+            rtbWordInfo.AppendText(targetWord.Word_etyma + "\n");
+            
+            //label_Word.Text = targetWord.word;
+            //label_meanCN.Text = targetWord.Mean_cn;
+            //label_meanEN.Text = targetWord.Mean_en;
+            //label_Example.Text = targetWord.Sentence + "\n" + targetWord.Sentence_trans;
+            //label_phrase.Text = targetWord.Sentence_phrase; 
+            //label_etyma.Text = targetWord.Word_etyma;
             VoicePlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + targetWord.word;
             VoicePlayer.Ctlcontrols.play();
 
@@ -54,6 +63,21 @@ namespace APP_Form
         private void ucBtnExt_Next_BtnClick(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void label_Example_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_meanEN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Word_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

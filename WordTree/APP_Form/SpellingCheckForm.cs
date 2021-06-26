@@ -30,15 +30,8 @@ namespace APP_Form
             btnCommit.Enabled = true;
             this.trueWord = trueWord;
             labelMeanCN.Text = trueWord.Mean_cn;
-            txbAnswer.Focus();
+            txbAnswer.txtInput.Focus();
 
-        }
-
-
-        private void btnAnounce_BtnClick(object sender, EventArgs e)
-        {
-            mediaPlayer.URL ="http://dict.youdao.com/dictvoice?type=1&audio=" + trueWord.word;
-            mediaPlayer.Ctlcontrols.play();
         }
 
         private void btnCommit_Click(object sender, EventArgs e)
@@ -50,14 +43,12 @@ namespace APP_Form
                 soundPlayer.Play();
 
                 txbAnswer.RectColor = ColorTranslator.FromHtml("#1BA784");
+                txbAnswer.InputText = "              (๑•̀ㅂ•́)و✧";
                 txbAnswer.Refresh();
                 Thread.Sleep(500);
 
                 True();
                 this.Dispose();
-
-
-
             }
             else if (txbAnswer.InputText.Equals(trueWord.word) && haveFalse)
             {
@@ -66,6 +57,7 @@ namespace APP_Form
                 soundPlayer.Play();
 
                 txbAnswer.RectColor = ColorTranslator.FromHtml("#1BA784");
+                txbAnswer.InputText = "              (๑•̀ㅂ•́)و✧";
                 txbAnswer.Refresh();
                 Thread.Sleep(500);
 
@@ -78,11 +70,13 @@ namespace APP_Form
                 soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
                 soundPlayer.Load();
                 soundPlayer.Play();
-                txbAnswer.RectColor = Color.FromArgb(205, 92, 92);
 
+                txbAnswer.RectColor = Color.FromArgb(205, 92, 92);
+                txbAnswer.InputText = "           (°ー°〃)";
+                txbAnswer.Refresh();
                 Thread.Sleep(500);
                 txbAnswer.RectColor = Color.FromArgb(220, 220, 220);
-
+                txbAnswer.InputText = "";
             }
         }
 
@@ -99,6 +93,12 @@ namespace APP_Form
             txbAnswer.InputText = trueWord.word;
             txbAnswer.Refresh();
             btnCommit.Enabled = false;
+        }
+
+        private void btnAnnounce_Click(object sender, EventArgs e)
+        {
+            mediaPlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + trueWord.word;
+            mediaPlayer.Ctlcontrols.play();
         }
     }
 
