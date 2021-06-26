@@ -127,9 +127,7 @@ namespace APP_Form
             pictureBox1.Image = bmp;
         }
 
-        private void SearchForm_Load(object sender, EventArgs e)
-        {
 
-        }
+
     }
 }

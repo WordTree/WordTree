@@ -45,14 +45,14 @@ namespace APP_Form
             this.tvMenu.HideSelection = false;
             this.tvMenu.IsShowByCustomModel = true;
             this.tvMenu.IsShowTip = false;
-            this.tvMenu.ItemHeight = 115;
+            this.tvMenu.ItemHeight = 70;
             this.tvMenu.Location = new System.Drawing.Point(0, 61);
             this.tvMenu.LstTips = ((System.Collections.Generic.Dictionary<string, string>)(resources.GetObject("tvMenu.LstTips")));
             this.tvMenu.Name = "tvMenu";
             this.tvMenu.NodeBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
             this.tvMenu.NodeDownPic = ((System.Drawing.Image)(resources.GetObject("tvMenu.NodeDownPic")));
             this.tvMenu.NodeForeColor = System.Drawing.Color.White;
-            this.tvMenu.NodeHeight = 115;
+            this.tvMenu.NodeHeight = 70;
             this.tvMenu.NodeIsShowSplitLine = true;
             this.tvMenu.NodeSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(61)))), ((int)(((byte)(73)))));
             this.tvMenu.NodeSelectedForeColor = System.Drawing.Color.White;
@@ -85,6 +85,7 @@ namespace APP_Form
             this.ClientSize = new System.Drawing.Size(1019, 698);
             this.Controls.Add(this.panControl);
             this.Controls.Add(this.tvMenu);
+            this.IsShowCloseBtn = true;
             this.Name = "TrialMain";
             this.Text = "TrialMain";
             this.Load += new System.EventHandler(this.TrialMain_Load);

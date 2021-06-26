@@ -84,9 +84,6 @@ namespace APP_Form
             soundPlayer.SoundLocation = @"..\..\Resources\正确提示音.wav";
             soundPlayer.Load();
             soundPlayer.Play();
-
-            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\正确提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
             this.lblWordStr.ForeColor = Color.Green;
             lblWordStr.Refresh();
             Thread.Sleep(500);
@@ -95,52 +92,37 @@ namespace APP_Form
             this.Dispose();
         }
 
-        private void picFalseWord1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// 错误之后的行为
+        /// </summary>
+        private void PfmAfterFalse()
         {
-            
             soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
             soundPlayer.Load();
             soundPlayer.Play();
-
             this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
-            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
-
             lblWordStr.Refresh();
             Thread.Sleep(500);
             lblWordStr.ForeColor = Color.Black;
             lblWordStr.Refresh();
+        }
+
+        private void picFalseWord1_Click(object sender, EventArgs e)
+        {
+            PfmAfterFalse();
         }
 
         private void picFalseWord2_Click(object sender, EventArgs e)
         {
-            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
-            soundPlayer.Load();
-            soundPlayer.Play();
-            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
-            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
-            lblWordStr.Refresh();
-            Thread.Sleep(500);
-            lblWordStr.ForeColor = Color.Black;
-            lblWordStr.Refresh();
-
+            PfmAfterFalse();
         }
 
         private void picFalseWord3_Click(object sender, EventArgs e)
         {
-            soundPlayer.SoundLocation = @"..\..\Resources\错误提示音.wav";
-            soundPlayer.Load();
-            soundPlayer.Play();
-            //mediaPlayer.URL = @"D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\Resources\错误提示音.wav";
-            //mediaPlayer.Ctlcontrols.play();
-            this.lblWordStr.ForeColor = Color.FromArgb(205, 92, 92);
-            lblWordStr.Refresh();
-            Thread.Sleep(500);
-            lblWordStr.ForeColor = Color.Black;
-            lblWordStr.Refresh();
-
+            PfmAfterFalse();
         }
+
+
 
     }
 }

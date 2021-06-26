@@ -35,7 +35,7 @@ namespace APP_Form.Controller
             //调整可见级
             form.TopLevel = false;
             //调整Dock风格
-            form.Dock = DockStyle.Fill;
+            form.Dock = DockStyle.Top;
             //去除边框
             form.FormBorderStyle = FormBorderStyle.None;
 

@@ -15,10 +15,7 @@ namespace APP_Form
 {
     public partial class TrialMain : FrmWithTitle
     {
-<<<<<<< HEAD
 
-=======
->>>>>>> a40cdf441226c397075407ff28c85481a27f4de7
         public SearchForm searchForm = new SearchForm();
         public ReaderForm readerForm = new ReaderForm();
         public MemoryForm memoryForm = new MemoryForm();
@@ -72,8 +69,6 @@ namespace APP_Form
                     break;
                 case "记忆":
                     transferController.Transfer(panControl, memoryForm);
-<<<<<<< HEAD
-=======
                     memoryForm.Memory(null, null);
                     break;
                 case "CET4":
@@ -87,7 +82,6 @@ namespace APP_Form
                     break;
                 case "IELTS":
                     transferController.Transfer(panControl, new ReaderForm("IELTS"));
->>>>>>> a40cdf441226c397075407ff28c85481a27f4de7
                     break;
             }
         }
