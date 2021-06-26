@@ -19,7 +19,6 @@ namespace APP_Form
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TrialMain());
 
-
             //WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
             //WordTree.Model.Word word = wordAndDicManager.getWord("access");
             //SpellingCheckForm spellingCheckForm = new SpellingCheckForm(word);

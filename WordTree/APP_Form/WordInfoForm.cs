@@ -21,7 +21,15 @@ namespace APP_Form
         {
             this.targetWord = targetWord;
             InitializeComponent();
-            richTextBox1.Text = targetWord.ToString();
+            label_Word.Text = targetWord.word;
+            lblAccent.Text = targetWord.Accent;
+            rtbWordInfo.AppendText(targetWord.Mean_cn + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Mean_en + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Sentence + "\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_trans + "\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_phrase + "\n");
+            rtbWordInfo.AppendText(targetWord.Word_etyma + "\n");
+            
             //label_Word.Text = targetWord.word;
             //label_meanCN.Text = targetWord.Mean_cn;
             //label_meanEN.Text = targetWord.Mean_en;
@@ -55,6 +63,21 @@ namespace APP_Form
         private void ucBtnExt_Next_BtnClick(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void label_Example_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_meanEN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Word_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

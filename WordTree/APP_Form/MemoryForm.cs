@@ -47,6 +47,7 @@ namespace APP_Form
             InitializeComponent();
             memoryManager.NeedNum = 20;
             InitPictureBoxes();
+            transfer.Transfer(panel_Form, new FinishedForm());
 
         }
 
@@ -99,7 +100,8 @@ namespace APP_Form
             }
             catch (ApplicationException e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
+                //transfer.Transfer(panel_Form, new FinishedForm());
             }
         }
 

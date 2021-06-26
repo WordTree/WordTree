@@ -31,15 +31,13 @@ namespace APP_Form
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordInfoForm));
             this.VoicePlayer = new AxWMPLib.AxWindowsMediaPlayer();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.button_Voice = new System.Windows.Forms.Button();
             this.label_Word = new System.Windows.Forms.Label();
             this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
-            this.btnAddPlan = new System.Windows.Forms.Button();
             this.ucBtnExt_Next = new HZH_Controls.Controls.UCBtnExt();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbWordInfo = new System.Windows.Forms.RichTextBox();
+            this.lblAccent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.VoicePlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // VoicePlayer
@@ -53,46 +51,35 @@ namespace APP_Form
             this.VoicePlayer.TabIndex = 12;
             this.VoicePlayer.Visible = false;
             // 
-            // pictureBox
-            // 
-            this.pictureBox.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox.Location = new System.Drawing.Point(10, 56);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(116, 108);
-            this.pictureBox.TabIndex = 15;
-            this.pictureBox.TabStop = false;
-            this.pictureBox.Visible = false;
-            // 
             // button_Voice
             // 
-            this.button_Voice.Location = new System.Drawing.Point(442, 29);
+            this.button_Voice.BackColor = System.Drawing.Color.Transparent;
+            this.button_Voice.BackgroundImage = global::APP_Form.Properties.Resources.WPS图片_修改尺寸;
+            this.button_Voice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Voice.FlatAppearance.BorderSize = 0;
+            this.button_Voice.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_Voice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_Voice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Voice.ForeColor = System.Drawing.Color.Transparent;
+            this.button_Voice.Location = new System.Drawing.Point(690, 29);
+            this.button_Voice.Margin = new System.Windows.Forms.Padding(4);
             this.button_Voice.Name = "button_Voice";
-            this.button_Voice.Size = new System.Drawing.Size(59, 24);
+            this.button_Voice.Size = new System.Drawing.Size(55, 51);
             this.button_Voice.TabIndex = 13;
-            this.button_Voice.Text = "播音";
-            this.button_Voice.UseVisualStyleBackColor = true;
+            this.button_Voice.UseVisualStyleBackColor = false;
             this.button_Voice.Click += new System.EventHandler(this.button_Voice_Click);
             // 
             // label_Word
             // 
-            this.label_Word.Font = new System.Drawing.Font("Microsoft YaHei UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Word.Location = new System.Drawing.Point(106, 4);
+            this.label_Word.Font = new System.Drawing.Font("Microsoft YaHei UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Word.Location = new System.Drawing.Point(189, 9);
+            this.label_Word.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_Word.Name = "label_Word";
-            this.label_Word.Size = new System.Drawing.Size(330, 49);
+            this.label_Word.Size = new System.Drawing.Size(424, 60);
             this.label_Word.TabIndex = 11;
             this.label_Word.Text = "Word";
             this.label_Word.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAddPlan
-            // 
-            this.btnAddPlan.Location = new System.Drawing.Point(33, 196);
-            this.btnAddPlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnAddPlan.Name = "btnAddPlan";
-            this.btnAddPlan.Size = new System.Drawing.Size(62, 24);
-            this.btnAddPlan.TabIndex = 24;
-            this.btnAddPlan.Text = "加入计划";
-            this.btnAddPlan.UseVisualStyleBackColor = true;
-            this.btnAddPlan.Click += new System.EventHandler(this.btnAddPlan_Click);
+            this.label_Word.Click += new System.EventHandler(this.label_Word_Click);
             // 
             // ucBtnExt_Next
             // 
@@ -109,12 +96,12 @@ namespace APP_Form
             this.ucBtnExt_Next.IsRadius = true;
             this.ucBtnExt_Next.IsShowRect = true;
             this.ucBtnExt_Next.IsShowTips = false;
-            this.ucBtnExt_Next.Location = new System.Drawing.Point(12, 286);
+            this.ucBtnExt_Next.Location = new System.Drawing.Point(9, 402);
             this.ucBtnExt_Next.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_Next.Name = "ucBtnExt_Next";
             this.ucBtnExt_Next.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
             this.ucBtnExt_Next.RectWidth = 1;
-            this.ucBtnExt_Next.Size = new System.Drawing.Size(124, 40);
+            this.ucBtnExt_Next.Size = new System.Drawing.Size(101, 27);
             this.ucBtnExt_Next.TabIndex = 25;
             this.ucBtnExt_Next.TabStop = false;
             this.ucBtnExt_Next.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
@@ -122,33 +109,46 @@ namespace APP_Form
             this.ucBtnExt_Next.Visible = false;
             this.ucBtnExt_Next.BtnClick += new System.EventHandler(this.ucBtnExt_Next_BtnClick);
             // 
-            // richTextBox1
+            // rtbWordInfo
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(189, 88);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(247, 252);
-            this.richTextBox1.TabIndex = 26;
-            this.richTextBox1.Text = "";
+            this.rtbWordInfo.BackColor = System.Drawing.Color.White;
+            this.rtbWordInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbWordInfo.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtbWordInfo.Location = new System.Drawing.Point(132, 102);
+            this.rtbWordInfo.Name = "rtbWordInfo";
+            this.rtbWordInfo.ReadOnly = true;
+            this.rtbWordInfo.Size = new System.Drawing.Size(551, 346);
+            this.rtbWordInfo.TabIndex = 26;
+            this.rtbWordInfo.Text = "";
+            // 
+            // lblAccent
+            // 
+            this.lblAccent.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblAccent.Location = new System.Drawing.Point(200, 69);
+            this.lblAccent.Margin = new System.Windows.Forms.Padding(0);
+            this.lblAccent.Name = "lblAccent";
+            this.lblAccent.Size = new System.Drawing.Size(413, 23);
+            this.lblAccent.TabIndex = 27;
+            this.lblAccent.Text = "Accent";
+            this.lblAccent.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // WordInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(520, 423);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblAccent);
+            this.Controls.Add(this.rtbWordInfo);
             this.Controls.Add(this.ucBtnExt_Next);
-            this.Controls.Add(this.btnAddPlan);
             this.Controls.Add(this.VoicePlayer);
-            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.button_Voice);
             this.Controls.Add(this.label_Word);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WordInfoForm";
             this.Text = "WordInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.VoicePlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,12 +156,11 @@ namespace APP_Form
         #endregion
 
         private AxWMPLib.AxWindowsMediaPlayer VoicePlayer;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button button_Voice;
         private System.Windows.Forms.Label label_Word;
         private MySql.Data.MySqlClient.CustomInstaller customInstaller1;
-        private System.Windows.Forms.Button btnAddPlan;
         public HZH_Controls.Controls.UCBtnExt ucBtnExt_Next;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbWordInfo;
+        private System.Windows.Forms.Label lblAccent;
     }
 }
