@@ -87,6 +87,7 @@ namespace APP_Form
             this.Controls.Add(this.tvMenu);
             this.IsShowCloseBtn = true;
             this.Name = "TrialMain";
+            this.ShowInTaskbar = true;
             this.Text = "TrialMain";
             this.Load += new System.EventHandler(this.TrialMain_Load);
             this.Controls.SetChildIndex(this.tvMenu, 0);

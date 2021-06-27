@@ -37,9 +37,9 @@ namespace WordTree.Service
         /// <param name="dicName"></param>
         public async void init(string dicName)
         {
-            //string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
-            //targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
-            //targetDic.Name = dicName;
+            string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
+            targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
+            targetDic.Name = dicName;
 
             ////将目标词库中所有单词加入计划
             //await Task.Run(() =>

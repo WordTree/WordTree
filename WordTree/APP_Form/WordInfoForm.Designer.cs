@@ -85,13 +85,13 @@ namespace APP_Form
             // 
             this.ucBtnExt_Next.BackColor = System.Drawing.Color.White;
             this.ucBtnExt_Next.BtnBackColor = System.Drawing.Color.White;
-            this.ucBtnExt_Next.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ucBtnExt_Next.BtnForeColor = System.Drawing.Color.White;
+            this.ucBtnExt_Next.BtnFont = new System.Drawing.Font("Arial Rounded MT Bold", 13F);
+            this.ucBtnExt_Next.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ucBtnExt_Next.BtnText = "NEXT>>";
             this.ucBtnExt_Next.ConerRadius = 5;
             this.ucBtnExt_Next.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ucBtnExt_Next.EnabledMouseEffect = false;
-            this.ucBtnExt_Next.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
+            this.ucBtnExt_Next.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.ucBtnExt_Next.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.ucBtnExt_Next.IsRadius = true;
             this.ucBtnExt_Next.IsShowRect = true;
@@ -99,9 +99,9 @@ namespace APP_Form
             this.ucBtnExt_Next.Location = new System.Drawing.Point(9, 402);
             this.ucBtnExt_Next.Margin = new System.Windows.Forms.Padding(0);
             this.ucBtnExt_Next.Name = "ucBtnExt_Next";
-            this.ucBtnExt_Next.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(58)))));
+            this.ucBtnExt_Next.RectColor = System.Drawing.Color.MediumSeaGreen;
             this.ucBtnExt_Next.RectWidth = 1;
-            this.ucBtnExt_Next.Size = new System.Drawing.Size(101, 27);
+            this.ucBtnExt_Next.Size = new System.Drawing.Size(96, 39);
             this.ucBtnExt_Next.TabIndex = 25;
             this.ucBtnExt_Next.TabStop = false;
             this.ucBtnExt_Next.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));

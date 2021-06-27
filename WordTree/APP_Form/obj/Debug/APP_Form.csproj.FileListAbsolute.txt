@@ -77,3 +77,4 @@ C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.csproj
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.csproj.CoreCompileInputs.cache
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.exe
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.pdb
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.SelectWordsForm.resources
