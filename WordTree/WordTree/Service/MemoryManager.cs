@@ -7,15 +7,16 @@ using WordTree.Model;
 
 namespace WordTree.Service
 {
+	/// <summary>
+	/// 单例类 负责管理单词记忆
+	/// </summary>
     public class MemoryManager
     {
+		private static MemoryManager instance = new MemoryManager();
+
 		WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
+
 		private MmryPlanManager mmryPlanManger = new MmryPlanManager();
-
-		public bool ChoosePicture { get; set; }
-		public bool ChooseCNMeans { get; set; }
-		public bool ReciteMethod { get; set; }
-
 
 		/// <summary>
 		/// 用户设定的每次记忆单词量
@@ -25,7 +26,7 @@ namespace WordTree.Service
 		public PlannedWord[] NeedWord;
 
 		//去掉5分钟和30分钟这个短时记忆周期
-		static TimeSpan[] memoryCycle = {
+		private static TimeSpan[] memoryCycle = {
 			new TimeSpan(12,0,0),	// 12小时 
 			new TimeSpan(1,0,0,0),	// 1天
 			new TimeSpan(2,0,0,0),	// 2天 
@@ -34,7 +35,12 @@ namespace WordTree.Service
 			new TimeSpan(15,0,0,0)	// 15天
 		};
 		
-		public bool NeedRecite(PlannedWord target)
+		/// <summary>
+		/// 简单遗传曲线算法实现
+		/// </summary>
+		/// <param name="target"></param>
+		/// <returns></returns>
+		private bool NeedRecite(PlannedWord target)
 		{
 			if (target.Phase == -1)
 				return true;
@@ -48,12 +54,17 @@ namespace WordTree.Service
 			return timeDiff > memoryCycle[target.Phase];
 		}
 
-		public MemoryManager()
+		private MemoryManager()
         {
-			List <PlannedWord> words = new MmryPlanManager().QueryAll();
-			var targetWords = words.Where(o => NeedRecite(o));
-			NeedWord = targetWords.ToArray();
 
+        }
+
+		public static MemoryManager getInstance()
+        {
+			List<PlannedWord> words = new MmryPlanManager().QueryAllPlan();
+			var targetWords = words.Where(o => instance.NeedRecite(o));
+			instance.NeedWord = targetWords.ToArray();
+			return instance;
         }
 
 		public WordLinkedList GetNextWords(int count)

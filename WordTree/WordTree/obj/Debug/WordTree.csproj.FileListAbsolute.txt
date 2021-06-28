@@ -32,7 +32,6 @@ D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\bin\Debug\System.Buffers.x
 D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\bin\Debug\System.Memory.xml
 D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\bin\Debug\System.Numerics.Vectors.xml
 D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\obj\Debug\WordTree.csprojAssemblyReference.cache
 D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\obj\Debug\WordTree.csproj.CoreCompileInputs.cache
 D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\obj\Debug\WordTree.csproj.CopyComplete
 D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\obj\Debug\WordTree.exe
@@ -76,3 +75,4 @@ C:\Users\Lisn\Desktop\Final\WordTree\WordTree\WordTree\obj\Debug\WordTree.csproj
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\WordTree\obj\Debug\WordTree.csproj.CopyComplete
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\WordTree\obj\Debug\WordTree.exe
 C:\Users\Lisn\Desktop\Final\WordTree\WordTree\WordTree\obj\Debug\WordTree.pdb
+D:\VS2019\Project\WordTree\WordTree\WordTree\WordTree\obj\Debug\WordTree.csprojAssemblyReference.cache

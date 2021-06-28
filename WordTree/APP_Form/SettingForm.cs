@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HZH_Controls.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,24 +12,53 @@ using WordTree.Service;
 
 namespace APP_Form
 {
-    public partial class SettingForm : Form
+    public partial class SettingForm : FrmWithTitle
     {
-        WordAndDicManager wordAndDicManager;
-        MemoryManager memoryManager;
+        WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
+        MemoryManager memoryManager = MemoryManager.getInstance();
 
-        public SettingForm(WordAndDicManager wordAndDicManager,MemoryManager memoryManager) 
+        public SettingForm() 
         {
-            this.wordAndDicManager = wordAndDicManager;
-            this.memoryManager = memoryManager;
             InitializeComponent();
         }
 
-        private void btnAffirm_Click(object sender, EventArgs e)
+        private void SettingForm_Load(object sender, EventArgs e)
         {
-            wordAndDicManager.changeTargetDic(cmbTargetDic.SelectedItem.ToString());
-            memoryManager.NeedNum = (int)nudNeedNum.Value;
-            this.Close();
+            
+            KeyValuePair<string, string>[] keyValuePairs = {new KeyValuePair<string, string>("1","CET4"),
+                                                          new KeyValuePair<string, string>("2","CET6"),
+                                                          new KeyValuePair<string, string>("3","TOEFL"),
+                                                          new KeyValuePair<string, string>("4","IELTS"),
+                                                          new KeyValuePair<string, string>("5","GRE"),
+                                                          new KeyValuePair<string, string>("6","SAT")};
+            List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>(keyValuePairs);
+            cmbTargetDic.Source = list;
+        }
 
+        private void btnAffrim_BtnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                wordAndDicManager.changeTargetDic(cmbTargetDic.SelectedText);
+                memoryManager.NeedNum = (int)ntbNeedNum.Num;
+                if (FrmDialog.ShowDialog(this, "设置成功！", "提示") == DialogResult.OK) {
+                    this.Close();
+                }
+            }catch(ApplicationException ex)
+            {
+                memoryManager.NeedNum = (int)ntbNeedNum.Num;
+                if (FrmDialog.ShowDialog(this, "设置成功！", "提示") == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+
+        }
+
+        private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Visible = false;
+            e.Cancel = true;
         }
     }
 }

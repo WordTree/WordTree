@@ -116,6 +116,12 @@
     <Compile Include="ExplanationCheckForm.Designer.cs">
       <DependentUpon>ExplanationCheckForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FinishedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinishedForm.Designer.cs">
+      <DependentUpon>FinishedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="ExplanationCheckForm.resx">
       <DependentUpon>ExplanationCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishedForm.resx">
+      <DependentUpon>FinishedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageCheckForm.resx">
       <DependentUpon>ImageCheckForm.cs</DependentUpon>
@@ -268,7 +277,17 @@
     <None Include="Resources\WPS图片-修改尺寸1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\退出 %281%29.png" />
+    <None Include="Resources\设 置 %281%29.png" />
+    <None Include="Resources\退出.png" />
+    <None Include="Resources\设 置.png" />
+    <None Include="Resources\设置.png" />
+    <None Include="Resources\tree.png" />
+    <None Include="Resources\单词.png" />
+    <None Include="Resources\关闭.png" />
+    <None Include="Resources\单词 %281%29.png" />
     <Content Include="Resources\叉.png" />
+    <None Include="Resources\笑脸.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
