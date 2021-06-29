@@ -20,7 +20,6 @@ namespace APP_Form
         public SearchForm searchForm = new SearchForm();
         public ReaderForm readerForm = new ReaderForm();
         public MemoryForm memoryForm = new MemoryForm();
-        public SettingForm settingForm = new SettingForm();
         public TransferController transferController = TransferController.GetController();
 
         TreeNode dictNode = new TreeNode("         词典");
@@ -84,7 +83,7 @@ namespace APP_Form
 
         private void btnSetting_BtnClick(object sender, EventArgs e)
         {
-            settingForm.Show();
+            new SettingForm().Show();
         }
 
         private void TrialMain_Shown(object sender, EventArgs e)
@@ -94,7 +93,7 @@ namespace APP_Form
             {
                 if (ctx.DictionaryWords.Count() == 0)
                 {
-                    settingForm.Show();
+                    new SettingForm().Show();
                 }
             }
         }
@@ -106,6 +105,7 @@ namespace APP_Form
 
         private void btnExit_BtnClick(object sender, EventArgs e)
         {
+            memoryForm.GenerateInfo();
             Application.Exit();
         }
     }

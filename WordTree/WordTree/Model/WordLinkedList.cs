@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WordTree.Model
 {
+    [Serializable]
     public class Node
     {
         public Word Data { get; set; }
@@ -28,6 +29,7 @@ namespace WordTree.Model
     /// <summary>
     /// 节点数据为Word的循环链表
     /// </summary>
+    [Serializable]
     public class WordLinkedList
     {
         public Node head;

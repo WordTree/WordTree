@@ -153,7 +153,7 @@ namespace APP_Form
             // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 359);
             this.Controls.Add(this.lblNeedNum);
@@ -167,7 +167,7 @@ namespace APP_Form
             this.Name = "SettingForm";
             this.Text = "SettingForm";
             this.Title = "设置";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingForm_FormClosing);
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingForm_FormClosing);
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.Controls.SetChildIndex(this.cmbTargetDic, 0);
             this.Controls.SetChildIndex(this.ntbNeedNum, 0);

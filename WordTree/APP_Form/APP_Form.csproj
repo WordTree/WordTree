@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DifferentRandomController.cs" />
+    <Compile Include="Controller\MemoryInfo.cs" />
     <Compile Include="Controller\TransferController.cs" />
     <Compile Include="ExplanationCheckForm.cs">
       <SubType>Form</SubType>
@@ -177,6 +178,12 @@
     <Compile Include="TrialMain.Designer.cs">
       <DependentUpon>TrialMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserDefault.cs" />
+    <Compile Include="UserDefault.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserDefault.settings</DependentUpon>
+    </Compile>
     <Compile Include="WordInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +238,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UserDefault.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserDefault.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

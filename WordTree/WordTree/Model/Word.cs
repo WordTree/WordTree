@@ -9,6 +9,7 @@ namespace WordTree.Model
     /// <summary>
     /// 单词信息
     /// </summary>
+    [Serializable]
     public class Word
     {
         public string word { get; set; } //单词名
