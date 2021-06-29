@@ -18,7 +18,7 @@ namespace WordTree
             //Word word = wordAndDicManager.getWord("crucial");
             //Console.WriteLine(word);
             MmryPlanManager mmryPlanManager = new MmryPlanManager();
-            mmryPlanManager.ClearAll();
+            //mmryPlanManager.ClearAll();
             mmryPlanManager.AddPlan("access");
             mmryPlanManager.AddPlan("project");
             mmryPlanManager.AddPlan("intention");

@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DifferentRandomController.cs" />
+    <Compile Include="Controller\MemoryInfo.cs" />
     <Compile Include="Controller\TransferController.cs" />
     <Compile Include="ExplanationCheckForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +154,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectWordsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectWordsForm.Designer.cs">
+      <DependentUpon>SelectWordsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +177,12 @@
     </Compile>
     <Compile Include="TrialMain.Designer.cs">
       <DependentUpon>TrialMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefault.cs" />
+    <Compile Include="UserDefault.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UserDefault.settings</DependentUpon>
     </Compile>
     <Compile Include="WordInfoForm.cs">
       <SubType>Form</SubType>
@@ -200,6 +213,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelectWordsForm.resx">
+      <DependentUpon>SelectWordsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +238,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UserDefault.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UserDefault.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -268,7 +288,15 @@
     <None Include="Resources\WPS图片-修改尺寸1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\退出 %281%29.png" />
+    <None Include="Resources\设 置 %281%29.png" />
+    <None Include="Resources\退出.png" />
+    <None Include="Resources\设 置.png" />
+    <None Include="Resources\设置.png" />
     <None Include="Resources\tree.png" />
+    <None Include="Resources\单词.png" />
+    <None Include="Resources\关闭.png" />
+    <None Include="Resources\单词 %281%29.png" />
     <Content Include="Resources\叉.png" />
     <None Include="Resources\笑脸.png" />
   </ItemGroup>

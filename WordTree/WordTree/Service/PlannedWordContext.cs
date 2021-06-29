@@ -10,7 +10,7 @@ using WordTree.Model;
 namespace WordTree.Service
 {
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    class PlannedWordContext:DbContext
+    public class PlannedWordContext:DbContext
     {
         public PlannedWordContext():base("PlannedWordDataBase")
         {
@@ -18,6 +18,7 @@ namespace WordTree.Service
         }
 
         public DbSet<PlannedWord> PlannedWords { get; set; }
+        public DbSet<DictionaryWord> DictionaryWords { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +14,17 @@ using WordTree;
 using System.Threading;
 using APP_Form.Controller;
 using HZH_Controls.Forms;
+using System.Xml.Serialization;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace APP_Form
 {
     public partial class MemoryForm : Form
     {
-        public MemoryManager memoryManager = new MemoryManager();
-
+        public MemoryManager memoryManager = MemoryManager.getInstance();
         WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
-        
+
         /// <summary>
         /// 用于实现页面跳转
         /// </summary>
@@ -31,6 +34,8 @@ namespace APP_Form
         private WordLinkedList changingWords = new WordLinkedList();  //动态变化的单词循环链表
         private int count = 0;   //已完成记忆的单词数量
         private int index;    //单词在循环链表中的index
+
+
 
         private Node currentNode;
         private PictureBox[] pictureBoxes = new PictureBox[10];
@@ -45,10 +50,9 @@ namespace APP_Form
         public MemoryForm()
         {
             InitializeComponent();
-            memoryManager.NeedNum = 20;
+            InitSettings();
+            ParseInfo();
             InitPictureBoxes();
-            transfer.Transfer(panel_Form, new FinishedForm());
-
         }
 
         /// <summary>
@@ -64,12 +68,13 @@ namespace APP_Form
                     try
                     {
                         currentNode = changingWords.GetElem(index);
-                    }catch(ApplicationException e)
+                    }
+                    catch (ApplicationException e)
                     {
                         index = index % changingWords.Count;
                         currentNode = changingWords.GetElem(index);
                     }
-                        
+
                 }
                 else
                 {
@@ -86,7 +91,7 @@ namespace APP_Form
 
                 switch (currentNode.StrangeDegree)
                 {
-                    case 3: 
+                    case 3:
                         ImageCheck(currentNode);
                         break;
                     case 2:
@@ -101,7 +106,7 @@ namespace APP_Form
             catch (ApplicationException e)
             {
                 //MessageBox.Show(e.Message);
-                //transfer.Transfer(panel_Form, new FinishedForm());
+                transfer.Transfer(panel_Form, new FinishedForm());
             }
         }
 
@@ -124,7 +129,7 @@ namespace APP_Form
                         tempWords[index] = node;
                         index++;
                     }
-                    
+
                 }
                 Node[] randomWords = DifferentRandomController<Node>.GetDifferentRandom(tempWords, 3);  //从剩下的9个单词中获取3个随机单词
 
@@ -154,7 +159,7 @@ namespace APP_Form
                     index++;
                 }
             }
-            Node[] randomWords = DifferentRandomController<Node>.GetDifferentRandom(tempWords, 3);  
+            Node[] randomWords = DifferentRandomController<Node>.GetDifferentRandom(tempWords, 3);
 
             //跳转到ExplanationCheckForm界面
             ExplanationCheckForm explanationCheckForm = new ExplanationCheckForm(trueWord, randomWords[0].Data, randomWords[1].Data, randomWords[2].Data);
@@ -175,7 +180,7 @@ namespace APP_Form
 
             transfer.Transfer(panel_Form, spellingCheckForm);
             spellingCheckForm.txbAnswer.txtInput.Focus();
-            
+
 
         }
 
@@ -203,13 +208,13 @@ namespace APP_Form
                     changingWords.Remove(index);
                     count++;
                     memoryManager.CompleteMmry(currentNode.Data);
-                }  
+                }
                 else
                     index++;
-                Memory(null,null);
+                Memory(null, null);
 
             }
-        } 
+        }
 
         /// <summary>
         /// 回答过程中选择过错误答案的操作：显示单词详细信息，并选择下一个单词，不更改当前单词熟悉度
@@ -239,16 +244,93 @@ namespace APP_Form
             pictureBoxes[8] = pictureBox9;
             pictureBoxes[9] = pictureBox10;
 
-            foreach (var picture in pictureBoxes)
+            for(byte i = 0;i<9;i++)
             {
-                picture.SizeMode = PictureBoxSizeMode.StretchImage;
-                picture.Image = Image.FromFile(stage1);
+                pictureBoxes[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                switch (changingWords.GetElem(i).StrangeDegree)
+                {
+                    case 3:pictureBoxes[i].Image = Image.FromFile(stage1);
+                        break;
+                    case 2:pictureBoxes[i].Image = Image.FromFile(stage2);
+                        break;
+                    case 1:pictureBoxes[i].Image = Image.FromFile(stage3);
+                        break;
+                    case 0:pictureBoxes[i].Image = Image.FromFile(stage4);
+                        break;
+                    default:break;
+                }
             }
         }
-
-        private void SetPicture(int pictureIndex,int StageIndex)
+        /// <summary>
+        /// 设置pictureBox的图像
+        /// </summary>
+        /// <param name="pictureIndex"></param>
+        /// <param name="StageIndex"></param>
+        private void SetPicture(int pictureIndex, int StageIndex)
         {
             pictureBoxes[pictureIndex].Image = Image.FromFile(stages[StageIndex]);
+        }
+        /// <summary>
+        /// 读取并配置用户设置
+        /// </summary>
+        private void InitSettings()
+        {
+            memoryManager.NeedNum = UserDefault.Default.NeedNum;
+            wordAndDicManager.changeTargetDic(UserDefault.Default.TargetDic);
+        }
+        /// <summary>
+        /// 读取MemoryInfo中存储的相关控制信息
+        /// 还原现场
+        /// </summary>
+        private void SetInfo(MemoryInfo info)
+        {
+            count = info.count;
+            index = info.index;
+            savedWords = info.savedWords;
+            changingWords = info.changingWords;
+        }
+        /// <summary>
+        /// 在窗体关闭时触发
+        /// 保存当前的控制信息
+        /// </summary>
+        public void GenerateInfo()
+        {
+            //创建序列化器
+            IFormatter formatter = new BinaryFormatter();
+            try
+            {
+                using (var stream = new FileStream(@"MemoryInfo.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                {
+                    formatter.Serialize(stream, new MemoryInfo(count, index, savedWords, changingWords));
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        /// <summary>
+        /// 获取Info信息
+        /// 并解析
+        /// </summary>
+        private void ParseInfo()
+        {
+            //创建序列化器
+            IFormatter formatter = new BinaryFormatter();
+            try
+            {
+                using(var stream = new FileStream(@"MemoryInfo.txt", FileMode.Open, FileAccess.Read))
+                {
+                    var info = formatter.Deserialize(stream) as MemoryInfo;
+                    if (info.IsAvailable())
+                    {
+                        SetInfo(info);
+                    }
+                }
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

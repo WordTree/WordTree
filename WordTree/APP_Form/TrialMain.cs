@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using APP_Form.Controller;
 using HZH_Controls.Forms;
 using Reader;
+using WordTree.Service;
 
 namespace APP_Form
 {
@@ -19,6 +20,7 @@ namespace APP_Form
         public SearchForm searchForm = new SearchForm();
         public ReaderForm readerForm = new ReaderForm();
         public MemoryForm memoryForm = new MemoryForm();
+        public SettingForm settingForm = new SettingForm();
         public TransferController transferController = TransferController.GetController();
 
         TreeNode dictNode = new TreeNode("         词典");
@@ -28,27 +30,21 @@ namespace APP_Form
         public TrialMain()
         {
             InitializeComponent();
-            Console.WriteLine(this.panControl.Size.Width);
-            Console.WriteLine(this.panControl.Size.Height);
         }
 
 
         private void TrialMain_Load(object sender, EventArgs e)
         {
-            
 
             readNode.Nodes.Add("    CET4");
             readNode.Nodes.Add("    CET6");
             readNode.Nodes.Add("    TOEFL");
             readNode.Nodes.Add("    IELTS");
 
-
             this.tvMenu.Nodes.Add(dictNode);
             this.tvMenu.Nodes.Add(statNode);
             this.tvMenu.Nodes.Add(mryNode);
             this.tvMenu.Nodes.Add(readNode);
-
-            
         }
 
         private void tvMenu_AfterSelect(object sender, TreeViewEventArgs e)
@@ -86,9 +82,32 @@ namespace APP_Form
             }
         }
 
-        private void tvMenu_AfterExpand(object sender, TreeViewEventArgs e)
+        private void btnSetting_BtnClick(object sender, EventArgs e)
         {
-            
+            settingForm.Show();
+        }
+
+        private void TrialMain_Shown(object sender, EventArgs e)
+        {
+            //初始时，弹出设置窗口
+            using (PlannedWordContext ctx = new PlannedWordContext())
+            {
+                if (ctx.DictionaryWords.Count() == 0)
+                {
+                    settingForm.Show();
+                }
+            }
+        }
+
+        private void btnSelect_BtnClick(object sender, EventArgs e)
+        {
+            new SelectWordsForm().ShowDialog();
+        }
+
+        private void btnExit_BtnClick(object sender, EventArgs e)
+        {
+            memoryForm.GenerateInfo();
+            Application.Exit();
         }
     }
 }

@@ -59,7 +59,7 @@ namespace APP_Form
             // 
             this.label_Search.AutoSize = true;
             this.label_Search.Font = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Search.Location = new System.Drawing.Point(170, 26);
+            this.label_Search.Location = new System.Drawing.Point(167, 30);
             this.label_Search.Name = "label_Search";
             this.label_Search.Size = new System.Drawing.Size(68, 31);
             this.label_Search.TabIndex = 1;
@@ -102,12 +102,13 @@ namespace APP_Form
             // label_note
             // 
             this.label_note.BackColor = System.Drawing.Color.Transparent;
-            this.label_note.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_note.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_note.Location = new System.Drawing.Point(4, 85);
             this.label_note.Name = "label_note";
             this.label_note.Size = new System.Drawing.Size(808, 85);
             this.label_note.TabIndex = 2;
             this.label_note.Text = "label2";
+            this.label_note.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_content
             // 
@@ -118,6 +119,7 @@ namespace APP_Form
             this.label_content.Size = new System.Drawing.Size(804, 64);
             this.label_content.TabIndex = 1;
             this.label_content.Text = "label1";
+            this.label_content.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 

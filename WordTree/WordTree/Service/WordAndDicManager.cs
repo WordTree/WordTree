@@ -37,39 +37,29 @@ namespace WordTree.Service
         /// <param name="dicName"></param>
         public async void init(string dicName)
         {
-            //string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
-            //targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
-            //targetDic.Name = dicName;
-
-            ////将目标词库中所有单词加入计划
-            //await Task.Run(() =>
-            //{
-            //    foreach (string wordStr in targetDic.List)
-            //    {
-            //        try
-            //        {
-            //            mmryPlanManger.AddPlan(wordStr);
-            //        }
-            //        catch (ApplicationException e)
-            //        {
-            //            continue;
-            //        }
-            //    }
-            //});
+            targetDic = getVocabularyDic(dicName);
+            //将目标词库中所有单词加入计划
+            await Task.Run(() =>
+            {
+                foreach (string wordStr in targetDic.List)
+                {
+                    mmryPlanManger.AddDicWord(wordStr);
+                }
+            });
         }
 
         /// <summary>
         /// 更换目标词库
         /// </summary>
         /// <param name="dicName"></param>
-        public async void changeTargetDic(string dicName)
+        public void changeTargetDic(string dicName)
         {
-            //if (dicName == targetDic.Name)
-            //    throw new ApplicationException("目标词库已经是该词库");
+            if (dicName == targetDic.Name)
+                throw new ApplicationException("目标词库已经是该词库");
 
-            ////清空计划，重新设置目标词库
-            //await Task.Run(() => mmryPlanManger.ClearAll());
-            //init(dicName);
+            //清空词库记录，重新设置目标词库
+            mmryPlanManger.ClearDic();
+            init(dicName);
         }
 
         /// <summary>
@@ -88,10 +78,16 @@ namespace WordTree.Service
             return target;
         }
 
+        /// <summary>
+        /// 根据词库名获取词库对象
+        /// </summary>
+        /// <param name="dicName"></param>
+        /// <returns></returns>
         public VocabularyDic getVocabularyDic(string dicName)
         {
             string dicInfo = File.ReadAllText("..\\..\\..\\WordTree\\Words\\VocabularyDic\\" + dicName + ".json");
             targetDic = JsonConvert.DeserializeObject<VocabularyDic>(dicInfo);
+            targetDic.Name = dicName;
             return targetDic;
         }
     }

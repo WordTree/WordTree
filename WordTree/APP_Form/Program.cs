@@ -18,6 +18,7 @@ namespace APP_Form
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TrialMain());
+            //Application.Run(new SelectWordsForm());
 
             //WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
             //WordTree.Model.Word word = wordAndDicManager.getWord("access");

@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DictionaryWord.cs" />
     <Compile Include="Model\PlannedWord.cs" />
     <Compile Include="Model\VocabularyDic.cs" />
     <Compile Include="Model\WordLinkedList.cs" />

@@ -27,6 +27,12 @@ namespace WordTree.Service
                 }
                 ctx.PlannedWords.Add(plannedWord);
                 ctx.SaveChanges();
+                var target = ctx.DictionaryWords.SingleOrDefault(w => w.WordStr == wordStr);
+                if (target != null)
+                {
+                    target.IsAdd = true;
+                    ctx.SaveChanges();
+                }
 
                 //Console.WriteLine("Successfully add!");
             }
@@ -35,7 +41,7 @@ namespace WordTree.Service
         /// <summary>
         /// 清空计划
         /// </summary>
-        public void ClearAll()
+        public void ClearAllPlan()
         {
             using (var ctx = new PlannedWordContext())
             {
@@ -88,7 +94,7 @@ namespace WordTree.Service
         /// 按上次记忆时间查询所有记录
         /// </summary>
         /// <returns></returns>
-        public List<PlannedWord> QueryAll()
+        public List<PlannedWord> QueryAllPlan()
         {
             using(var ctx = new PlannedWordContext())
             {
@@ -112,8 +118,46 @@ namespace WordTree.Service
                 return targetWord;
             }
         }
-        
 
+        /// <summary>
+        /// 将目标词库单词加入数据库
+        /// </summary>
+        /// <param name="wordStr"></param>
+        public void AddDicWord(string wordStr)
+        {
+            DictionaryWord dictionaryWord = new DictionaryWord(wordStr, false,DateTime.Now);
+            using (var ctx = new PlannedWordContext())
+            {
+                if(ctx.PlannedWords.Where(w=>w.Wordstr == wordStr).Any())
+                {
+                    dictionaryWord.IsAdd = true;
+                }
+                ctx.DictionaryWords.Add(dictionaryWord);
+                ctx.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 分页查询50个未加入记忆计划的单词
+        /// </summary>
+        public DictionaryWord[] QueryDicWordLimit50(int count)
+        {
+            using(var ctx = new PlannedWordContext())
+            {
+                var words = ctx.DictionaryWords.Where(w => w.IsAdd == false).OrderBy(w=>w.Time).Skip(count).Take(50);
+                return words.ToArray();
+            }
+        }
+
+        public void ClearDic()
+        {
+            using (var ctx = new PlannedWordContext())
+            {
+                var list = ctx.DictionaryWords.ToList();
+                ctx.DictionaryWords.RemoveRange(list);
+                ctx.SaveChanges();
+            }
+        }
 
     }
 }
