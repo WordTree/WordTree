@@ -61,6 +61,7 @@ namespace APP_Form
             // 
             this.picTrueWord.BackColor = System.Drawing.Color.Gray;
             this.picTrueWord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picTrueWord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTrueWord.Location = new System.Drawing.Point(4, 4);
             this.picTrueWord.Margin = new System.Windows.Forms.Padding(4);
             this.picTrueWord.Name = "picTrueWord";
@@ -88,6 +89,7 @@ namespace APP_Form
             // 
             this.picFalseWord1.BackColor = System.Drawing.Color.Gray;
             this.picFalseWord1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picFalseWord1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFalseWord1.Location = new System.Drawing.Point(412, 4);
             this.picFalseWord1.Margin = new System.Windows.Forms.Padding(4);
             this.picFalseWord1.Name = "picFalseWord1";
@@ -101,6 +103,7 @@ namespace APP_Form
             // 
             this.picFalseWord2.BackColor = System.Drawing.Color.Gray;
             this.picFalseWord2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picFalseWord2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFalseWord2.Location = new System.Drawing.Point(4, 186);
             this.picFalseWord2.Margin = new System.Windows.Forms.Padding(4);
             this.picFalseWord2.Name = "picFalseWord2";
@@ -114,6 +117,7 @@ namespace APP_Form
             // 
             this.picFalseWord3.BackColor = System.Drawing.Color.Gray;
             this.picFalseWord3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picFalseWord3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picFalseWord3.Location = new System.Drawing.Point(412, 186);
             this.picFalseWord3.Margin = new System.Windows.Forms.Padding(4);
             this.picFalseWord3.Name = "picFalseWord3";

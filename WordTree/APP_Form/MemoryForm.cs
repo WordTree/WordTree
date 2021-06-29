@@ -45,9 +45,16 @@ namespace APP_Form
         public MemoryForm()
         {
             InitializeComponent();
-            memoryManager.NeedNum = 20;
-            InitPictureBoxes();
-            transfer.Transfer(panel_Form, new FinishedForm());
+            pictureBoxes[0] = pictureBox1;
+            pictureBoxes[1] = pictureBox2;
+            pictureBoxes[2] = pictureBox3;
+            pictureBoxes[3] = pictureBox4;
+            pictureBoxes[4] = pictureBox5;
+            pictureBoxes[5] = pictureBox6;
+            pictureBoxes[6] = pictureBox7;
+            pictureBoxes[7] = pictureBox8;
+            pictureBoxes[8] = pictureBox9;
+            pictureBoxes[9] = pictureBox10;
 
         }
 
@@ -81,9 +88,10 @@ namespace APP_Form
                         savedWords.Add(temp);
                         temp = temp.Next;
                     }
+                    InitPictureBoxes();
                     currentNode = changingWords.GetElem(index);
                 }
-
+                //根据当前单词的熟悉度进入对应的记忆方法
                 switch (currentNode.StrangeDegree)
                 {
                     case 3: 
@@ -98,7 +106,7 @@ namespace APP_Form
                 }
 
             }
-            catch (ApplicationException e)
+            catch (ApplicationException e)  //跳转到完成任务界面
             {
                 //MessageBox.Show(e.Message);
                 transfer.Transfer(panel_Form, new FinishedForm());
@@ -228,16 +236,6 @@ namespace APP_Form
         /// </summary>
         private void InitPictureBoxes()
         {
-            pictureBoxes[0] = pictureBox1;
-            pictureBoxes[1] = pictureBox2;
-            pictureBoxes[2] = pictureBox3;
-            pictureBoxes[3] = pictureBox4;
-            pictureBoxes[4] = pictureBox5;
-            pictureBoxes[5] = pictureBox6;
-            pictureBoxes[6] = pictureBox7;
-            pictureBoxes[7] = pictureBox8;
-            pictureBoxes[8] = pictureBox9;
-            pictureBoxes[9] = pictureBox10;
 
             foreach (var picture in pictureBoxes)
             {
@@ -250,5 +248,7 @@ namespace APP_Form
         {
             pictureBoxes[pictureIndex].Image = Image.FromFile(stages[StageIndex]);
         }
+
+
     }
 }
