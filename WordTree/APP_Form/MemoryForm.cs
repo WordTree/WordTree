@@ -333,7 +333,10 @@ namespace APP_Form
                 using(var stream = new FileStream(@"MemoryInfo.txt", FileMode.Open, FileAccess.Read))
                 {
                     var info = formatter.Deserialize(stream) as MemoryInfo;
-                    SetInfo(info);   
+                    if (info.IsAvailable())
+                    {
+                        SetInfo(info);
+                    }
                 }
             }catch(Exception e)
             {
