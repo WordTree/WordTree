@@ -1,10 +1,12 @@
 ﻿using HZH_Controls.Controls;
 using HZH_Controls.Forms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +16,12 @@ using WordTree.Service;
 
 namespace APP_Form
 {
+    public delegate void SetRecord();
     public partial class SelectWordsForm : Form
     {
         MmryPlanManager mmryPlanManager = new MmryPlanManager();
         int count = 0;
+        public SetRecord set;
 
         public SelectWordsForm()
         {
@@ -69,6 +73,7 @@ namespace APP_Form
 
         private void btnAffirm_BtnClick(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if (ucTsfWords.RightDataSource.Count() != 0)
             {
                 foreach (WordModel word in ucTsfWords.RightDataSource)
@@ -80,6 +85,21 @@ namespace APP_Form
                 list.Clear();
                 ucTsfWords.RightDataSource = list.ToArray();
             }
+=======
+            List<string> traceRecord = new List<string>();
+            foreach(WordModel word in ucTsfWords.RightDataSource)
+            {
+                mmryPlanManager.AddPlan(word.Value);
+
+                traceRecord.Add(word.Value);
+            }
+            FrmDialog.ShowDialog(this, "添加成功！", "提示");
+            getRecommendedWords();
+
+            string path = "..\\..\\..\\StatTracer\\Record\\temp\\tinfo.json";
+            File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
+            set();
+>>>>>>> d65b72ce67b0ff016e76b806a204db77b83531f4
         }
 
         private void btnCancel_BtnClick(object sender, EventArgs e)

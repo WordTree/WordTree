@@ -63,10 +63,6 @@ namespace APP_Form
             UserDefault.Default.Save();
         }
 
-        //private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    this.Visible = false;
-        //    e.Cancel = true;
-        //}
+
     }
 }

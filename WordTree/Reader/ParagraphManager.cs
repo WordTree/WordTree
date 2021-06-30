@@ -51,14 +51,14 @@ namespace Reader
         /// </summary>
         public void ContentImpact(List<string> targets, RichTextBox textbox)
         {
+            char[] textsearch = textbox.Text.ToCharArray();
             foreach (string target in targets) {
                 List<int> list = GetIndexArray(textbox, target);
                 for (int i = 0; i < list.Count; i++)
                 {
-                    int index = (int)list[i];
+                    int index = list[i];
                     textbox.Select(index, target.Length);
                     textbox.SelectionColor = Color.Red;
-           
                 } 
             }
         }
@@ -99,7 +99,7 @@ namespace Reader
            
             for(int i=0; i<selectedline.Length; i++) 
             {
-                if(selectedline[i] == ' '|| (int)selectedline[i] > 122 || (int)selectedline[i] < 65)//根据空格和标点选出单词
+                if(selectedline[i] == ' '|| selectedline[i] > 122 || selectedline[i] < 65)//根据空格和标点选出单词
                 {
                     selectedstring = selectedline.Substring(0, i);
                     richTextBox.Select(start, i);
