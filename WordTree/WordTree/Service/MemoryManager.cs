@@ -36,7 +36,7 @@ namespace WordTree.Service
 		};
 		
 		/// <summary>
-		/// 简单遗传曲线算法实现，获取需要记忆的单词
+		/// 简单遗传曲线算法实现
 		/// </summary>
 		/// <param name="target"></param>
 		/// <returns></returns>
@@ -67,14 +67,9 @@ namespace WordTree.Service
 			return instance;
         }
 
-		/// <summary>
-		/// 从需要记忆的单词中选出10个单词组成循环链表
-		/// </summary>
-		/// <param name="count"></param>
-		/// <returns></returns>
 		public WordLinkedList GetNextWords(int count)
 		{
-			if (count >= NeedNum || count + 10 >= NeedWord.Length)
+			if (count >= NeedNum)
 			{
 				throw new ApplicationException("已达成目标");
 			}
@@ -89,10 +84,6 @@ namespace WordTree.Service
 
 		}
 
-		/// <summary>
-		/// 单词完成记忆后的操作
-		/// </summary>
-		/// <param name="word"></param>
 		public void CompleteMmry(Word word)
 		{
 			var target = NeedWord.SingleOrDefault(w => w.Wordstr == word.word);

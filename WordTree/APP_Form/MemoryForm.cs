@@ -51,17 +51,6 @@ namespace APP_Form
         public MemoryForm()
         {
             InitializeComponent();
-
-            pictureBoxes[0] = pictureBox1;
-            pictureBoxes[1] = pictureBox2;
-            pictureBoxes[2] = pictureBox3;
-            pictureBoxes[3] = pictureBox4;
-            pictureBoxes[4] = pictureBox5;
-            pictureBoxes[5] = pictureBox6;
-            pictureBoxes[6] = pictureBox7;
-            pictureBoxes[7] = pictureBox8;
-            pictureBoxes[8] = pictureBox9;
-            pictureBoxes[9] = pictureBox10;
             InitSettings();
             ParseInfo();
             InitPictureBoxes();
@@ -90,18 +79,17 @@ namespace APP_Form
                 }
                 else
                 {
+                    savedWords.Clear();
                     changingWords = memoryManager.GetNextWords(count);
                     Node temp = changingWords.head.Next;
-                    savedWords.Clear();
                     while (temp != changingWords.head)
                     {
                         savedWords.Add(temp);
                         temp = temp.Next;
                     }
-                    InitPictureBoxes();
                     currentNode = changingWords.GetElem(index);
                 }
-                //根据当前单词的熟悉度进入对应的记忆方法
+
                 switch (currentNode.StrangeDegree)
                 {
                     case 3:
@@ -116,7 +104,7 @@ namespace APP_Form
                 }
 
             }
-            catch (ApplicationException e)  //跳转到完成任务界面
+            catch (ApplicationException e)
             {
                 //MessageBox.Show(e.Message);
                 transfer.Transfer(panel_Form, new FinishedForm());
@@ -246,28 +234,31 @@ namespace APP_Form
         /// </summary>
         private void InitPictureBoxes()
         {
+            pictureBoxes[0] = pictureBox1;
+            pictureBoxes[1] = pictureBox2;
+            pictureBoxes[2] = pictureBox3;
+            pictureBoxes[3] = pictureBox4;
+            pictureBoxes[4] = pictureBox5;
+            pictureBoxes[5] = pictureBox6;
+            pictureBoxes[6] = pictureBox7;
+            pictureBoxes[7] = pictureBox8;
+            pictureBoxes[8] = pictureBox9;
+            pictureBoxes[9] = pictureBox10;
 
-            for(byte i = 0;i <= 9;i++)
+            for(byte i = 0;i<9;i++)
             {
                 pictureBoxes[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                if (savedWords.Count != 0)
+                switch (changingWords.GetElem(i).StrangeDegree)
                 {
-                    switch (savedWords[i].StrangeDegree)
-                    {
-                        case 3:
-                            pictureBoxes[i].Image = Image.FromFile(stage1);
-                            break;
-                        case 2:
-                            pictureBoxes[i].Image = Image.FromFile(stage2);
-                            break;
-                        case 1:
-                            pictureBoxes[i].Image = Image.FromFile(stage3);
-                            break;
-                        case 0:
-                            pictureBoxes[i].Image = Image.FromFile(stage4);
-                            break;
-                        default: break;
-                    }
+                    case 3:pictureBoxes[i].Image = Image.FromFile(stage1);
+                        break;
+                    case 2:pictureBoxes[i].Image = Image.FromFile(stage2);
+                        break;
+                    case 1:pictureBoxes[i].Image = Image.FromFile(stage3);
+                        break;
+                    case 0:pictureBoxes[i].Image = Image.FromFile(stage4);
+                        break;
+                    default:break;
                 }
             }
         }
@@ -280,16 +271,14 @@ namespace APP_Form
         {
             pictureBoxes[pictureIndex].Image = Image.FromFile(stages[StageIndex]);
         }
-
         /// <summary>
         /// 读取并配置用户设置
         /// </summary>
         private void InitSettings()
         {
             memoryManager.NeedNum = UserDefault.Default.NeedNum;
-            
+            wordAndDicManager.changeTargetDic(UserDefault.Default.TargetDic);
         }
-
         /// <summary>
         /// 读取MemoryInfo中存储的相关控制信息
         /// 还原现场
@@ -365,6 +354,5 @@ namespace APP_Form
                 Console.WriteLine(e.Message);
             }
         }
-
     }
 }

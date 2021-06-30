@@ -17,8 +17,7 @@ namespace APP_Form.Controller
         public int count = 0;
         public int index = 0;
         public  List<Node> savedWords = new List<Node>(); 
-        public  WordLinkedList changingWords = new WordLinkedList();
-        public DateTime UpdateTime { set; get; }
+        public  WordLinkedList changingWords = new WordLinkedList();  
 
         public MemoryInfo()
         {
@@ -30,19 +29,11 @@ namespace APP_Form.Controller
             this.index = index;
             this.savedWords = savedWords;
             this.changingWords = changingWords;
-            UpdateTime = System.DateTime.Now;
         }
         
         public bool IsAvailable()
         {
-            if(System.DateTime.Now.Day == UpdateTime.Day)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return savedWords.Count != 0 && !changingWords.IsEmpty();
         }
     }
 }

@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="NeedNum" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">20</Value>
     </Setting>
     <Setting Name="TargetDic" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">CET4</Value>
     </Setting>
   </Settings>
 </SettingsFile>

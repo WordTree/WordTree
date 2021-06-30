@@ -25,7 +25,7 @@ namespace APP_Form
             rtbWordInfo.AppendText(targetWord.Mean_cn + "\n\n");
             rtbWordInfo.AppendText(targetWord.Mean_en + "\n\n");
             rtbWordInfo.AppendText(targetWord.Sentence + "\n");
-            rtbWordInfo.AppendText(targetWord.Sentence_trans + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_trans + "\n");
             rtbWordInfo.AppendText(targetWord.Sentence_phrase + "\n");
             rtbWordInfo.AppendText(targetWord.Word_etyma + "\n");
             
