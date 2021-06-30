@@ -12,8 +12,10 @@ using WordTree.Service;
 
 namespace APP_Form
 {
+    public delegate void SetType(string selectedtype);
     public partial class SettingForm : FrmWithTitle
     {
+        public SetType setType;
         WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
         MemoryManager memoryManager = MemoryManager.getInstance();
 
@@ -46,6 +48,7 @@ namespace APP_Form
                 //memoryManager.NeedNum = (int)ntbNeedNum.Num;
                 UserDefault.Default.NeedNum = (int)ntbNeedNum.Num;
                 if (FrmDialog.ShowDialog(this, "设置成功！", "提示") == DialogResult.OK) {
+                    setType(cmbTargetDic.SelectedText);
                     this.Close();
                 }
             }catch(ApplicationException ex)
@@ -63,6 +66,11 @@ namespace APP_Form
         {
             this.Visible = false;
             e.Cancel = true;
+        }
+
+        private void cmbTargetDic_SelectedChangedEvent(object sender, EventArgs e)
+        {
+
         }
     }
 }

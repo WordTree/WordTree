@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP_Form", "APP_Form\APP_Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reader", "Reader\Reader.csproj", "{ED444C09-DF5D-421E-927A-B63032C09AF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatTracer", "StatTracer\StatTracer.csproj", "{D4B95C8F-4B41-4483-B3A9-0C23F8E3BE2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{ED444C09-DF5D-421E-927A-B63032C09AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED444C09-DF5D-421E-927A-B63032C09AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED444C09-DF5D-421E-927A-B63032C09AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B95C8F-4B41-4483-B3A9-0C23F8E3BE2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B95C8F-4B41-4483-B3A9-0C23F8E3BE2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B95C8F-4B41-4483-B3A9-0C23F8E3BE2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B95C8F-4B41-4483-B3A9-0C23F8E3BE2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

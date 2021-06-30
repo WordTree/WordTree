@@ -61,6 +61,7 @@ namespace APP_Form
             this.cmbTargetDic.TabIndex = 8;
             this.cmbTargetDic.TextValue = "";
             this.cmbTargetDic.TriangleColor = System.Drawing.Color.RoyalBlue;
+            this.cmbTargetDic.SelectedChangedEvent += new System.EventHandler(this.cmbTargetDic_SelectedChangedEvent);
             // 
             // ntbNeedNum
             // 
@@ -153,7 +154,7 @@ namespace APP_Form
             // 
             // SettingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 359);
             this.Controls.Add(this.lblNeedNum);

@@ -1,10 +1,12 @@
 ﻿using HZH_Controls.Controls;
 using HZH_Controls.Forms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +16,12 @@ using WordTree.Service;
 
 namespace APP_Form
 {
+    public delegate void SetRecord();
     public partial class SelectWordsForm : Form
     {
         MmryPlanManager mmryPlanManager = new MmryPlanManager();
         int count = 0;
+        public SetRecord set;
 
         public SelectWordsForm()
         {
@@ -69,12 +73,19 @@ namespace APP_Form
 
         private void btnAffirm_BtnClick(object sender, EventArgs e)
         {
+            List<string> traceRecord = new List<string>();
             foreach(WordModel word in ucTsfWords.RightDataSource)
             {
                 mmryPlanManager.AddPlan(word.Value);
+
+                traceRecord.Add(word.Value);
             }
             FrmDialog.ShowDialog(this, "添加成功！", "提示");
-            getRecommendedWords();            
+            getRecommendedWords();
+
+            string path = "..\\..\\..\\StatTracer\\Record\\temp\\tinfo.json";
+            File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
+            set();
         }
 
         private void btnCancel_BtnClick(object sender, EventArgs e)

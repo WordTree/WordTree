@@ -17,6 +17,7 @@ using HZH_Controls.Forms;
 using System.Xml.Serialization;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Newtonsoft.Json;
 
 namespace APP_Form
 {
@@ -293,8 +294,29 @@ namespace APP_Form
         /// 在窗体关闭时触发
         /// 保存当前的控制信息
         /// </summary>
-        public void GenerateInfo()
+        public void GenerateInfo(char key)
         {
+            
+            //存至Trace的Record文件夹
+            string path = null;
+            switch(key)
+            {
+                case 'a':   //a for current
+                    path = "..\\..\\..\\StatTracer\\Record\\current\\cinfo.json";
+                    break;
+                case 'b':   //b for history
+                    path = "..\\..\\..\\StatTracer\\Record\\history\\hinfo.json";
+                    break;
+                default:
+                    path = "..\\..\\..\\StatTracer\\Record\\temp\\tinfo.json";
+                    break;
+            }
+            List<string> traceRecord = new List<string>();
+            foreach(Node node in savedWords)
+            {
+                traceRecord.Add(node.Data.word);
+            }
+            File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
             //创建序列化器
             IFormatter formatter = new BinaryFormatter();
             try
