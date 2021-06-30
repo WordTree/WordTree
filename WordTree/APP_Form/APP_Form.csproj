@@ -288,6 +288,9 @@
     <None Include="Resources\WPS图片-修改尺寸1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\已加入计划.png" />
+    <None Include="Resources\喇叭.png" />
+    <None Include="Resources\未加入计划.png" />
     <None Include="Resources\退出 %281%29.png" />
     <None Include="Resources\设 置 %281%29.png" />
     <None Include="Resources\退出.png" />

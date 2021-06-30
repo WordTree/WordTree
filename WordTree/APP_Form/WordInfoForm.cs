@@ -15,22 +15,17 @@ namespace APP_Form
     public partial class WordInfoForm : Form
     {
         private Word targetWord;
+        private MmryPlanManager mmryplanmanager = new MmryPlanManager();
+        private bool isPlannedWord;
 
         public WordInfoForm(Word targetWord)
         {
             this.targetWord = targetWord;
             InitializeComponent();
-            label_Word.Text = targetWord.word;
-            lblAccent.Text = targetWord.Accent;
-            rtbWordInfo.AppendText(targetWord.Mean_cn + "\n\n");
-            rtbWordInfo.AppendText(targetWord.Mean_en + "\n\n");
-            rtbWordInfo.AppendText(targetWord.Sentence + "\n");
-            rtbWordInfo.AppendText(targetWord.Sentence_trans + "\n\n");
-            rtbWordInfo.AppendText(targetWord.Sentence_phrase + "\n");
-            rtbWordInfo.AppendText(targetWord.Word_etyma + "\n");
-            
-            VoicePlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + targetWord.word;
-            VoicePlayer.Ctlcontrols.play();
+            InitWordInfo();
+            this.AcceptButton = button_enter;
+            this.button_enter.Enabled = false;
+            InitPic();
 
         }
 
@@ -44,5 +39,62 @@ namespace APP_Form
             this.Dispose();
         }
 
+        private void Btn_Add_BtnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                mmryplanmanager.AddPlan(targetWord.word);
+            }catch(Exception ex)
+            {
+
+            }
+        }
+        /// <summary>
+        /// 用于设置单词的相关信息
+        /// </summary>
+        private void InitWordInfo()
+        {
+            label_Word.Text = targetWord.word;
+            lblAccent.Text = targetWord.Accent;
+            rtbWordInfo.AppendText(targetWord.Mean_cn + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Mean_en + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Sentence + "\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_trans + "\n\n");
+            rtbWordInfo.AppendText(targetWord.Sentence_phrase + "\n");
+            rtbWordInfo.AppendText(targetWord.Word_etyma + "\n");
+
+            VoicePlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + targetWord.word;
+            VoicePlayer.Ctlcontrols.play();
+        }
+
+        private void InitPic()
+        {
+            if (mmryplanmanager.IsExist(targetWord.word))
+            {
+                button_AddPlan.Image = Properties.Resources.已加入计划;
+                isPlannedWord = true;
+            }
+            else
+            {
+                button_AddPlan.Image = Properties.Resources.未加入计划;
+                isPlannedWord = false;
+            }
+        }
+
+        public void button_AddPlan_Click(object sender, EventArgs e)
+        {
+            if(!isPlannedWord)
+            {
+                mmryplanmanager.AddPlan(targetWord.word);
+                button_AddPlan.Image = Properties.Resources.已加入计划;
+                isPlannedWord = true;
+            }else
+            {
+                mmryplanmanager.DelPlan(targetWord.word);
+                button_AddPlan.Image = Properties.Resources.未加入计划;
+                isPlannedWord = false;
+            }
+            button_AddPlan.Refresh();
+        }
     }
 }

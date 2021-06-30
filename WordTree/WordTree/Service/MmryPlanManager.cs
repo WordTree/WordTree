@@ -107,15 +107,11 @@ namespace WordTree.Service
         /// </summary>
         /// <param name="wordStr"></param>
         /// <returns></returns>
-        public PlannedWord QueryByWordStr(string wordStr)
+        public bool IsExist(string wordStr)
         {
             using(var ctx = new PlannedWordContext())
             {
-                var targetWord = ctx.PlannedWords.SingleOrDefault(o => o.Wordstr == wordStr);
-
-                if (targetWord == null)
-                    throw new ApplicationException("该单词不在计划中");
-                return targetWord;
+                return ctx.PlannedWords.Where(o => o.Wordstr == wordStr).Any();               
             }
         }
 

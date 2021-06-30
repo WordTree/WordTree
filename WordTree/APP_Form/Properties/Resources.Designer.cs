@@ -123,6 +123,16 @@ namespace APP_Form.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 喇叭 {
+            get {
+                object obj = ResourceManager.GetObject("喇叭", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 小喇叭_爱给网_aigei_com {
             get {
                 object obj = ResourceManager.GetObject("小喇叭_爱给网_aigei_com", resourceCulture);
@@ -136,6 +146,26 @@ namespace APP_Form.Properties {
         internal static System.Drawing.Bitmap 小喇叭_爱给网_aigei_com1 {
             get {
                 object obj = ResourceManager.GetObject("小喇叭_爱给网_aigei_com1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 已加入计划 {
+            get {
+                object obj = ResourceManager.GetObject("已加入计划", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 未加入计划 {
+            get {
+                object obj = ResourceManager.GetObject("未加入计划", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -27,10 +27,10 @@ namespace APP_Form
         private void SelectWordsForm_Load(object sender, EventArgs e)
         {
             DataGridViewColumnEntity[] lstLeftCulumns = new DataGridViewColumnEntity[1];
-            lstLeftCulumns[0] = new DataGridViewColumnEntity() { DataField = "Value", HeadText = "建议单词", TextAlign = ContentAlignment.MiddleCenter };
+            lstLeftCulumns[0] = new DataGridViewColumnEntity() { DataField = "Value", HeadText = "建议单词", TextAlign = ContentAlignment.MiddleLeft};
 
             DataGridViewColumnEntity[] lstRightCulumns = new DataGridViewColumnEntity[1];
-            lstRightCulumns[0] = new DataGridViewColumnEntity() { DataField = "Value", HeadText = "已选单词", TextAlign = ContentAlignment.MiddleCenter };
+            lstRightCulumns[0] = new DataGridViewColumnEntity() { DataField = "Value", HeadText = "已选单词", TextAlign = ContentAlignment.MiddleLeft};
 
             this.ucTsfWords.LeftColumns = lstLeftCulumns;
             this.ucTsfWords.RightColumns = lstRightCulumns;
@@ -69,12 +69,17 @@ namespace APP_Form
 
         private void btnAffirm_BtnClick(object sender, EventArgs e)
         {
-            foreach(WordModel word in ucTsfWords.RightDataSource)
+            if (ucTsfWords.RightDataSource.Count() != 0)
             {
-                mmryPlanManager.AddPlan(word.Value);
+                foreach (WordModel word in ucTsfWords.RightDataSource)
+                {
+                    mmryPlanManager.AddPlan(word.Value);
+                }
+                FrmDialog.ShowDialog(this, "添加成功！", "提示");
+                var list = ucTsfWords.RightDataSource.ToList();
+                list.Clear();
+                ucTsfWords.RightDataSource = list.ToArray();
             }
-            FrmDialog.ShowDialog(this, "添加成功！", "提示");
-            getRecommendedWords();            
         }
 
         private void btnCancel_BtnClick(object sender, EventArgs e)

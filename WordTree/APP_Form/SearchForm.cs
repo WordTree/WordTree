@@ -49,7 +49,7 @@ namespace APP_Form
                 this.comboBox_Searcher.SelectionStart = this.comboBox_Searcher.Text.Length;
             }catch(Exception e2)
             {
-                Console.WriteLine(e2.Message);
+                
             }
             //使光标不被遮挡
             Cursor = Cursors.Default;
@@ -87,7 +87,7 @@ namespace APP_Form
                 }
             }catch(Exception e)
             {
-                Console.WriteLine(e.Message);
+                
             }
         }
 

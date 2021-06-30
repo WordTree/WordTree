@@ -235,8 +235,12 @@ namespace APP_Form
         {
             var wordInfoForm = new WordInfoForm(currentNode.Data);
             wordInfoForm.ucBtnExt_Next.BtnClick += Memory;
+            wordInfoForm.button_enter.Click += Memory;
             wordInfoForm.ucBtnExt_Next.Visible = true;
+            wordInfoForm.button_enter.Enabled = true;
+            wordInfoForm.button_AddPlan.Click -= new EventHandler(wordInfoForm.button_AddPlan_Click);
             transfer.Transfer(panel_Form, wordInfoForm);
+            wordInfoForm.Focus();
             index++;
         }
 
