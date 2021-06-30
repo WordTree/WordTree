@@ -20,25 +20,27 @@ namespace StatTracer
 {
     public partial class TraceForm : Form
     {
-        List<string> yesterday = new List<string>();
-        List<string> today = new List<string>();
-        List<string> tomorrow = new List<string>();
+        public List<string> yesterday = new List<string>();
+        public List<string> today = new List<string>();
+        public List<string> tomorrow = new List<string>();
 
         WordAndDicManager manager = WordAndDicManager.getInstance();
-        public TraceForm()
+        public  TraceForm()
         {
             InitializeComponent();
             YesterdayRecordInit();
             TodaydayRecordInit();
-            
+
+            FormInit(TimeLine1, yesterday);
+            FormInit(TimeLine2, today);
+            FormInit(TimeLine3, tomorrow);
         }
 
         private void TraceForm_Load(object sender, EventArgs e)
         {
-           
-            FormInit(TimeLine1, yesterday);
-            FormInit(TimeLine2, today);
-            FormInit(TimeLine3, tomorrow);
+            //FormInit(TimeLine1, yesterday);
+            //FormInit(TimeLine2, today);
+            //FormInit(TimeLine3, tomorrow);
         }
 
         private void YesterdayRecordInit()
@@ -76,20 +78,26 @@ namespace StatTracer
             TimeLine3.Items = temps.ToArray();
         }
 
-        private void FormInit(UCTimeLine timeLine, List<string> record )
+        public async void FormInit(UCTimeLine timeLine, List<string> record )
         {
             List<Word> words = new List<Word>();
             List<TimeLineItem> temps = new List<TimeLineItem>();
-            foreach (string reco in record)
+            if (record != null)
             {
-                TimeLineItem temp = new TimeLineItem();
-                Word word = manager.getWord(reco);
-                temp.Details = word.Mean_cn + "\r\n" + word.Mean_en + "\r\n" + word.Sentence;
-                temp.Title = word.word;
-                temps.Add(temp);
+                await Task.Run(() =>
+                {
+                    foreach (string reco in record)
+                    {
+                        TimeLineItem temp = new TimeLineItem();
+                        Word word = manager.getWord(reco);
+                        temp.Details = word.Mean_cn + "\r\n" + word.Mean_en + "\r\n" + word.Sentence;
+                        temp.Title = word.word;
+                        temps.Add(temp);
+                    }
+                });
+                timeLine.Items = temps.ToArray();
+                
             }
-            timeLine.Items = temps.ToArray();
-            
         }
 
         private void YesterdayListConvert(List<Node> saved)

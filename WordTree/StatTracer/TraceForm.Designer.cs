@@ -194,9 +194,9 @@ namespace StatTracer
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private HZH_Controls.Controls.UCTimeLine TimeLine2;
-        private HZH_Controls.Controls.UCTimeLine TimeLine1;
-        private HZH_Controls.Controls.UCTimeLine TimeLine3;
+        public HZH_Controls.Controls.UCTimeLine TimeLine2;
+        public HZH_Controls.Controls.UCTimeLine TimeLine1;
+        public HZH_Controls.Controls.UCTimeLine TimeLine3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

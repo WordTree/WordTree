@@ -71,21 +71,12 @@ namespace APP_Form
             getRecommendedWords();
         }
 
-        private void btnAffirm_BtnClick(object sender, EventArgs e)
+        private async void btnAffirm_BtnClick(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            if (ucTsfWords.RightDataSource.Count() != 0)
+            if(ucTsfWords.RightDataSource.Length == 0)
             {
-                foreach (WordModel word in ucTsfWords.RightDataSource)
-                {
-                    mmryPlanManager.AddPlan(word.Value);
-                }
-                FrmDialog.ShowDialog(this, "添加成功！", "提示");
-                var list = ucTsfWords.RightDataSource.ToList();
-                list.Clear();
-                ucTsfWords.RightDataSource = list.ToArray();
+                return;
             }
-=======
             List<string> traceRecord = new List<string>();
             foreach(WordModel word in ucTsfWords.RightDataSource)
             {
@@ -94,12 +85,21 @@ namespace APP_Form
                 traceRecord.Add(word.Value);
             }
             FrmDialog.ShowDialog(this, "添加成功！", "提示");
-            getRecommendedWords();
-
+            var list = ucTsfWords.RightDataSource.ToList();
+            list.Clear();
+            ucTsfWords.RightDataSource = list.ToArray();
             string path = "..\\..\\..\\StatTracer\\Record\\temp\\tinfo.json";
-            File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
-            set();
->>>>>>> d65b72ce67b0ff016e76b806a204db77b83531f4
+            if (ucTsfWords.LeftDataSource.Length == 0)
+            {
+                getRecommendedWords();
+            }
+            //异步写入Record统计文件
+            await Task.Run(()=>
+            {
+                File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
+                set();
+            });
+            
         }
 
         private void btnCancel_BtnClick(object sender, EventArgs e)

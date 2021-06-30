@@ -51,7 +51,6 @@ namespace APP_Form
         public MemoryForm()
         {
             InitializeComponent();
-
             pictureBoxes[0] = pictureBox1;
             pictureBoxes[1] = pictureBox2;
             pictureBoxes[2] = pictureBox3;
@@ -86,7 +85,6 @@ namespace APP_Form
                         index = index % changingWords.Count;
                         currentNode = changingWords.GetElem(index);
                     }
-
                 }
                 else
                 {
@@ -101,7 +99,7 @@ namespace APP_Form
                     InitPictureBoxes();
                     currentNode = changingWords.GetElem(index);
                 }
-                //根据当前单词的熟悉度进入对应的记忆方法
+
                 switch (currentNode.StrangeDegree)
                 {
                     case 3:
@@ -116,9 +114,8 @@ namespace APP_Form
                 }
 
             }
-            catch (ApplicationException e)  //跳转到完成任务界面
+            catch (ApplicationException e)
             {
-                //MessageBox.Show(e.Message);
                 transfer.Transfer(panel_Form, new FinishedForm());
             }
         }
@@ -250,12 +247,11 @@ namespace APP_Form
         /// </summary>
         private void InitPictureBoxes()
         {
-
-            for(byte i = 0;i <= 9;i++)
+            if (savedWords.Count != 0)
             {
-                pictureBoxes[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                if (savedWords.Count != 0)
+                for (byte i = 0; i < 10; i++)
                 {
+                    pictureBoxes[i].SizeMode = PictureBoxSizeMode.StretchImage;
                     switch (savedWords[i].StrangeDegree)
                     {
                         case 3:
@@ -284,16 +280,13 @@ namespace APP_Form
         {
             pictureBoxes[pictureIndex].Image = Image.FromFile(stages[StageIndex]);
         }
-
         /// <summary>
         /// 读取并配置用户设置
         /// </summary>
         private void InitSettings()
         {
             memoryManager.NeedNum = UserDefault.Default.NeedNum;
-            
         }
-
         /// <summary>
         /// 读取MemoryInfo中存储的相关控制信息
         /// 还原现场
@@ -326,12 +319,16 @@ namespace APP_Form
                     path = "..\\..\\..\\StatTracer\\Record\\temp\\tinfo.json";
                     break;
             }
+
             List<string> traceRecord = new List<string>();
-            foreach(Node node in savedWords)
+            for(int i = 0; i < memoryManager.NeedNum; i++)
             {
-                traceRecord.Add(node.Data.word);
+                traceRecord.Add(memoryManager.NeedWord[i].Wordstr);
             }
+
+
             File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
+
             //创建序列化器
             IFormatter formatter = new BinaryFormatter();
             try
@@ -369,6 +366,5 @@ namespace APP_Form
                 Console.WriteLine(e.Message);
             }
         }
-
     }
 }
