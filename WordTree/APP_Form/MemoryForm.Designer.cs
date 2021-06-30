@@ -77,7 +77,7 @@ namespace APP_Form
             this.flowLayoutPanel1.Controls.Add(this.pictureBox9);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox10);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(817, 73);
             this.flowLayoutPanel1.TabIndex = 2;
@@ -85,7 +85,7 @@ namespace APP_Form
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(73, 61);
             this.pictureBox1.TabIndex = 0;
@@ -94,7 +94,7 @@ namespace APP_Form
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(85, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(73, 61);
             this.pictureBox2.TabIndex = 1;
@@ -103,7 +103,7 @@ namespace APP_Form
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(166, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(73, 61);
             this.pictureBox3.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace APP_Form
             // pictureBox4
             // 
             this.pictureBox4.Location = new System.Drawing.Point(247, 4);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(73, 61);
             this.pictureBox4.TabIndex = 3;
@@ -121,7 +121,7 @@ namespace APP_Form
             // pictureBox5
             // 
             this.pictureBox5.Location = new System.Drawing.Point(328, 4);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(73, 61);
             this.pictureBox5.TabIndex = 4;
@@ -130,7 +130,7 @@ namespace APP_Form
             // pictureBox6
             // 
             this.pictureBox6.Location = new System.Drawing.Point(409, 4);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(73, 61);
             this.pictureBox6.TabIndex = 5;
@@ -139,7 +139,7 @@ namespace APP_Form
             // pictureBox7
             // 
             this.pictureBox7.Location = new System.Drawing.Point(490, 4);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(73, 61);
             this.pictureBox7.TabIndex = 6;
@@ -148,7 +148,7 @@ namespace APP_Form
             // pictureBox8
             // 
             this.pictureBox8.Location = new System.Drawing.Point(571, 4);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(73, 61);
             this.pictureBox8.TabIndex = 7;
@@ -157,7 +157,7 @@ namespace APP_Form
             // pictureBox9
             // 
             this.pictureBox9.Location = new System.Drawing.Point(652, 4);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(73, 61);
             this.pictureBox9.TabIndex = 8;
@@ -166,7 +166,7 @@ namespace APP_Form
             // pictureBox10
             // 
             this.pictureBox10.Location = new System.Drawing.Point(733, 4);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(73, 61);
             this.pictureBox10.TabIndex = 9;
@@ -181,7 +181,7 @@ namespace APP_Form
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel_Form);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MemoryForm";
             this.Text = "MemoryForm";
             this.flowLayoutPanel1.ResumeLayout(false);

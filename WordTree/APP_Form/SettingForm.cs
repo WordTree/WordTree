@@ -12,10 +12,8 @@ using WordTree.Service;
 
 namespace APP_Form
 {
-    public delegate void SetType(string selectedtype);
     public partial class SettingForm : FrmWithTitle
     {
-        public SetType setType;
         WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
         MemoryManager memoryManager = MemoryManager.getInstance();
 
@@ -27,28 +25,31 @@ namespace APP_Form
         private void SettingForm_Load(object sender, EventArgs e)
         {
             
-            KeyValuePair<string, string>[] keyValuePairs = {new KeyValuePair<string, string>("1","CET4"),
-                                                          new KeyValuePair<string, string>("2","CET6"),
-                                                          new KeyValuePair<string, string>("3","TOEFL"),
-                                                          new KeyValuePair<string, string>("4","IELTS"),
-                                                          new KeyValuePair<string, string>("5","GRE"),
-                                                          new KeyValuePair<string, string>("6","SAT")};
+            KeyValuePair<string, string>[] keyValuePairs = {new KeyValuePair<string, string>("0","CET4"),
+                                                          new KeyValuePair<string, string>("1","CET6"),
+                                                          new KeyValuePair<string, string>("2","TOEFL"),
+                                                          new KeyValuePair<string, string>("3","IELTS"),
+                                                          new KeyValuePair<string, string>("4","GRE"),
+                                                          new KeyValuePair<string, string>("5","SAT")};
             List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>(keyValuePairs);
             cmbTargetDic.Source = list;
             ntbNeedNum.Num = UserDefault.Default.NeedNum;//显示当前设置
-            cmbTargetDic.SelectedIndex = Convert.ToInt32(list.First(o => o.Value == UserDefault.Default.TargetDic).Key);
+            if (UserDefault.Default.TargetDic != "")
+            {
+                cmbTargetDic.SelectedIndex = Convert.ToInt32(list.First(o => o.Value == UserDefault.Default.TargetDic).Key);
+            }
         }
+            
 
         private void btnAffrim_BtnClick(object sender, EventArgs e)
         {
             try
             {
-                //wordAndDicManager.changeTargetDic(cmbTargetDic.SelectedText);
+                wordAndDicManager.changeTargetDic(cmbTargetDic.SelectedText);
                 UserDefault.Default.TargetDic = cmbTargetDic.SelectedText;
-                //memoryManager.NeedNum = (int)ntbNeedNum.Num;
+                memoryManager.NeedNum = (int)ntbNeedNum.Num;
                 UserDefault.Default.NeedNum = (int)ntbNeedNum.Num;
                 if (FrmDialog.ShowDialog(this, "设置成功！", "提示") == DialogResult.OK) {
-                    setType(cmbTargetDic.SelectedText);
                     this.Close();
                 }
             }catch(ApplicationException ex)
@@ -62,15 +63,10 @@ namespace APP_Form
             UserDefault.Default.Save();
         }
 
-        private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Visible = false;
-            e.Cancel = true;
-        }
-
-        private void cmbTargetDic_SelectedChangedEvent(object sender, EventArgs e)
-        {
-
-        }
+        //private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    this.Visible = false;
+        //    e.Cancel = true;
+        //}
     }
 }

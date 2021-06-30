@@ -25,7 +25,7 @@ namespace APP_Form {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int NeedNum {
             get {
                 return ((int)(this["NeedNum"]));
@@ -37,7 +37,7 @@ namespace APP_Form {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("CET4")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string TargetDic {
             get {
                 return ((string)(this["TargetDic"]));

@@ -34,6 +34,7 @@ namespace APP_Form
             VocabularyDic allWordsDic = wordAndDicManager.getVocabularyDic("AllWords");
             searchTarget = new List<string>(allWordsDic.List);
         }
+
         /**<summary>
          * 输入内容时自动触发 Search 方法,
          * 并设置相关的属性.
@@ -92,10 +93,17 @@ namespace APP_Form
 
         private void comboBox_Searcher_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (wordInfoForm != null)
+            {
+                wordInfoForm.Dispose();
+            }
+
             if (comboBox_Searcher.SelectedIndex >= 0)
             {
                 pnl_wordInfo.Controls.Clear();
-                Word targetWord = wordAndDicManager.getWord((string)comboBox_Searcher.SelectedItem);
+                string wordStr = comboBox_Searcher.SelectedItem.ToString().Replace(' ', '_');
+
+                Word targetWord = wordAndDicManager.getWord(wordStr);
                 wordInfoForm = new WordInfoForm(targetWord);
                 wordInfoForm.TopLevel = false;
                 wordInfoForm.FormBorderStyle = FormBorderStyle.None;

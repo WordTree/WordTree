@@ -29,8 +29,6 @@ namespace WordTree.Model
             return word.Equals(answer);
         }
 
-        
-
         public override bool Equals(object obj)
         {
             return obj is Word word &&
