@@ -33,18 +33,19 @@ namespace Reader
         /// </summary>
         public List<string > GetAllParagraghNames(string type)
         {
-            var files = Directory.GetFiles( $"..\\..\\..\\Reader\\Text\\{type}", "*.txt").ToList();
-            List<string> names = new List<string>();
-            foreach( string name in files)
-            {
-                string generalpath = "..\\..\\..\\Reader\\Text\\";
+            
+                var files = Directory.GetFiles($"..\\..\\..\\Reader\\Text\\{type}", "*.txt").ToList();
+                List<string> names = new List<string>();
+                foreach (string name in files)
+                {
+                    string generalpath = "..\\..\\..\\Reader\\Text\\";
 
-                string targetname = name.Replace(generalpath, "");
-                targetname = targetname.Substring(0, targetname.Length - 4);
-                names.Add(targetname);
-            }
-
-            return names;
+                    string targetname = name.Replace(generalpath, "");
+                    targetname = targetname.Substring(0, targetname.Length - 4);
+                    names.Add(targetname);
+                }
+                return names;
+           
         }
         /// <summary>
         /// 关键字标红

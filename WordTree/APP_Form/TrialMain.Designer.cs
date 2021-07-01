@@ -35,6 +35,12 @@ namespace APP_Form
             this.btnSetting = new HZH_Controls.Controls.UCBtnExt();
             this.btnSelect = new HZH_Controls.Controls.UCBtnExt();
             this.btnExit = new HZH_Controls.Controls.UCBtnExt();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnExit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tvMenu
@@ -148,6 +154,7 @@ namespace APP_Form
             this.btnExit.BtnForeColor = System.Drawing.Color.White;
             this.btnExit.BtnText = null;
             this.btnExit.ConerRadius = 5;
+            this.btnExit.Controls.Add(this.pictureBox1);
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.EnabledMouseEffect = false;
             this.btnExit.FillColor = System.Drawing.Color.Transparent;
@@ -167,11 +174,45 @@ namespace APP_Form
             this.btnExit.TipsText = "";
             this.btnExit.BtnClick += new System.EventHandler(this.btnExit_BtnClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            this.pictureBox2.Image = global::APP_Form.Properties.Resources.树1;
+            this.pictureBox2.Location = new System.Drawing.Point(54, 461);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(153, 165);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
+            this.label1.Font = new System.Drawing.Font("Brush Script MT", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(92, 641);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 29);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "WordTree";
+            // 
             // TrialMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 698);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnSetting);
@@ -187,7 +228,13 @@ namespace APP_Form
             this.Controls.SetChildIndex(this.btnSetting, 0);
             this.Controls.SetChildIndex(this.btnSelect, 0);
             this.Controls.SetChildIndex(this.btnExit, 0);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.btnExit.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,5 +245,8 @@ namespace APP_Form
         private HZH_Controls.Controls.UCBtnExt btnSetting;
         private HZH_Controls.Controls.UCBtnExt btnSelect;
         private HZH_Controls.Controls.UCBtnExt btnExit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

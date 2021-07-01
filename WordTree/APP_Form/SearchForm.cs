@@ -122,15 +122,22 @@ namespace APP_Form
             object content;
             object note;
             object picture;
-            json.TryGetValue("content", out content);
-            json.TryGetValue("note", out note);
-            json.TryGetValue("picture2", out picture);
-            label_content.Text = content.ToString();
-            label_note.Text = note.ToString();
-            var webC = new System.Net.WebClient();
-            var bmp = new Bitmap(webC.OpenRead(picture.ToString()));
-            pictureBox1.Image = bmp;
-        }
+            try
+            {
+                json.TryGetValue("content", out content);
+                json.TryGetValue("note", out note);
+                json.TryGetValue("picture2", out picture);
+                label_content.Text = content.ToString();
+                label_note.Text = note.ToString();
+                var webC = new System.Net.WebClient();
+                var bmp = new Bitmap(webC.OpenRead(picture.ToString()));
+                pictureBox1.Image = bmp;
+            }
+            catch (Exception laz)
+            {
+
+            }
+         }
 
     }
 }

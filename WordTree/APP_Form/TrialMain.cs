@@ -56,6 +56,7 @@ namespace APP_Form
                     break;
                 case "统计":
                     transferController.Transfer(panControl, traceForm);
+                    traceForm.SetTree(memoryForm.count, memoryForm.memoryManager.NeedNum );
                     break;
                 case "阅读":
                     transferController.Transfer(panControl, readerForm);
@@ -70,11 +71,8 @@ namespace APP_Form
 
         private void SetParaType(string selectedtype)
         {
-            if (readerForm != null)
-            {
-                readerForm.Dispose();
-            }
-            readerForm = new ReaderForm(selectedtype);
+          
+            readerForm.type = selectedtype;
         }
 
         private void TomorrowRecordUpdate()
@@ -116,6 +114,11 @@ namespace APP_Form
         {
             memoryForm.GenerateInfo();
             Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -203,6 +203,16 @@ namespace APP_Form.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 树1 {
+            get {
+                object obj = ResourceManager.GetObject("树1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 种子 {
             get {
                 object obj = ResourceManager.GetObject("种子", resourceCulture);

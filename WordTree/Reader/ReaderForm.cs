@@ -23,7 +23,13 @@ namespace Reader
         Word selected = new Word();//用户选中的单词
         List<string> userchoices = new List<string>();
 
-        string type = "CET4";//文段类型
+        public string type = "CET4";//文段类型
+        const string cetpath = "..\\..\\..\\Reader\\Pictures\\cet.png";
+        const string toeflpath = "..\\..\\..\\Reader\\Pictures\\toefl.png";
+        const string ieltspath = "..\\..\\..\\Reader\\Pictures\\ielts.png";
+        const string grepath = "..\\..\\..\\Reader\\Pictures\\gre.png";
+
+
 
         public ReaderForm()
         {
@@ -71,7 +77,7 @@ namespace Reader
             try
             {
                 selected = wordAndDicManager.getWord(manager.SlectedStringScanner(Paragraph_richTextBox));
-                Info_richTextBox.Text = "\r\n"+"\r\n"+selected.word + "\r\n" + selected.Mean_cn;
+                Info_richTextBox.Text = "\r\n"+"\r\n"+selected.word + "\r\n" + selected.Mean_cn +"\r\n" + selected.Mean_en;
                 word_axWindowsMediaPlayer.URL = "http://dict.youdao.com/dictvoice?type=1&audio=" + selected.word;
                 word_axWindowsMediaPlayer.Ctlcontrols.play();
             }
@@ -95,10 +101,34 @@ namespace Reader
         int scan = 0;//用于文件目录循环遍历
         private void readbutton_Click(object sender, EventArgs e)
         {
-            //UserTextChoice choiceform = new UserTextChoice(SetParagraph, TraceText);
-            //choiceform.Show();
+            label1.Text = $"Page {scan+1}";
+            string imagepath = "";
+            switch (type)
+            {
+                case "CET4":
+                    imagepath = cetpath;
+                    break;
+                case "CET6":
+                    imagepath = cetpath;
+                    break;
+                case "TOEFL":
+                    imagepath = toeflpath;
+                    break;
+                case "IELTS":
+                    imagepath = ieltspath;
+                    break;
+                case "GRE":
+                    imagepath = grepath;
+                    break;
+            }
+            pictureBox1.Image = Image.FromFile(imagepath);
+
+            userchoices = manager.GetAllParagraghNames(type);
+            string userchoice = userchoices.FirstOrDefault();
+            SetParagraph(userchoice);
+            TraceParaText();
             scan = (scan + 1) % userchoices.Count;
-            string userchoice = userchoices[scan];
+            userchoice = userchoices[scan];
             SetParagraph(userchoice);
             TraceParaText();
         }

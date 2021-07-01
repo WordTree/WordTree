@@ -23,6 +23,9 @@ namespace StatTracer
         public List<string> yesterday = new List<string>();
         public List<string> today = new List<string>();
         public List<string> tomorrow = new List<string>();
+        //int count = 0;
+        //int needNum = 0;
+        float growth = 0.1f;
 
         WordAndDicManager manager = WordAndDicManager.getInstance();
         public  TraceForm()
@@ -34,6 +37,11 @@ namespace StatTracer
             FormInit(TimeLine1, yesterday);
             FormInit(TimeLine2, today);
             FormInit(TimeLine3, tomorrow);
+
+            
+            plant_pictureBox.BackColor = Color.Transparent;
+            plant_pictureBox.Parent = pot_pictureBox;
+            plant_pictureBox.Location = new Point(10, -10);
         }
 
 
@@ -102,6 +110,21 @@ namespace StatTracer
 
                 timeLine.Items = temps.ToArray();
             }
+        }
+
+        public void SetTree(int count, int needNum)
+        {
+            
+            growth = count / needNum;
+            if (growth > 0.25 && growth < 0.75) plant_pictureBox.Image = Image.FromFile("..\\..\\..\\StatTracer\\Tree\\seedling.png");
+            if (growth > 0.75 && growth <= 1)//随机生成植物
+            {
+                int index = 1;
+                Random random = new Random();
+                index = random.Next(1, 3);
+                plant_pictureBox.Image = Image.FromFile($"..\\..\\..\\StatTracer\\Tree\\animatedplants\\{index}.gif");
+            }
+           
         }
 
     }
