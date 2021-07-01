@@ -166,4 +166,16 @@
   <data name="已加入计划" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\已加入计划.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="带树" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\带树.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="幼苗" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\幼苗.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="成熟期" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\成熟期.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="种子" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\种子.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

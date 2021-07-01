@@ -19,16 +19,18 @@ namespace APP_Form.Controller
         public  List<Node> savedWords = new List<Node>(); 
         public  WordLinkedList changingWords = new WordLinkedList();
         public DateTime updateTime;
+        public List<string> falsedWords = new List<string>();
         public MemoryInfo()
         {
 
         }
-        public MemoryInfo(int count,int index, List<Node> savedWords, WordLinkedList changingWords)
+        public MemoryInfo(int count,int index, List<Node> savedWords, WordLinkedList changingWords,List<string> falsedWords)
         {
             this.count = count;
             this.index = index;
             this.savedWords = savedWords;
             this.changingWords = changingWords;
+            this.falsedWords = falsedWords;
             this.updateTime = System.DateTime.Now;
         }
         

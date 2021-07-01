@@ -15,8 +15,6 @@ using WordTree.Service;
 
 namespace APP_Form
 {
-    
-    
     public partial class TrialMain : FrmWithTitle
     {
         public TraceForm traceForm = new TraceForm();
@@ -37,19 +35,12 @@ namespace APP_Form
         }
 
 
-        private async void TrialMain_Load(object sender, EventArgs e)
+        private void TrialMain_Load(object sender, EventArgs e)
         {
             this.tvMenu.Nodes.Add(dictNode);
             this.tvMenu.Nodes.Add(statNode);
             this.tvMenu.Nodes.Add(mryNode);
             this.tvMenu.Nodes.Add(readNode);
-
-            //await Task.Run(() => 
-            //{
-            //    traceForm.FormInit(traceForm.TimeLine1, traceForm.yesterday);
-            //    traceForm.FormInit(traceForm.TimeLine2, traceForm.today);
-            //    traceForm.FormInit(traceForm.TimeLine3, traceForm.tomorrow);
-            //});
 
         }
 
@@ -75,7 +66,6 @@ namespace APP_Form
                     break;
                 
             }
-            memoryForm.GenerateInfo('a');
         }
 
         private void SetParaType(string selectedtype)
@@ -97,6 +87,7 @@ namespace APP_Form
         {
             var settingForm = new SettingForm();
             settingForm.setType += new SetType(SetParaType);
+            settingForm.updateRecord += new Action<char, List<string>>(memoryForm.GenerateRecords);
             settingForm.Show();
         }
 
@@ -123,7 +114,7 @@ namespace APP_Form
 
         private void btnExit_BtnClick(object sender, EventArgs e)
         {
-            memoryForm.GenerateInfo('b');
+            memoryForm.GenerateInfo();
             Application.Exit();
         }
     }

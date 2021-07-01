@@ -31,19 +31,19 @@ namespace StatTracer
         {
             this.tabControlExt1 = new HZH_Controls.Controls.TabControlExt();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TimeLine1 = new HZH_Controls.Controls.UCTimeLine();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TimeLine2 = new HZH_Controls.Controls.UCTimeLine();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.TimeLine3 = new HZH_Controls.Controls.UCTimeLine();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControlExt1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlExt1
@@ -80,6 +80,14 @@ namespace StatTracer
             this.tabPage1.Text = "上周期";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(627, 74);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(123, 164);
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
             // TimeLine1
             // 
             this.TimeLine1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -95,7 +103,6 @@ namespace StatTracer
             this.TimeLine1.TabIndex = 3;
             this.TimeLine1.TitleFont = new System.Drawing.Font("微软雅黑", 14F);
             this.TimeLine1.TitleForcolor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
-            this.TimeLine1.Load += new System.EventHandler(this.TimeLine1_Load);
             // 
             // tabPage2
             // 
@@ -108,6 +115,14 @@ namespace StatTracer
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "本周期";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(607, 72);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 164);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // TimeLine2
             // 
@@ -152,22 +167,6 @@ namespace StatTracer
             this.TimeLine3.TitleFont = new System.Drawing.Font("微软雅黑", 14F);
             this.TimeLine3.TitleForcolor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(49)))), ((int)(((byte)(51)))));
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(607, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 164);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(627, 74);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(123, 164);
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // TraceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -176,14 +175,12 @@ namespace StatTracer
             this.Controls.Add(this.tabControlExt1);
             this.Name = "TraceForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.TraceForm_Load);
-            this.Shown += new System.EventHandler(this.TraceForm_Shown);
             this.tabControlExt1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

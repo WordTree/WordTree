@@ -23,6 +23,9 @@ namespace WordTree.Service
 		/// </summary>
 		public int NeedNum { get; set; }
 
+		/// <summary>
+		/// 根据简易遗传曲线算法得出的需要记忆单词
+		/// </summary>
 		public PlannedWord[] NeedWord;
 
 		//去掉5分钟和30分钟这个短时记忆周期
@@ -40,7 +43,7 @@ namespace WordTree.Service
 		/// </summary>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		private bool NeedRecite(PlannedWord target)
+		private bool NeedRecite(PlannedWord target,DateTime dateTime)
 		{
 			if (target.Phase == -1)
 				return true;
@@ -48,7 +51,7 @@ namespace WordTree.Service
 			{
 				return false;
 			}
-			DateTime currentTime = DateTime.Now;
+			DateTime currentTime = dateTime;
 			TimeSpan timeDiff = currentTime - target.LastMmryTime;
 
 			return timeDiff > memoryCycle[target.Phase];
@@ -62,8 +65,9 @@ namespace WordTree.Service
 		public static MemoryManager getInstance()
         {
 			List<PlannedWord> words = new MmryPlanManager().QueryAllPlan();
-			var targetWords = words.Where(o => instance.NeedRecite(o));
+			var targetWords = words.Where(o => instance.NeedRecite(o,DateTime.Today));
 			instance.NeedWord = targetWords.ToArray();
+
 			return instance;
         }
 

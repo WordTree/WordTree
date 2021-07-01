@@ -295,6 +295,14 @@
     <None Include="Resources\WPS图片-修改尺寸1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Images\带树.png" />
+    <Content Include="Resources\Images\幼苗.png" />
+    <Content Include="Resources\Images\成熟期.png" />
+    <Content Include="Resources\Images\种子.png" />
+    <Content Include="Resources\带树.png" />
+    <Content Include="Resources\幼苗.png" />
+    <Content Include="Resources\成熟期.png" />
+    <Content Include="Resources\种子.png" />
     <None Include="Resources\已加入计划.png" />
     <None Include="Resources\喇叭.png" />
     <None Include="Resources\未加入计划.png" />

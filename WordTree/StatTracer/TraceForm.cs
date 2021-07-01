@@ -36,12 +36,7 @@ namespace StatTracer
             FormInit(TimeLine3, tomorrow);
         }
 
-        private void TraceForm_Load(object sender, EventArgs e)
-        {
-            //FormInit(TimeLine1, yesterday);
-            //FormInit(TimeLine2, today);
-            //FormInit(TimeLine3, tomorrow);
-        }
+
 
         private void YesterdayRecordInit()
         {
@@ -75,7 +70,16 @@ namespace StatTracer
                 temp.Title = word.word;
                 temps.Add(temp);
             }
-            TimeLine3.Items = temps.ToArray();
+            if (TimeLine3.InvokeRequired)
+            {
+                Action action = new Action(()=> TimeLine3.Items = temps.ToArray());
+                TimeLine3.Invoke(action);
+            }
+            else
+            {
+                TimeLine3.Items = temps.ToArray();
+            }
+            
         }
 
         public async void FormInit(UCTimeLine timeLine, List<string> record )
@@ -95,28 +99,11 @@ namespace StatTracer
                         temps.Add(temp);
                     }
                 });
+
                 timeLine.Items = temps.ToArray();
-                
             }
         }
 
-        private void YesterdayListConvert(List<Node> saved)
-        {
-            foreach(Node node in saved)
-            {
-                yesterday.Add(node.Data.word);
-            }
-        }
-
-        private void TimeLine1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TraceForm_Shown(object sender, EventArgs e)
-        {
-            
-        }
     }
 
     internal class MemoryInfo

@@ -33,10 +33,11 @@ namespace APP_Form
 
         private List<Node> savedWords = new List<Node>(); //保存每一轮的10个单词
         private WordLinkedList changingWords = new WordLinkedList();  //动态变化的单词循环链表
-        private int count = 0;   //已完成记忆的单词数量
+
+        public int count = 0;   //已完成记忆的单词数量
         private int index;    //单词在循环链表中的index
 
-
+        private List<string> FalsedWords = new List<string>();
 
         private Node currentNode;
         private PictureBox[] pictureBoxes = new PictureBox[10];
@@ -64,6 +65,7 @@ namespace APP_Form
             InitSettings();
             ParseInfo();
             InitPictureBoxes();
+            GenerateRecords('a', TakeRecord(memoryManager.NeedWord));
         }
 
         /// <summary>
@@ -117,7 +119,19 @@ namespace APP_Form
             catch (ApplicationException e)
             {
                 transfer.Transfer(panel_Form, new FinishedForm());
+                GenerateRecords('b', FalsedWords);
+                FalsedWords.Clear();
             }
+        }
+
+        private List<string> TakeRecord(PlannedWord[] NeedWords)
+        {
+            List<string> records = new List<string>();
+            for(int i =0; i< memoryManager.NeedNum; i++)
+            {
+                records.Add(NeedWords[i].Wordstr);
+            }
+            return records;
         }
 
 
@@ -205,7 +219,15 @@ namespace APP_Form
                 currentNode.StrangeDegree--;
                 SetPicture(wordIndex, currentNode.StrangeDegree);
 
-                HaveIncorrectAnswer();      //操作相同因此调用改方法
+                var wordInfoForm = new WordInfoForm(currentNode.Data);
+                wordInfoForm.ucBtnExt_Next.BtnClick += Memory;
+                wordInfoForm.button_enter.Click += Memory;
+                wordInfoForm.ucBtnExt_Next.Visible = true;
+                wordInfoForm.button_enter.Enabled = true;
+                wordInfoForm.button_AddPlan.Click -= new EventHandler(wordInfoForm.button_AddPlan_Click);
+                transfer.Transfer(panel_Form, wordInfoForm);
+                wordInfoForm.Focus();
+                index++;
 
             }
             else     //若为其他两种方法，熟悉度-1并直接下一个单词记忆
@@ -231,6 +253,10 @@ namespace APP_Form
         /// </summary>
         private void HaveIncorrectAnswer()
         {
+            if (!FalsedWords.Contains(currentNode.Data.word))
+            {
+                FalsedWords.Add(currentNode.Data.word);
+            }
             var wordInfoForm = new WordInfoForm(currentNode.Data);
             wordInfoForm.ucBtnExt_Next.BtnClick += Memory;
             wordInfoForm.button_enter.Click += Memory;
@@ -255,18 +281,19 @@ namespace APP_Form
                     switch (savedWords[i].StrangeDegree)
                     {
                         case 3:
-                            pictureBoxes[i].Image = Image.FromFile(stage1);
+                            pictureBoxes[i].Image = Properties.Resources.种子;
                             break;
                         case 2:
-                            pictureBoxes[i].Image = Image.FromFile(stage2);
+                            pictureBoxes[i].Image = Properties.Resources.幼苗;
                             break;
                         case 1:
-                            pictureBoxes[i].Image = Image.FromFile(stage3);
+                            pictureBoxes[i].Image = Properties.Resources.成熟期;
                             break;
                         case 0:
-                            pictureBoxes[i].Image = Image.FromFile(stage4);
+                            pictureBoxes[i].Image = Properties.Resources.带树;
                             break;
                         default: break;
+
                     }
                 }
             }
@@ -297,17 +324,38 @@ namespace APP_Form
             index = info.index;
             savedWords = info.savedWords;
             changingWords = info.changingWords;
+            FalsedWords = info.falsedWords;
         }
         /// <summary>
         /// 在窗体关闭时触发
         /// 保存当前的控制信息
         /// </summary>
-        public void GenerateInfo(char key)
+        public void GenerateInfo()
+        {  
+            //创建序列化器
+            IFormatter formatter = new BinaryFormatter();
+            try
+            {
+                using (var stream = new FileStream(@"MemoryInfo.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                {
+                    formatter.Serialize(stream, new MemoryInfo(count, index, savedWords, changingWords,FalsedWords));
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+        /// <summary>
+        /// 用于存储Trace窗口所需数据
+        /// </summary>
+        /// <param name="key">存入路径选项</param>
+        /// <param name="records">需要存入的数据</param>
+        public void GenerateRecords(char key,List<string> records)
         {
-            
             //存至Trace的Record文件夹
             string path = null;
-            switch(key)
+            switch (key)
             {
                 case 'a':   //a for current
                     path = "..\\..\\..\\StatTracer\\Record\\current\\cinfo.json";
@@ -320,28 +368,7 @@ namespace APP_Form
                     break;
             }
 
-            List<string> traceRecord = new List<string>();
-            for(int i = 0; i < memoryManager.NeedNum; i++)
-            {
-                traceRecord.Add(memoryManager.NeedWord[i].Wordstr);
-            }
-
-
-            File.WriteAllText(path, JsonConvert.SerializeObject(traceRecord));
-
-            //创建序列化器
-            IFormatter formatter = new BinaryFormatter();
-            try
-            {
-                using (var stream = new FileStream(@"MemoryInfo.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite))
-                {
-                    formatter.Serialize(stream, new MemoryInfo(count, index, savedWords, changingWords));
-                }
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            File.WriteAllText(path, JsonConvert.SerializeObject(records));
         }
         /// <summary>
         /// 获取Info信息

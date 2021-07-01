@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WordTree.Model;
 using WordTree.Service;
 
 namespace APP_Form
@@ -18,6 +19,8 @@ namespace APP_Form
         public SetType setType;
         WordAndDicManager wordAndDicManager = WordAndDicManager.getInstance();
         MemoryManager memoryManager = MemoryManager.getInstance();
+
+        public event Action<char, List<string>> updateRecord;
 
         public SettingForm() 
         {
@@ -52,6 +55,7 @@ namespace APP_Form
                 UserDefault.Default.NeedNum = (int)ntbNeedNum.Num;
                 if (FrmDialog.ShowDialog(this, "设置成功！", "提示") == DialogResult.OK) {
                     setType(cmbTargetDic.SelectedText);
+                    updateRecord('a', TakeRecord(memoryManager.NeedWord));
                     this.Close();
                 }
             }catch(ApplicationException ex)
@@ -65,15 +69,14 @@ namespace APP_Form
             UserDefault.Default.Save();
         }
 
-        private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
+        private List<string> TakeRecord(PlannedWord[] NeedWords)
         {
-            this.Visible = false;
-            e.Cancel = true;
-        }
-
-        private void cmbTargetDic_SelectedChangedEvent(object sender, EventArgs e)
-        {
-
+            List<string> records = new List<string>();
+            for (int i = 0; i < memoryManager.NeedNum; i++)
+            {
+                records.Add(NeedWords[i].Wordstr);
+            }
+            return records;
         }
     }
 }

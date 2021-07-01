@@ -167,7 +167,6 @@ namespace APP_Form
             this.Name = "SettingForm";
             this.Text = "SettingForm";
             this.Title = "设置";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingForm_FormClosing);
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.Controls.SetChildIndex(this.cmbTargetDic, 0);
             this.Controls.SetChildIndex(this.ntbNeedNum, 0);

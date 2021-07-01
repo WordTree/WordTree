@@ -43,7 +43,7 @@ namespace APP_Form
                 soundPlayer.Play();
 
                 txbAnswer.RectColor = ColorTranslator.FromHtml("#1BA784");
-                txbAnswer.InputText = "              (๑•̀ㅂ•́)و✧";
+                txbAnswer.InputText = "                   (๑•̀ㅂ•́)و✧";
                 txbAnswer.Refresh();
                 Thread.Sleep(500);
 
@@ -57,7 +57,7 @@ namespace APP_Form
                 soundPlayer.Play();
 
                 txbAnswer.RectColor = ColorTranslator.FromHtml("#1BA784");
-                txbAnswer.InputText = "              (๑•̀ㅂ•́)و✧";
+                txbAnswer.InputText = "                   (๑•̀ㅂ•́)و✧";
                 txbAnswer.Refresh();
                 Thread.Sleep(500);
 
@@ -72,7 +72,7 @@ namespace APP_Form
                 soundPlayer.Play();
 
                 txbAnswer.RectColor = Color.FromArgb(205, 92, 92);
-                txbAnswer.InputText = "           (°ー°〃)";
+                txbAnswer.InputText = "                 (°ー°〃)";
                 txbAnswer.Refresh();
                 Thread.Sleep(500);
                 txbAnswer.RectColor = Color.FromArgb(220, 220, 220);
