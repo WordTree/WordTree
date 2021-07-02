@@ -114,8 +114,13 @@ namespace StatTracer
 
         public void SetTree(int count, int needNum)
         {
-            
-            growth = count / needNum;
+            try
+            {
+               growth = count / needNum;
+            }catch(Exception e)
+            {
+                growth = 0.1f;
+            }
             if (growth > 0.25 && growth < 0.75) plant_pictureBox.Image = Image.FromFile("..\\..\\..\\StatTracer\\Tree\\seedling.png");
             if (growth > 0.75 && growth <= 1)//随机生成植物
             {

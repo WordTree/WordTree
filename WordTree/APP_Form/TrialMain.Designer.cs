@@ -198,11 +198,11 @@ namespace APP_Form
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            this.label1.Font = new System.Drawing.Font("Brush Script MT", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Brush Script MT", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(92, 641);
+            this.label1.Location = new System.Drawing.Point(95, 641);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 29);
+            this.label1.Size = new System.Drawing.Size(112, 34);
             this.label1.TabIndex = 14;
             this.label1.Text = "WordTree";
             // 

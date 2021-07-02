@@ -119,19 +119,24 @@ namespace APP_Form
             catch (ApplicationException e)
             {
                 transfer.Transfer(panel_Form, new FinishedForm());
-                GenerateRecords('b', FalsedWords);
-                FalsedWords.Clear();
+                GenerateRecords('b', FalsedWords);     
             }
         }
 
         private List<string> TakeRecord(PlannedWord[] NeedWords)
         {
             List<string> records = new List<string>();
-            for(int i =0; i< memoryManager.NeedNum; i++)
+            if (NeedWords.Length > 0)
             {
-                records.Add(NeedWords[i].Wordstr);
+                for (int i = 0; i < memoryManager.NeedNum; i++)
+                {
+                    records.Add(NeedWords[i].Wordstr);
+                }
+                return records;
             }
-            return records;
+            else
+                return records;
+
         }
 
 
@@ -386,6 +391,10 @@ namespace APP_Form
                     if (info.IsAvailable())
                     {
                         SetInfo(info);
+                    }
+                    else
+                    {
+                        FalsedWords.Clear();
                     }
                 }
             }catch(Exception e)

@@ -98,6 +98,7 @@ namespace APP_Form
                 {
                     var settingForm = new SettingForm();
                     settingForm.setType += new SetType(SetParaType);
+                    settingForm.updateRecord += new Action<char, List<string>>(memoryForm.GenerateRecords);
                     settingForm.Show();
                 }
             }
