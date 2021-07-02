@@ -259,3 +259,6 @@ C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.cs
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.csproj.CopyComplete
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.exe
 C:\Users\86187\Documents\GitHub\WordTree\WordTree\APP_Form\obj\Debug\APP_Form.pdb
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\StatTracer.exe
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\StatTracer.pdb
+D:\VS2019\Project\WordTree\WordTree\WordTree\APP_Form\bin\Debug\StatTracer.exe.config

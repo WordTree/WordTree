@@ -63,20 +63,26 @@ namespace APP_Form
                 memoryManager.NeedNum = (int)ntbNeedNum.Num;
                 if (FrmDialog.ShowDialog(this, "设置成功！", "提示") == DialogResult.OK)
                 {
+                    updateRecord('a', TakeRecord(memoryManager.NeedWord));
                     this.Close();
                 }
             }
             UserDefault.Default.Save();
         }
-
         private List<string> TakeRecord(PlannedWord[] NeedWords)
         {
             List<string> records = new List<string>();
-            for (int i = 0; i < memoryManager.NeedNum; i++)
+            if (NeedWords.Length > 0)
             {
-                records.Add(NeedWords[i].Wordstr);
+                for (int i = 0; i < memoryManager.NeedNum; i++)
+                {
+                    records.Add(NeedWords[i].Wordstr);
+                }
+                return records;
             }
-            return records;
+            else
+                return records;
+
         }
     }
 }

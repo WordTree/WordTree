@@ -33,7 +33,8 @@ namespace StatTracer
             InitializeComponent();
             YesterdayRecordInit();
             TodaydayRecordInit();
-
+            TomorrowRecordInit();
+           
             FormInit(TimeLine1, yesterday);
             FormInit(TimeLine2, today);
             FormInit(TimeLine3, tomorrow);
@@ -114,14 +115,19 @@ namespace StatTracer
 
         public void SetTree(int count, int needNum)
         {
-            
-            growth = count / needNum;
+            try
+            {
+               growth = count / needNum;
+            }catch(Exception e)
+            {
+                growth = 0.1f;
+            }
             if (growth > 0.25 && growth < 0.75) plant_pictureBox.Image = Image.FromFile("..\\..\\..\\StatTracer\\Tree\\seedling.png");
             if (growth > 0.75 && growth <= 1)//随机生成植物
             {
                 int index = 1;
                 Random random = new Random();
-                index = random.Next(1, 3);
+                index = random.Next(1, 4);
                 plant_pictureBox.Image = Image.FromFile($"..\\..\\..\\StatTracer\\Tree\\animatedplants\\{index}.gif");
                 copy1plant_pictureBox.Image = plant_pictureBox.Image;
                 copy3plant_pictureBox.Image = plant_pictureBox.Image;

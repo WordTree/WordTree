@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>树叶.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -302,6 +306,7 @@
     <Content Include="Resources\带树.png" />
     <Content Include="Resources\幼苗.png" />
     <Content Include="Resources\成熟期.png" />
+    <Content Include="树叶.ico" />
     <None Include="Resources\白树.bmp" />
     <None Include="Resources\树1.png" />
     <Content Include="Resources\种子.png" />

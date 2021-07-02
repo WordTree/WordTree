@@ -73,7 +73,7 @@ namespace APP_Form
             this.tvMenu.ShowRootLines = false;
             this.tvMenu.Size = new System.Drawing.Size(283, 637);
             this.tvMenu.TabIndex = 8;
-            this.tvMenu.TipFont = new System.Drawing.Font("新宋体", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tvMenu.TipFont = new System.Drawing.Font("微软雅黑", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tvMenu.TipImage = ((System.Drawing.Image)(resources.GetObject("tvMenu.TipImage")));
             this.tvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterSelect);
             // 
@@ -198,11 +198,11 @@ namespace APP_Form
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-            this.label1.Font = new System.Drawing.Font("Brush Script MT", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Brush Script MT", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(92, 641);
+            this.label1.Location = new System.Drawing.Point(70, 630);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 29);
+            this.label1.Size = new System.Drawing.Size(149, 47);
             this.label1.TabIndex = 14;
             this.label1.Text = "WordTree";
             // 

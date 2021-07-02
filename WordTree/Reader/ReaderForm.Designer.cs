@@ -65,7 +65,7 @@ namespace Reader
             this.read_switchbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.read_switchbutton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ButtonHighlight;
             this.read_switchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.read_switchbutton.Location = new System.Drawing.Point(880, 647);
+            this.read_switchbutton.Location = new System.Drawing.Point(830, 636);
             this.read_switchbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.read_switchbutton.Name = "read_switchbutton";
             this.read_switchbutton.Size = new System.Drawing.Size(76, 69);

@@ -73,7 +73,7 @@ namespace WordTree.Service
 
 		public WordLinkedList GetNextWords(int count)
 		{
-			if (count >= NeedNum)
+			if (count >= NeedNum || NeedWord.Length == 0)
 			{
 				throw new ApplicationException("已达成目标");
 			}
