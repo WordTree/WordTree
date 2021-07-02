@@ -32,19 +32,27 @@ namespace StatTracer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraceForm));
             this.tabControlExt1 = new HZH_Controls.Controls.TabControlExt();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.copy1plant_pictureBox = new System.Windows.Forms.PictureBox();
+            this.copypot_pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TimeLine1 = new HZH_Controls.Controls.UCTimeLine();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.plant_pictureBox = new System.Windows.Forms.PictureBox();
             this.pot_pictureBox = new System.Windows.Forms.PictureBox();
             this.TimeLine2 = new HZH_Controls.Controls.UCTimeLine();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.copy3plant_pictureBox = new System.Windows.Forms.PictureBox();
+            this.copypot_pictureBox3 = new System.Windows.Forms.PictureBox();
             this.TimeLine3 = new HZH_Controls.Controls.UCTimeLine();
             this.tabControlExt1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.copy1plant_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copypot_pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.plant_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pot_pictureBox)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.copy3plant_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copypot_pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlExt1
@@ -70,6 +78,8 @@ namespace StatTracer
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.copy1plant_pictureBox);
+            this.tabPage1.Controls.Add(this.copypot_pictureBox1);
             this.tabPage1.Controls.Add(this.TimeLine1);
             this.tabPage1.Font = new System.Drawing.Font("幼圆", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPage1.Location = new System.Drawing.Point(4, 54);
@@ -79,6 +89,26 @@ namespace StatTracer
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "近期错词";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // copy1plant_pictureBox
+            // 
+            this.copy1plant_pictureBox.BackColor = System.Drawing.Color.White;
+            this.copy1plant_pictureBox.Location = new System.Drawing.Point(581, 112);
+            this.copy1plant_pictureBox.Name = "copy1plant_pictureBox";
+            this.copy1plant_pictureBox.Size = new System.Drawing.Size(120, 131);
+            this.copy1plant_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.copy1plant_pictureBox.TabIndex = 8;
+            this.copy1plant_pictureBox.TabStop = false;
+            // 
+            // copypot_pictureBox1
+            // 
+            this.copypot_pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("copypot_pictureBox1.Image")));
+            this.copypot_pictureBox1.Location = new System.Drawing.Point(584, 141);
+            this.copypot_pictureBox1.Name = "copypot_pictureBox1";
+            this.copypot_pictureBox1.Size = new System.Drawing.Size(153, 143);
+            this.copypot_pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.copypot_pictureBox1.TabIndex = 7;
+            this.copypot_pictureBox1.TabStop = false;
             // 
             // TimeLine1
             // 
@@ -147,6 +177,8 @@ namespace StatTracer
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.copy3plant_pictureBox);
+            this.tabPage3.Controls.Add(this.copypot_pictureBox3);
             this.tabPage3.Controls.Add(this.TimeLine3);
             this.tabPage3.Location = new System.Drawing.Point(4, 54);
             this.tabPage3.Name = "tabPage3";
@@ -155,6 +187,26 @@ namespace StatTracer
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "下周期";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // copy3plant_pictureBox
+            // 
+            this.copy3plant_pictureBox.BackColor = System.Drawing.Color.White;
+            this.copy3plant_pictureBox.Location = new System.Drawing.Point(584, 126);
+            this.copy3plant_pictureBox.Name = "copy3plant_pictureBox";
+            this.copy3plant_pictureBox.Size = new System.Drawing.Size(120, 131);
+            this.copy3plant_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.copy3plant_pictureBox.TabIndex = 8;
+            this.copy3plant_pictureBox.TabStop = false;
+            // 
+            // copypot_pictureBox3
+            // 
+            this.copypot_pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("copypot_pictureBox3.Image")));
+            this.copypot_pictureBox3.Location = new System.Drawing.Point(584, 141);
+            this.copypot_pictureBox3.Name = "copypot_pictureBox3";
+            this.copypot_pictureBox3.Size = new System.Drawing.Size(153, 143);
+            this.copypot_pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.copypot_pictureBox3.TabIndex = 7;
+            this.copypot_pictureBox3.TabStop = false;
             // 
             // TimeLine3
             // 
@@ -182,10 +234,14 @@ namespace StatTracer
             this.Text = "Form1";
             this.tabControlExt1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.copy1plant_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copypot_pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.plant_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pot_pictureBox)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.copy3plant_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copypot_pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +257,10 @@ namespace StatTracer
         public HZH_Controls.Controls.UCTimeLine TimeLine3;
         private System.Windows.Forms.PictureBox pot_pictureBox;
         private System.Windows.Forms.PictureBox plant_pictureBox;
+        private System.Windows.Forms.PictureBox copy1plant_pictureBox;
+        private System.Windows.Forms.PictureBox copypot_pictureBox1;
+        private System.Windows.Forms.PictureBox copy3plant_pictureBox;
+        private System.Windows.Forms.PictureBox copypot_pictureBox3;
     }
 }
 
