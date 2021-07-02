@@ -185,7 +185,7 @@ namespace StatTracer
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(792, 392);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "下周期";
+            this.tabPage3.Text = "新加入";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // copy3plant_pictureBox

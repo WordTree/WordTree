@@ -33,7 +33,8 @@ namespace StatTracer
             InitializeComponent();
             YesterdayRecordInit();
             TodaydayRecordInit();
-
+            TomorrowRecordInit();
+           
             FormInit(TimeLine1, yesterday);
             FormInit(TimeLine2, today);
             FormInit(TimeLine3, tomorrow);
@@ -126,7 +127,7 @@ namespace StatTracer
             {
                 int index = 1;
                 Random random = new Random();
-                index = random.Next(1, 3);
+                index = random.Next(1, 4);
                 plant_pictureBox.Image = Image.FromFile($"..\\..\\..\\StatTracer\\Tree\\animatedplants\\{index}.gif");
                 copy1plant_pictureBox.Image = plant_pictureBox.Image;
                 copy3plant_pictureBox.Image = plant_pictureBox.Image;

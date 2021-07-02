@@ -24,10 +24,10 @@ namespace APP_Form
         public TransferController transferController = TransferController.GetController();
         public SelectWordsForm selectform = new SelectWordsForm();
 
-        TreeNode dictNode = new TreeNode("         词典");
-        TreeNode statNode = new TreeNode("         统计");
-        TreeNode readNode = new TreeNode("         阅读");
-        TreeNode mryNode = new TreeNode("         记忆");
+        TreeNode dictNode = new TreeNode("         词   典");
+        TreeNode statNode = new TreeNode("         统   计");
+        TreeNode readNode = new TreeNode("         阅   读");
+        TreeNode mryNode = new TreeNode("         记   忆");
         public TrialMain()
         {
             InitializeComponent();
@@ -51,17 +51,17 @@ namespace APP_Form
             this.Title = strName;
             switch (strName)
             {
-                case "词典":
+                case "词   典":
                     transferController.Transfer(panControl, searchForm);
                     break;
-                case "统计":
+                case "统   计":
                     transferController.Transfer(panControl, traceForm);
                     traceForm.SetTree(memoryForm.count, memoryForm.memoryManager.NeedNum );
                     break;
-                case "阅读":
+                case "阅   读":
                     transferController.Transfer(panControl, readerForm);
                     break;
-                case "记忆":
+                case "记   忆":
                     transferController.Transfer(panControl, memoryForm);
                     memoryForm.Memory(null, null);
                     break;
