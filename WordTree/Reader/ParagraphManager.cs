@@ -76,7 +76,7 @@ namespace Reader
             while (start < textbox.Text.Length)
             {
                 int index = textbox.Text.IndexOf(targetstr, start);
-                if (index >= 0 && textsearch[index - 1] == ' ')
+                if (index >= 0 && textsearch[index - 1] == ' '&&(textsearch[index +targetstr.Length] == ' '|| textsearch[index + targetstr.Length + 1] == ' ' || textsearch[index + targetstr.Length + 2] == ' '))
                 {
                     list_position.Add(index);
                     start = index + targetstr.Length;
