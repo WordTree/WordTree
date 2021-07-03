@@ -142,5 +142,10 @@ namespace Reader
         {
 
         }
+
+        private void Info_richTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

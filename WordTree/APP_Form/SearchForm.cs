@@ -86,27 +86,34 @@ namespace APP_Form
                 }
             }catch(Exception e)
             {
-                
+                pnl_wordInfo.Controls.Add(panel_sentence);
             }
         }
 
         private void comboBox_Searcher_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(wordInfoForm != null)
+            try
             {
-                wordInfoForm.Dispose();
+                if (wordInfoForm != null)
+                {
+                    wordInfoForm.Dispose();
+                }
+                if (comboBox_Searcher.SelectedIndex >= 0)
+                {
+                    pnl_wordInfo.Controls.Clear();
+                    string wordStr = comboBox_Searcher.SelectedItem.ToString().Replace(' ', '_');
+                    Word targetWord = wordAndDicManager.getWord(wordStr);
+                    wordInfoForm = new WordInfoForm(targetWord);
+                    wordInfoForm.TopLevel = false;
+                    wordInfoForm.FormBorderStyle = FormBorderStyle.None;
+                    wordInfoForm.Dock = DockStyle.Fill;
+                    pnl_wordInfo.Controls.Add(wordInfoForm);
+                    wordInfoForm.Show();
+                }
             }
-            if (comboBox_Searcher.SelectedIndex >= 0)
+            catch(Exception ex)
             {
-                pnl_wordInfo.Controls.Clear();        
-                string wordStr = comboBox_Searcher.SelectedItem.ToString().Replace(' ', '_');
-                Word targetWord = wordAndDicManager.getWord(wordStr);
-                wordInfoForm = new WordInfoForm(targetWord);
-                wordInfoForm.TopLevel = false;
-                wordInfoForm.FormBorderStyle = FormBorderStyle.None;
-                wordInfoForm.Dock = DockStyle.Fill;
-                pnl_wordInfo.Controls.Add(wordInfoForm);
-                wordInfoForm.Show();
+
             }
         }
         /// <summary>
