@@ -1,14 +1,13 @@
 WordTree
 
-谢逸帆：DaY1zz
-洪易郅 baizz-maker
-林星宇：LisnXy
+DaY1zz
+baizz-maker
+LisnXy
 
 大致分工：
-谢逸帆：记忆模块 设置选词模块 解析提取词库资源 
+DaY1zz：记忆模块 设置选词模块 解析提取词库资源 
 
-洪易郅：阅读 统计 界面UI
+baizz：阅读 统计 界面UI
 
-林星宇：窗体跳转逻辑 词典模块 部分记忆模块
+LisnXy：窗体跳转逻辑 词典模块 部分记忆模块
 
-（详细请见每人的课程报告）
